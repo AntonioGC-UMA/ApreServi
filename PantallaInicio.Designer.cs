@@ -178,6 +178,7 @@ namespace ApreServi
             this.bIniciarSesion.TabIndex = 4;
             this.bIniciarSesion.Text = "Iniciar Sesion";
             this.bIniciarSesion.UseVisualStyleBackColor = true;
+            this.bIniciarSesion.Click += new System.EventHandler(this.bIniciarSesion_Click);
             // 
             // bRegistrarse
             // 

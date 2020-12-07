@@ -68,6 +68,7 @@ namespace ApreServi
             // 
             this.tPassword.Location = new System.Drawing.Point(333, 215);
             this.tPassword.Name = "tPassword";
+            this.tPassword.PasswordChar = '*';
             this.tPassword.Size = new System.Drawing.Size(119, 23);
             this.tPassword.TabIndex = 3;
             // 

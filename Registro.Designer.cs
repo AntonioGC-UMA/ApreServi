@@ -30,16 +30,16 @@ namespace ApreServi
         private void InitializeComponent()
         {
             this.bCancelar = new System.Windows.Forms.Button();
-            this.tPassword = new System.Windows.Forms.TextBox();
-            this.tUsuario = new System.Windows.Forms.TextBox();
+            this.tCorreo = new System.Windows.Forms.TextBox();
+            this.tApellidos = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.Label();
             this.usuario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tConfirmPassword = new System.Windows.Forms.TextBox();
+            this.tPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tNombre = new System.Windows.Forms.TextBox();
+            this.tNombreUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,19 +56,19 @@ namespace ApreServi
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
             // 
-            // tPassword
+            // tCorreo
             // 
-            this.tPassword.Location = new System.Drawing.Point(42, 369);
-            this.tPassword.Name = "tPassword";
-            this.tPassword.Size = new System.Drawing.Size(191, 23);
-            this.tPassword.TabIndex = 8;
+            this.tCorreo.Location = new System.Drawing.Point(42, 369);
+            this.tCorreo.Name = "tCorreo";
+            this.tCorreo.Size = new System.Drawing.Size(191, 23);
+            this.tCorreo.TabIndex = 8;
             // 
-            // tUsuario
+            // tApellidos
             // 
-            this.tUsuario.Location = new System.Drawing.Point(42, 278);
-            this.tUsuario.Name = "tUsuario";
-            this.tUsuario.Size = new System.Drawing.Size(191, 23);
-            this.tUsuario.TabIndex = 7;
+            this.tApellidos.Location = new System.Drawing.Point(42, 278);
+            this.tApellidos.Name = "tApellidos";
+            this.tApellidos.Size = new System.Drawing.Size(191, 23);
+            this.tApellidos.TabIndex = 7;
             // 
             // password
             // 
@@ -90,19 +90,21 @@ namespace ApreServi
             this.usuario.TabIndex = 5;
             this.usuario.Text = "Apellidos";
             // 
-            // textBox1
+            // tConfirmPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(492, 202);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 23);
-            this.textBox1.TabIndex = 13;
+            this.tConfirmPassword.Location = new System.Drawing.Point(492, 201);
+            this.tConfirmPassword.Name = "tConfirmPassword";
+            this.tConfirmPassword.PasswordChar = '*';
+            this.tConfirmPassword.Size = new System.Drawing.Size(216, 23);
+            this.tConfirmPassword.TabIndex = 13;
             // 
-            // textBox2
+            // tPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(492, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 23);
-            this.textBox2.TabIndex = 12;
+            this.tPassword.Location = new System.Drawing.Point(492, 113);
+            this.tPassword.Name = "tPassword";
+            this.tPassword.PasswordChar = '*';
+            this.tPassword.Size = new System.Drawing.Size(216, 23);
+            this.tPassword.TabIndex = 12;
             // 
             // label1
             // 
@@ -124,19 +126,19 @@ namespace ApreServi
             this.label2.TabIndex = 10;
             this.label2.Text = "Confirmar contraseña";
             // 
-            // textBox3
+            // tNombre
             // 
-            this.textBox3.Location = new System.Drawing.Point(42, 192);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(191, 23);
-            this.textBox3.TabIndex = 17;
+            this.tNombre.Location = new System.Drawing.Point(42, 192);
+            this.tNombre.Name = "tNombre";
+            this.tNombre.Size = new System.Drawing.Size(191, 23);
+            this.tNombre.TabIndex = 17;
             // 
-            // textBox4
+            // tNombreUsuario
             // 
-            this.textBox4.Location = new System.Drawing.Point(42, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 23);
-            this.textBox4.TabIndex = 16;
+            this.tNombreUsuario.Location = new System.Drawing.Point(42, 102);
+            this.tNombreUsuario.Name = "tNombreUsuario";
+            this.tNombreUsuario.Size = new System.Drawing.Size(191, 23);
+            this.tNombreUsuario.TabIndex = 16;
             // 
             // label3
             // 
@@ -154,9 +156,9 @@ namespace ApreServi
             this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(42, 63);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 23);
+            this.label4.Size = new System.Drawing.Size(193, 23);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Nombre de ususario";
+            this.label4.Text = "Nombre de usuario";
             // 
             // label5
             // 
@@ -186,17 +188,17 @@ namespace ApreServi
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bConfirmar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tNombre);
+            this.Controls.Add(this.tNombreUsuario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tConfirmPassword);
+            this.Controls.Add(this.tPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bCancelar);
-            this.Controls.Add(this.tPassword);
-            this.Controls.Add(this.tUsuario);
+            this.Controls.Add(this.tCorreo);
+            this.Controls.Add(this.tApellidos);
             this.Controls.Add(this.password);
             this.Controls.Add(this.usuario);
             this.Name = "Registro";
@@ -209,16 +211,16 @@ namespace ApreServi
         #endregion
 
         private System.Windows.Forms.Button bCancelar;
-        private System.Windows.Forms.TextBox tPassword;
-        private System.Windows.Forms.TextBox tUsuario;
+        private System.Windows.Forms.TextBox tCorreo;
+        private System.Windows.Forms.TextBox tApellidos;
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.Label usuario;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tConfirmPassword;
+        private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tNombre;
+        private System.Windows.Forms.TextBox tNombreUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
