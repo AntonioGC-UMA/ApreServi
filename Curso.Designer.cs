@@ -216,12 +216,6 @@ namespace ApreServi
             // 
             this.lForos.FormattingEnabled = true;
             this.lForos.ItemHeight = 15;
-            this.lForos.Items.AddRange(new object[] {
-            "Foro Tema 1",
-            "Foro Tema 2",
-            "Foro dudas generales",
-            "Foro dudas examenes",
-            "Foro para turorias"});
             this.lForos.Location = new System.Drawing.Point(3, 3);
             this.lForos.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
             this.lForos.Name = "lForos";
