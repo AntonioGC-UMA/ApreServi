@@ -45,7 +45,7 @@ namespace ApreServi
             this.tDescripcion = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lForos = new System.Windows.Forms.ListBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -203,7 +203,7 @@ namespace ApreServi
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.lForos);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -212,21 +212,22 @@ namespace ApreServi
             this.tabPage2.Text = "Foros";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lForos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
+            this.lForos.FormattingEnabled = true;
+            this.lForos.ItemHeight = 15;
+            this.lForos.Items.AddRange(new object[] {
             "Foro Tema 1",
             "Foro Tema 2",
             "Foro dudas generales",
             "Foro dudas examenes",
             "Foro para turorias"});
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(498, 274);
-            this.listBox1.TabIndex = 8;
+            this.lForos.Location = new System.Drawing.Point(3, 3);
+            this.lForos.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
+            this.lForos.Name = "lForos";
+            this.lForos.Size = new System.Drawing.Size(498, 274);
+            this.lForos.TabIndex = 8;
+            this.lForos.SelectedIndexChanged += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -313,7 +314,7 @@ namespace ApreServi
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lForos;
         private System.Windows.Forms.Button bAbandonar;
     }
 }

@@ -36,7 +36,7 @@ namespace ApreServi
             this.bCursos = new System.Windows.Forms.Button();
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lForos = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.noticias = new System.Windows.Forms.Label();
@@ -118,20 +118,15 @@ namespace ApreServi
             this.bForos.UseVisualStyleBackColor = true;
             this.bForos.Click += new System.EventHandler(this.bForos_Click);
             // 
-            // listBox1
+            // lForos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Items.AddRange(new object[] {
-            "Foro Tema 1",
-            "Foro Tema 2",
-            "Foro dudas generales",
-            "Foro dudas examenes",
-            "Foro para turorias"});
-            this.listBox1.Location = new System.Drawing.Point(38, 93);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(468, 334);
-            this.listBox1.TabIndex = 24;
+            this.lForos.FormattingEnabled = true;
+            this.lForos.ItemHeight = 15;
+            this.lForos.Location = new System.Drawing.Point(38, 93);
+            this.lForos.Name = "lForos";
+            this.lForos.Size = new System.Drawing.Size(468, 334);
+            this.lForos.TabIndex = 24;
+            this.lForos.SelectedIndexChanged += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -178,7 +173,7 @@ namespace ApreServi
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lForos);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noticias);
@@ -201,7 +196,7 @@ namespace ApreServi
         private System.Windows.Forms.Button bCursos;
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lForos;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label noticias;

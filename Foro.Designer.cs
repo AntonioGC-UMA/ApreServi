@@ -39,8 +39,10 @@ namespace ApreServi
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lPosts = new System.Windows.Forms.ListBox();
+            this.lableTitulo = new System.Windows.Forms.Label();
+            this.tRespuesta = new System.Windows.Forms.TextBox();
+            this.bEnviar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -145,23 +147,43 @@ namespace ApreServi
             this.titulo.TabIndex = 51;
             this.titulo.Text = "ApreServi";
             // 
-            // listBox1
+            // lPosts
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(46, 115);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(498, 319);
-            this.listBox1.TabIndex = 58;
+            this.lPosts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lPosts.FormattingEnabled = true;
+            this.lPosts.ItemHeight = 14;
+            this.lPosts.Location = new System.Drawing.Point(46, 115);
+            this.lPosts.Name = "lPosts";
+            this.lPosts.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.lPosts.Size = new System.Drawing.Size(498, 228);
+            this.lPosts.TabIndex = 58;
             // 
-            // label2
+            // lableTitulo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "Foro \'x\'";
+            this.lableTitulo.AutoSize = true;
+            this.lableTitulo.Location = new System.Drawing.Point(46, 82);
+            this.lableTitulo.Name = "lableTitulo";
+            this.lableTitulo.Size = new System.Drawing.Size(46, 15);
+            this.lableTitulo.TabIndex = 60;
+            this.lableTitulo.Text = "Foro \'x\'";
+            // 
+            // tRespuesta
+            // 
+            this.tRespuesta.Location = new System.Drawing.Point(46, 362);
+            this.tRespuesta.Multiline = true;
+            this.tRespuesta.Name = "tRespuesta";
+            this.tRespuesta.Size = new System.Drawing.Size(500, 72);
+            this.tRespuesta.TabIndex = 61;
+            // 
+            // bEnviar
+            // 
+            this.bEnviar.Location = new System.Drawing.Point(552, 389);
+            this.bEnviar.Name = "bEnviar";
+            this.bEnviar.Size = new System.Drawing.Size(75, 23);
+            this.bEnviar.TabIndex = 62;
+            this.bEnviar.Text = "Enviar";
+            this.bEnviar.UseVisualStyleBackColor = true;
+            this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
             // 
             // Foro
             // 
@@ -169,8 +191,10 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.bEnviar);
+            this.Controls.Add(this.tRespuesta);
+            this.Controls.Add(this.lableTitulo);
+            this.Controls.Add(this.lPosts);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -197,7 +221,9 @@ namespace ApreServi
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label titulo;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox lPosts;
+        private System.Windows.Forms.Label lableTitulo;
+        private System.Windows.Forms.TextBox tRespuesta;
+        private System.Windows.Forms.Button bEnviar;
     }
 }

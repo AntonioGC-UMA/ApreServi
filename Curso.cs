@@ -20,6 +20,28 @@ namespace ApreServi
             this.curso = curso;
 
             this.tDescripcion.Text = curso.descripcion;
+
+
+            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+            MySqlConnection connection = new MySqlConnection(MyConString);
+
+            connection.Open();
+
+
+            var sql = "select * from Foro f where f.idCurso = " + curso.id;
+
+            var cmd = new MySqlCommand(sql, connection);
+
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                this.lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+            }
+
+            rdr.Close();
+            connection.Close();
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -64,6 +86,18 @@ namespace ApreServi
             connection.Close();
 
             Cursos ventana = new Cursos();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var foro_seleccionado = (ForoBD)lForos.SelectedItem;
+
+            if (foro_seleccionado == null) return;
+
+            Foro ventana = new Foro(foro_seleccionado);
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();

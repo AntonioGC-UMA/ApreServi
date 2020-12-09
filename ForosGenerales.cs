@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,27 @@ namespace ApreServi
         public ForosGenerales()
         {
             InitializeComponent();
+
+            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+            MySqlConnection connection = new MySqlConnection(MyConString);
+
+            connection.Open();
+
+
+            var sql = "select * from Foro f where f.idCurso is null ";
+
+            var cmd = new MySqlCommand(sql, connection);
+
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+            }
+
+            rdr.Close();
+            connection.Close();
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -39,6 +61,18 @@ namespace ApreServi
         private void bAyuda_Click(object sender, EventArgs e)
         {
             // TODO
+        }
+
+        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var foro_seleccionado = (ForoBD)lForos.SelectedItem;
+
+            if (foro_seleccionado == null) return;
+
+            Foro ventana = new Foro(foro_seleccionado);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
     }
 }
