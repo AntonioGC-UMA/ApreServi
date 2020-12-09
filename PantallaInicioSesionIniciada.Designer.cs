@@ -29,6 +29,7 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaInicioSesionIniciada));
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
@@ -42,13 +43,14 @@ namespace ApreServi
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.labelNombre = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(499, 168);
+            this.vScrollBar1.Location = new System.Drawing.Point(481, 130);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(20, 272);
             this.vScrollBar1.TabIndex = 15;
@@ -57,13 +59,14 @@ namespace ApreServi
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(40, 166);
+            this.listBox1.Location = new System.Drawing.Point(22, 128);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(458, 274);
             this.listBox1.TabIndex = 14;
             // 
             // bPerfil
             // 
+            this.bPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bPerfil.Location = new System.Drawing.Point(654, 94);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(111, 23);
@@ -74,7 +77,7 @@ namespace ApreServi
             // noticias
             // 
             this.noticias.AutoSize = true;
-            this.noticias.Location = new System.Drawing.Point(40, 110);
+            this.noticias.Location = new System.Drawing.Point(22, 94);
             this.noticias.Name = "noticias";
             this.noticias.Size = new System.Drawing.Size(111, 15);
             this.noticias.TabIndex = 9;
@@ -83,9 +86,10 @@ namespace ApreServi
             // titulo
             // 
             this.titulo.AutoSize = true;
-            this.titulo.Location = new System.Drawing.Point(40, 28);
+            this.titulo.Font = new System.Drawing.Font("Verdana", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.titulo.Location = new System.Drawing.Point(5, 25);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(57, 15);
+            this.titulo.Size = new System.Drawing.Size(146, 32);
             this.titulo.TabIndex = 8;
             this.titulo.Text = "ApreServi";
             // 
@@ -110,45 +114,55 @@ namespace ApreServi
             // 
             // bAyuda
             // 
+            this.bAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAyuda.Location = new System.Drawing.Point(207, 3);
             this.bAyuda.Name = "bAyuda";
             this.bAyuda.Size = new System.Drawing.Size(64, 26);
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = true;
+            this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bCursos
             // 
+            this.bCursos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCursos.Location = new System.Drawing.Point(139, 3);
             this.bCursos.Name = "bCursos";
             this.bCursos.Size = new System.Drawing.Size(62, 26);
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = true;
+            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bNoticias
             // 
+            this.bNoticias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bNoticias.Location = new System.Drawing.Point(71, 3);
             this.bNoticias.Name = "bNoticias";
             this.bNoticias.Size = new System.Drawing.Size(62, 26);
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = true;
+            this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
             // 
             // bForos
             // 
+            this.bForos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bForos.Location = new System.Drawing.Point(3, 3);
             this.bForos.Name = "bForos";
             this.bForos.Size = new System.Drawing.Size(62, 26);
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = true;
+            this.bForos.Click += new System.EventHandler(this.bForos_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(664, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
@@ -167,12 +181,23 @@ namespace ApreServi
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 19;
             // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNombre.Location = new System.Drawing.Point(511, 41);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(63, 19);
+            this.labelNombre.TabIndex = 20;
+            this.labelNombre.Text = "label2";
+            // 
             // PantallaInicioSesionIniciada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -206,5 +231,6 @@ namespace ApreServi
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.Label labelNombre;
     }
 }

@@ -99,6 +99,7 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = true;
+            this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bCursos
             // 
@@ -108,6 +109,7 @@ namespace ApreServi
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = true;
+            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bNoticias
             // 
@@ -117,6 +119,7 @@ namespace ApreServi
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = true;
+            this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
             // 
             // bForos
             // 
@@ -126,6 +129,7 @@ namespace ApreServi
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = true;
+            this.bForos.Click += new System.EventHandler(this.bForos_Click);
             // 
             // bPerfil
             // 
@@ -259,6 +263,7 @@ namespace ApreServi
             this.bAbandonar.TabIndex = 40;
             this.bAbandonar.Text = "Abandonar";
             this.bAbandonar.UseVisualStyleBackColor = true;
+            this.bAbandonar.Click += new System.EventHandler(this.bAbandonar_Click);
             // 
             // Curso
             // 

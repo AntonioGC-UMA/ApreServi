@@ -34,6 +34,7 @@ namespace ApreServi
             this.tUsuario = new System.Windows.Forms.TextBox();
             this.tPassword = new System.Windows.Forms.TextBox();
             this.bIniciar = new System.Windows.Forms.Button();
+            this.bCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuario
@@ -45,7 +46,6 @@ namespace ApreServi
             this.usuario.Size = new System.Drawing.Size(83, 23);
             this.usuario.TabIndex = 0;
             this.usuario.Text = "Usuario";
-            this.usuario.Click += new System.EventHandler(this.label1_Click);
             // 
             // password
             // 
@@ -75,12 +75,24 @@ namespace ApreServi
             // bIniciar
             // 
             this.bIniciar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bIniciar.Location = new System.Drawing.Point(332, 333);
+            this.bIniciar.Location = new System.Drawing.Point(430, 322);
             this.bIniciar.Name = "bIniciar";
             this.bIniciar.Size = new System.Drawing.Size(117, 65);
             this.bIniciar.TabIndex = 4;
             this.bIniciar.Text = "Iniciar Sesion";
             this.bIniciar.UseVisualStyleBackColor = true;
+            this.bIniciar.Click += new System.EventHandler(this.bIniciar_Click);
+            // 
+            // bCancelar
+            // 
+            this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCancelar.Location = new System.Drawing.Point(200, 322);
+            this.bCancelar.Name = "bCancelar";
+            this.bCancelar.Size = new System.Drawing.Size(117, 65);
+            this.bCancelar.TabIndex = 10;
+            this.bCancelar.Text = "Cancelar";
+            this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // InicioDeSesion
             // 
@@ -88,6 +100,7 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bIniciar);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tUsuario);
@@ -107,5 +120,6 @@ namespace ApreServi
         private System.Windows.Forms.TextBox tUsuario;
         private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Button bIniciar;
+        private System.Windows.Forms.Button bCancelar;
     }
 }

@@ -188,6 +188,7 @@ namespace ApreServi
             this.bRegistrarse.TabIndex = 5;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = true;
+            this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
             // 
             // listBox1
             // 

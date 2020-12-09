@@ -36,12 +36,12 @@ namespace ApreServi
             this.bCursos = new System.Windows.Forms.Button();
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lMisCursos = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.noticias = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lOtrosCursos = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -88,6 +88,7 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = true;
+            this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bCursos
             // 
@@ -97,6 +98,7 @@ namespace ApreServi
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = true;
+            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bNoticias
             // 
@@ -106,6 +108,7 @@ namespace ApreServi
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = true;
+            this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
             // 
             // bForos
             // 
@@ -115,18 +118,20 @@ namespace ApreServi
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = true;
+            this.bForos.Click += new System.EventHandler(this.bForos_Click);
             // 
-            // listBox1
+            // lMisCursos
             // 
-            this.listBox1.ColumnWidth = 60;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(38, 127);
-            this.listBox1.MultiColumn = true;
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(458, 94);
-            this.listBox1.TabIndex = 24;
+            this.lMisCursos.ColumnWidth = 60;
+            this.lMisCursos.FormattingEnabled = true;
+            this.lMisCursos.HorizontalScrollbar = true;
+            this.lMisCursos.ItemHeight = 15;
+            this.lMisCursos.Location = new System.Drawing.Point(38, 127);
+            this.lMisCursos.MultiColumn = true;
+            this.lMisCursos.Name = "lMisCursos";
+            this.lMisCursos.Size = new System.Drawing.Size(458, 94);
+            this.lMisCursos.TabIndex = 24;
+            this.lMisCursos.SelectedIndexChanged += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -164,17 +169,18 @@ namespace ApreServi
             this.titulo.TabIndex = 20;
             this.titulo.Text = "ApreServi";
             // 
-            // listBox2
+            // lOtrosCursos
             // 
-            this.listBox2.ColumnWidth = 60;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.HorizontalScrollbar = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(38, 311);
-            this.listBox2.MultiColumn = true;
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(458, 94);
-            this.listBox2.TabIndex = 30;
+            this.lOtrosCursos.ColumnWidth = 60;
+            this.lOtrosCursos.FormattingEnabled = true;
+            this.lOtrosCursos.HorizontalScrollbar = true;
+            this.lOtrosCursos.ItemHeight = 15;
+            this.lOtrosCursos.Location = new System.Drawing.Point(38, 311);
+            this.lOtrosCursos.MultiColumn = true;
+            this.lOtrosCursos.Name = "lOtrosCursos";
+            this.lOtrosCursos.Size = new System.Drawing.Size(458, 94);
+            this.lOtrosCursos.TabIndex = 30;
+            this.lOtrosCursos.SelectedIndexChanged += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -192,11 +198,11 @@ namespace ApreServi
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.lOtrosCursos);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lMisCursos);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noticias);
@@ -219,12 +225,12 @@ namespace ApreServi
         private System.Windows.Forms.Button bCursos;
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lMisCursos;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label noticias;
         private System.Windows.Forms.Label titulo;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lOtrosCursos;
         private System.Windows.Forms.Label label2;
     }
 }
