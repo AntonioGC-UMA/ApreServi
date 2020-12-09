@@ -42,7 +42,7 @@ namespace ApreServi
             this.titulo = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tDescripcion = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -173,7 +173,7 @@ namespace ApreServi
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.tDescripcion);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
@@ -183,15 +183,15 @@ namespace ApreServi
             this.tabPage1.Text = "Descripcion";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(177, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(303, 257);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.tDescripcion.Location = new System.Drawing.Point(177, 12);
+            this.tDescripcion.Multiline = true;
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.ReadOnly = true;
+            this.tDescripcion.Size = new System.Drawing.Size(303, 257);
+            this.tDescripcion.TabIndex = 2;
+            this.tDescripcion.Text = resources.GetString("tDescripcion.Text");
             // 
             // pictureBox2
             // 
@@ -307,7 +307,7 @@ namespace ApreServi
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tDescripcion;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;

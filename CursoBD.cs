@@ -6,9 +6,10 @@ namespace ApreServi
 {
     public class CursoBD
     {
+
         public int id { get; private set; }
-        string nombre;
-        string descripcion;
+        public string nombre { get; private set; }
+        public string descripcion { get; private set; }
         //List<string> foros;
 
         public CursoBD(int i, string n, string d)

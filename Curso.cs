@@ -18,6 +18,8 @@ namespace ApreServi
             InitializeComponent();
 
             this.curso = curso;
+
+            this.tDescripcion.Text = curso.descripcion;
         }
 
         private void bForos_Click(object sender, EventArgs e)

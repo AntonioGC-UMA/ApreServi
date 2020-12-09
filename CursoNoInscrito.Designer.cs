@@ -41,7 +41,7 @@ namespace ApreServi
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tDescripcion = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -158,15 +158,15 @@ namespace ApreServi
             this.titulo.TabIndex = 42;
             this.titulo.Text = "ApreServi";
             // 
-            // textBox1
+            // tDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 112);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(338, 281);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.Text = resources.GetString("textBox1.Text");
+            this.tDescripcion.Location = new System.Drawing.Point(195, 112);
+            this.tDescripcion.Multiline = true;
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.ReadOnly = true;
+            this.tDescripcion.Size = new System.Drawing.Size(338, 281);
+            this.tDescripcion.TabIndex = 50;
+            this.tDescripcion.Text = resources.GetString("tDescripcion.Text");
             // 
             // pictureBox2
             // 
@@ -182,7 +182,7 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tDescripcion);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.bInscribirse);
             this.Controls.Add(this.monthCalendar1);
@@ -214,7 +214,7 @@ namespace ApreServi
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label titulo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tDescripcion;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -55,6 +55,8 @@ namespace ApreServi
         {
             var curso_seleccionado = (CursoBD)lMisCursos.SelectedItem;
 
+            if (curso_seleccionado == null) return;
+
             Curso ventana = new Curso(curso_seleccionado);
             this.Visible = false;
             ventana.ShowDialog();
@@ -64,6 +66,8 @@ namespace ApreServi
         private void lOtrosCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
             var curso_seleccionado = (CursoBD)lOtrosCursos.SelectedItem;
+
+            if (curso_seleccionado == null) return;
 
             CursoNoInscrito ventana = new CursoNoInscrito(curso_seleccionado);
             this.Visible = false;
