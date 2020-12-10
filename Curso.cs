@@ -18,7 +18,7 @@ namespace ApreServi
             InitializeComponent();
 
             this.curso = curso;
-
+            this.lUsuario.Text = Usuario.getInstance().usuario;
             this.tDescripcion.Text = curso.descripcion;
 
 
@@ -100,6 +100,12 @@ namespace ApreServi
             Foro ventana = new Foro(foro_seleccionado);
             this.Visible = false;
             ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Usuario.cerrarSesion();
             this.Close();
         }
     }

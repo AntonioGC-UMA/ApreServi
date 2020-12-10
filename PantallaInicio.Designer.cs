@@ -45,6 +45,7 @@ namespace ApreServi
             this.bRegistrarse = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.bSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -182,7 +183,7 @@ namespace ApreServi
             // 
             // bRegistrarse
             // 
-            this.bRegistrarse.Location = new System.Drawing.Point(600, 23);
+            this.bRegistrarse.Location = new System.Drawing.Point(577, 23);
             this.bRegistrarse.Name = "bRegistrarse";
             this.bRegistrarse.Size = new System.Drawing.Size(111, 23);
             this.bRegistrarse.TabIndex = 5;
@@ -206,12 +207,23 @@ namespace ApreServi
             this.vScrollBar1.Size = new System.Drawing.Size(18, 199);
             this.vScrollBar1.TabIndex = 7;
             // 
+            // bSalir
+            // 
+            this.bSalir.Location = new System.Drawing.Point(696, 23);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(75, 23);
+            this.bSalir.TabIndex = 8;
+            this.bSalir.Text = "Salir";
+            this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bSalir);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.bRegistrarse);
@@ -251,6 +263,7 @@ namespace ApreServi
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.Button bSalir;
     }
 }
 

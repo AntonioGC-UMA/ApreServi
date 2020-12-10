@@ -29,6 +29,7 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,6 +44,12 @@ namespace ApreServi
             this.titulo = new System.Windows.Forms.Label();
             this.lOtrosCursos = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.bCerrarSesion = new System.Windows.Forms.Button();
+            this.lUsuario = new System.Windows.Forms.Label();
+            this.bCrearCurso = new System.Windows.Forms.Button();
+            this.bEntrarCurso = new System.Windows.Forms.Button();
+            this.bModificarCurso = new System.Windows.Forms.Button();
+            this.bEliminarCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,9 +62,11 @@ namespace ApreServi
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(662, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
@@ -163,9 +172,10 @@ namespace ApreServi
             // titulo
             // 
             this.titulo.AutoSize = true;
-            this.titulo.Location = new System.Drawing.Point(38, 27);
+            this.titulo.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.titulo.Location = new System.Drawing.Point(10, 27);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(57, 15);
+            this.titulo.Size = new System.Drawing.Size(146, 32);
             this.titulo.TabIndex = 20;
             this.titulo.Text = "ApreServi";
             // 
@@ -191,12 +201,75 @@ namespace ApreServi
             this.label2.TabIndex = 31;
             this.label2.Text = "Otros cursos";
             // 
+            // bCerrarSesion
+            // 
+            this.bCerrarSesion.Location = new System.Drawing.Point(457, 32);
+            this.bCerrarSesion.Name = "bCerrarSesion";
+            this.bCerrarSesion.Size = new System.Drawing.Size(86, 23);
+            this.bCerrarSesion.TabIndex = 32;
+            this.bCerrarSesion.Text = "Cerrar Sesión";
+            this.bCerrarSesion.UseVisualStyleBackColor = true;
+            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            // 
+            // lUsuario
+            // 
+            this.lUsuario.AutoSize = true;
+            this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lUsuario.Location = new System.Drawing.Point(560, 36);
+            this.lUsuario.Name = "lUsuario";
+            this.lUsuario.Size = new System.Drawing.Size(68, 23);
+            this.lUsuario.TabIndex = 33;
+            this.lUsuario.Text = "label3";
+            // 
+            // bCrearCurso
+            // 
+            this.bCrearCurso.Location = new System.Drawing.Point(540, 355);
+            this.bCrearCurso.Name = "bCrearCurso";
+            this.bCrearCurso.Size = new System.Drawing.Size(100, 23);
+            this.bCrearCurso.TabIndex = 34;
+            this.bCrearCurso.Text = "Crear Curso";
+            this.bCrearCurso.UseVisualStyleBackColor = true;
+            this.bCrearCurso.Click += new System.EventHandler(this.bCrearCurso_Click);
+            // 
+            // bEntrarCurso
+            // 
+            this.bEntrarCurso.Location = new System.Drawing.Point(671, 355);
+            this.bEntrarCurso.Name = "bEntrarCurso";
+            this.bEntrarCurso.Size = new System.Drawing.Size(92, 23);
+            this.bEntrarCurso.TabIndex = 35;
+            this.bEntrarCurso.Text = "Entrar Curso";
+            this.bEntrarCurso.UseVisualStyleBackColor = true;
+            // 
+            // bModificarCurso
+            // 
+            this.bModificarCurso.Location = new System.Drawing.Point(540, 405);
+            this.bModificarCurso.Name = "bModificarCurso";
+            this.bModificarCurso.Size = new System.Drawing.Size(100, 23);
+            this.bModificarCurso.TabIndex = 36;
+            this.bModificarCurso.Text = "Modificar Curso";
+            this.bModificarCurso.UseVisualStyleBackColor = true;
+            // 
+            // bEliminarCurso
+            // 
+            this.bEliminarCurso.Location = new System.Drawing.Point(671, 405);
+            this.bEliminarCurso.Name = "bEliminarCurso";
+            this.bEliminarCurso.Size = new System.Drawing.Size(92, 23);
+            this.bEliminarCurso.TabIndex = 37;
+            this.bEliminarCurso.Text = "Eliminar Curso";
+            this.bEliminarCurso.UseVisualStyleBackColor = true;
+            // 
             // Cursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bEliminarCurso);
+            this.Controls.Add(this.bModificarCurso);
+            this.Controls.Add(this.bEntrarCurso);
+            this.Controls.Add(this.bCrearCurso);
+            this.Controls.Add(this.lUsuario);
+            this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lOtrosCursos);
             this.Controls.Add(this.monthCalendar1);
@@ -232,5 +305,11 @@ namespace ApreServi
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.ListBox lOtrosCursos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button bCerrarSesion;
+        private System.Windows.Forms.Label lUsuario;
+        private System.Windows.Forms.Button bCrearCurso;
+        private System.Windows.Forms.Button bEntrarCurso;
+        private System.Windows.Forms.Button bModificarCurso;
+        private System.Windows.Forms.Button bEliminarCurso;
     }
 }

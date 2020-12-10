@@ -14,7 +14,8 @@ namespace ApreServi
         {
             InitializeComponent();
 
-            labelNombre.Text = Usuario.getInstance().usuario;
+            lUsuario.Text = Usuario.getInstance().usuario;
+            lAdmin.Text = Usuario.getInstance().rol.ToString();
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -41,6 +42,12 @@ namespace ApreServi
         private void bAyuda_Click(object sender, EventArgs e)
         {
             // TODO
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Usuario.cerrarSesion();
+            this.Close();
         }
     }
 }

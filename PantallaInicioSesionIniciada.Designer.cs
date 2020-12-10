@@ -43,7 +43,9 @@ namespace ApreServi
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.labelNombre = new System.Windows.Forms.Label();
+            this.lUsuario = new System.Windows.Forms.Label();
+            this.bCerrarSesion = new System.Windows.Forms.Button();
+            this.lAdmin = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -181,15 +183,34 @@ namespace ApreServi
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 19;
             // 
-            // labelNombre
+            // lUsuario
             // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNombre.Location = new System.Drawing.Point(511, 41);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(63, 19);
-            this.labelNombre.TabIndex = 20;
-            this.labelNombre.Text = "label2";
+            this.lUsuario.AutoSize = true;
+            this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lUsuario.Location = new System.Drawing.Point(560, 33);
+            this.lUsuario.Name = "lUsuario";
+            this.lUsuario.Size = new System.Drawing.Size(68, 23);
+            this.lUsuario.TabIndex = 20;
+            this.lUsuario.Text = "label2";
+            // 
+            // bCerrarSesion
+            // 
+            this.bCerrarSesion.Location = new System.Drawing.Point(464, 33);
+            this.bCerrarSesion.Name = "bCerrarSesion";
+            this.bCerrarSesion.Size = new System.Drawing.Size(90, 23);
+            this.bCerrarSesion.TabIndex = 21;
+            this.bCerrarSesion.Text = "Cerrar Sesión";
+            this.bCerrarSesion.UseVisualStyleBackColor = true;
+            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            // 
+            // lAdmin
+            // 
+            this.lAdmin.AutoSize = true;
+            this.lAdmin.Location = new System.Drawing.Point(560, 73);
+            this.lAdmin.Name = "lAdmin";
+            this.lAdmin.Size = new System.Drawing.Size(38, 15);
+            this.lAdmin.TabIndex = 22;
+            this.lAdmin.Text = "label2";
             // 
             // PantallaInicioSesionIniciada
             // 
@@ -197,7 +218,9 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelNombre);
+            this.Controls.Add(this.lAdmin);
+            this.Controls.Add(this.bCerrarSesion);
+            this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -231,6 +254,8 @@ namespace ApreServi
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label labelNombre;
+        private System.Windows.Forms.Label lUsuario;
+        private System.Windows.Forms.Button bCerrarSesion;
+        private System.Windows.Forms.Label lAdmin;
     }
 }

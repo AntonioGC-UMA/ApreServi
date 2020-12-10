@@ -29,6 +29,7 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ForosGenerales));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,6 +42,8 @@ namespace ApreServi
             this.label1 = new System.Windows.Forms.Label();
             this.noticias = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
+            this.bCerrarSesion = new System.Windows.Forms.Button();
+            this.lUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,9 +56,11 @@ namespace ApreServi
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(662, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(90, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
@@ -66,6 +71,7 @@ namespace ApreServi
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.bAyuda, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCursos, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.bNoticias, 1, 0);
@@ -158,11 +164,32 @@ namespace ApreServi
             // titulo
             // 
             this.titulo.AutoSize = true;
-            this.titulo.Location = new System.Drawing.Point(38, 27);
+            this.titulo.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.titulo.Location = new System.Drawing.Point(13, 27);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(57, 15);
+            this.titulo.Size = new System.Drawing.Size(146, 32);
             this.titulo.TabIndex = 20;
             this.titulo.Text = "ApreServi";
+            // 
+            // bCerrarSesion
+            // 
+            this.bCerrarSesion.Location = new System.Drawing.Point(452, 33);
+            this.bCerrarSesion.Name = "bCerrarSesion";
+            this.bCerrarSesion.Size = new System.Drawing.Size(91, 23);
+            this.bCerrarSesion.TabIndex = 29;
+            this.bCerrarSesion.Text = "Cerrar Sesión";
+            this.bCerrarSesion.UseVisualStyleBackColor = true;
+            this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
+            // 
+            // lUsuario
+            // 
+            this.lUsuario.AutoSize = true;
+            this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lUsuario.Location = new System.Drawing.Point(571, 33);
+            this.lUsuario.Name = "lUsuario";
+            this.lUsuario.Size = new System.Drawing.Size(68, 23);
+            this.lUsuario.TabIndex = 30;
+            this.lUsuario.Text = "label2";
             // 
             // ForosGenerales
             // 
@@ -170,6 +197,8 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lUsuario);
+            this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -201,5 +230,7 @@ namespace ApreServi
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label noticias;
         private System.Windows.Forms.Label titulo;
+        private System.Windows.Forms.Button bCerrarSesion;
+        private System.Windows.Forms.Label lUsuario;
     }
 }

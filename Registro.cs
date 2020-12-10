@@ -93,10 +93,16 @@ namespace ApreServi
             instance.contraseña = contraseña;
             instance.nombre = nombre;
             instance.apellido = apellido;
+           // instance.rol = new Rol("usuario");
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
             this.Visible = false;
             ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bCancelar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
