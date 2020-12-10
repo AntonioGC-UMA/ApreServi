@@ -47,7 +47,7 @@ namespace ApreServi
                     instance.contraseña = (string)rdr[2];
                     instance.nombre = (string)rdr[3];
                     instance.apellido = (string)rdr[4];
-                    //instance.rol = (string)rdr[5];
+                    instance.rol = new Rol((string)rdr[5]);
 
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
                     this.Visible = false;

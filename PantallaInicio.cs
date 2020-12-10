@@ -61,5 +61,10 @@ namespace ApreServi
             ventana.ShowDialog();
             this.Visible = true;
         }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

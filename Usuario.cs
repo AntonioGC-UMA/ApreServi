@@ -13,11 +13,23 @@ namespace ApreServi
         public string apellido { get; set;}
         public string contraseña { get; set;}
         public string correo { get; set;}
-        //string rol { get; set;}
+        public Rol rol { get; set;}
 
         private Usuario()
         {
 
+        }
+
+        public static void cerrarSesion()
+        {
+            instance.usuario = null;
+            instance.nombre = null;
+            instance.apellido = null;
+            instance.correo = null;
+            instance.contraseña = null;
+            instance.rol = null;
+
+            instance = null;
         }
 
         public static Usuario getInstance()

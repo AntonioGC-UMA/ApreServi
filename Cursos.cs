@@ -20,11 +20,11 @@ namespace ApreServi
 
             connection.Open();
 
-
             var sql = "select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
 
             var cmd = new MySqlCommand(sql, connection);
-
+            
+            this.lUsuario.Text = Usuario.getInstance().usuario;
 
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -100,6 +100,17 @@ namespace ApreServi
         private void bAyuda_Click(object sender, EventArgs e)
         {
             // TODO
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Usuario.cerrarSesion();
+            this.Close();
+        }
+
+        private void bCrearCurso_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

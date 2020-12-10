@@ -15,6 +15,8 @@ namespace ApreServi
         {
             InitializeComponent();
 
+            this.lUsuario.Text = Usuario.getInstance().usuario;
+
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
@@ -72,6 +74,12 @@ namespace ApreServi
             Foro ventana = new Foro(foro_seleccionado);
             this.Visible = false;
             ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Usuario.cerrarSesion();
             this.Close();
         }
     }

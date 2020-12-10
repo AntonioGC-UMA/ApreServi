@@ -15,6 +15,8 @@ namespace ApreServi
 
         public void update()
         {
+            this.lUsuario.Text = Usuario.getInstance().usuario;
+
             lPosts.Items.Clear();
             tRespuesta.Text = "";
 
@@ -93,6 +95,12 @@ namespace ApreServi
             connection.Close();
 
             update();
+        }
+
+        private void bCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Usuario.cerrarSesion();
+            this.Close();
         }
     }
 }
