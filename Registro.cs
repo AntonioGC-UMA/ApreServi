@@ -93,7 +93,7 @@ namespace ApreServi
             instance.contraseña = contraseña;
             instance.nombre = nombre;
             instance.apellido = apellido;
-           // instance.rol = new Rol("usuario");
+            instance.rol = new Rol("usuario");
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
             this.Visible = false;

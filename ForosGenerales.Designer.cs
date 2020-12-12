@@ -201,6 +201,7 @@ namespace ApreServi
             this.bAñadir.TabIndex = 31;
             this.bAñadir.Text = "Añadir";
             this.bAñadir.UseVisualStyleBackColor = true;
+            this.bAñadir.Visible = false;
             this.bAñadir.Click += new System.EventHandler(this.bAñadir_Click);
             // 
             // bBorrar
@@ -211,6 +212,7 @@ namespace ApreServi
             this.bBorrar.TabIndex = 32;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Visible = false;
             this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
             // 
             // ForosGenerales
