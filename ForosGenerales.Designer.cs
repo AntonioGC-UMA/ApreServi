@@ -44,6 +44,8 @@ namespace ApreServi
             this.titulo = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.lUsuario = new System.Windows.Forms.Label();
+            this.bAñadir = new System.Windows.Forms.Button();
+            this.bBorrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +134,7 @@ namespace ApreServi
             this.lForos.Name = "lForos";
             this.lForos.Size = new System.Drawing.Size(468, 334);
             this.lForos.TabIndex = 24;
-            this.lForos.SelectedIndexChanged += new System.EventHandler(this.lForos_SelectedIndexChanged);
+            this.lForos.DoubleClick += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -191,12 +193,34 @@ namespace ApreServi
             this.lUsuario.TabIndex = 30;
             this.lUsuario.Text = "label2";
             // 
+            // bAñadir
+            // 
+            this.bAñadir.Location = new System.Drawing.Point(571, 354);
+            this.bAñadir.Name = "bAñadir";
+            this.bAñadir.Size = new System.Drawing.Size(75, 23);
+            this.bAñadir.TabIndex = 31;
+            this.bAñadir.Text = "Añadir";
+            this.bAñadir.UseVisualStyleBackColor = true;
+            this.bAñadir.Click += new System.EventHandler(this.bAñadir_Click);
+            // 
+            // bBorrar
+            // 
+            this.bBorrar.Location = new System.Drawing.Point(688, 354);
+            this.bBorrar.Name = "bBorrar";
+            this.bBorrar.Size = new System.Drawing.Size(75, 23);
+            this.bBorrar.TabIndex = 32;
+            this.bBorrar.Text = "Borrar";
+            this.bBorrar.UseVisualStyleBackColor = true;
+            this.bBorrar.Click += new System.EventHandler(this.bBorrar_Click);
+            // 
             // ForosGenerales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bBorrar);
+            this.Controls.Add(this.bAñadir);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.monthCalendar1);
@@ -232,5 +256,7 @@ namespace ApreServi
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.Label lUsuario;
+        private System.Windows.Forms.Button bAñadir;
+        private System.Windows.Forms.Button bBorrar;
     }
 }

@@ -15,40 +15,14 @@ namespace ApreServi
         {
             InitializeComponent();
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            cargarCursos();
 
-            connection.Open();
-
-            var sql = "select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
-
-            var cmd = new MySqlCommand(sql, connection);
-            
-            this.lUsuario.Text = Usuario.getInstance().usuario;
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            if (Usuario.getInstance().rol.admin)
             {
-                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                bCrearCurso.Visible = true;
+                bEliminarCurso.Visible = true;
+                bEntrarCurso.Visible = true;
             }
-
-            rdr.Close();
-            
-            sql = "select * from Curso c where c.id not in (select c.id from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "');";
-
-            cmd = new MySqlCommand(sql, connection);
-
-            rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
-            }
-            rdr.Close();
-            
-
-            connection.Close();
         }
 
         private void lMisCursos_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,9 +82,94 @@ namespace ApreServi
             this.Close();
         }
 
+        private void cargarCursos()
+        {
+            lMisCursos.Items.Clear();
+            lOtrosCursos.Items.Clear();
+            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+            MySqlConnection connection = new MySqlConnection(MyConString);
+
+            connection.Open();
+
+            var sql = "select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            this.lUsuario.Text = Usuario.getInstance().usuario;
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+            }
+            rdr.Close();
+
+            sql = "select * from Curso c where c.id not in (select c.id from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "');";
+
+            cmd = new MySqlCommand(sql, connection);
+
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+            }
+
+            rdr.Close();
+            connection.Close();
+        }
+
         private void bCrearCurso_Click(object sender, EventArgs e)
         {
+            CrearCurso ventana = new CrearCurso();
+            this.Visible = false;
+            ventana.ShowDialog();
+            cargarCursos();
+            this.Visible = true;
+        }
 
+        private void bEliminarCurso_Click(object sender, EventArgs e)
+        {
+            if(lMisCursos.SelectedIndex != -1)
+            {
+                var curso = (CursoBD)lMisCursos.SelectedItem;
+
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                MySqlConnection connection = new MySqlConnection(MyConString);
+
+                connection.Open();
+
+                var sql = "delete from Curso where id =" + curso.id;
+
+                var cmd = new MySqlCommand(sql, connection);
+
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+                cargarCursos();
+            }
+
+            if (lOtrosCursos.SelectedIndex != -1)
+            {
+                var curso = (CursoBD)lOtrosCursos.SelectedItem;
+
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                MySqlConnection connection = new MySqlConnection(MyConString);
+
+                connection.Open();
+
+                var sql = "delete from Curso where id =" + curso.id;
+
+                var cmd = new MySqlCommand(sql, connection);
+
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+                cargarCursos();
+            }
         }
     }
 }

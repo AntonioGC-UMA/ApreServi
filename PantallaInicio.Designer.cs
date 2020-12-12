@@ -43,8 +43,7 @@ namespace ApreServi
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.bRegistrarse = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.lForos = new System.Windows.Forms.ListBox();
             this.bSalir = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -76,9 +75,9 @@ namespace ApreServi
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(512, 128);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 15);
+            this.label1.Size = new System.Drawing.Size(97, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Noticias destacadas";
+            this.label1.Text = "Foros destacadas";
             // 
             // tableLayoutPanel1
             // 
@@ -191,21 +190,15 @@ namespace ApreServi
             this.bRegistrarse.UseVisualStyleBackColor = true;
             this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
             // 
-            // listBox1
+            // lForos
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(473, 180);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(194, 199);
-            this.listBox1.TabIndex = 6;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(670, 182);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 199);
-            this.vScrollBar1.TabIndex = 7;
+            this.lForos.FormattingEnabled = true;
+            this.lForos.ItemHeight = 15;
+            this.lForos.Location = new System.Drawing.Point(473, 180);
+            this.lForos.Name = "lForos";
+            this.lForos.Size = new System.Drawing.Size(194, 199);
+            this.lForos.TabIndex = 6;
+            this.lForos.DoubleClick += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
             // bSalir
             // 
@@ -224,8 +217,7 @@ namespace ApreServi
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bSalir);
-            this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lForos);
             this.Controls.Add(this.bRegistrarse);
             this.Controls.Add(this.bIniciarSesion);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -257,12 +249,11 @@ namespace ApreServi
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button bIniciarSesion;
         private System.Windows.Forms.Button bRegistrarse;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lForos;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Button bSalir;
     }
 }

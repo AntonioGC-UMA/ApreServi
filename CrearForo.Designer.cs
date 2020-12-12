@@ -30,13 +30,13 @@ namespace ApreServi
         private void InitializeComponent()
         {
             this.bConfirmar = new System.Windows.Forms.Button();
-            this.tNombreUsuario = new System.Windows.Forms.TextBox();
+            this.tNombreForo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tPassword = new System.Windows.Forms.TextBox();
+            this.tContenido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bCancelar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cCategoria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // bConfirmar
@@ -48,13 +48,14 @@ namespace ApreServi
             this.bConfirmar.TabIndex = 34;
             this.bConfirmar.Text = "Crear foro";
             this.bConfirmar.UseVisualStyleBackColor = true;
+            this.bConfirmar.Click += new System.EventHandler(this.bConfirmar_Click);
             // 
-            // tNombreUsuario
+            // tNombreForo
             // 
-            this.tNombreUsuario.Location = new System.Drawing.Point(75, 123);
-            this.tNombreUsuario.Name = "tNombreUsuario";
-            this.tNombreUsuario.Size = new System.Drawing.Size(191, 23);
-            this.tNombreUsuario.TabIndex = 31;
+            this.tNombreForo.Location = new System.Drawing.Point(75, 123);
+            this.tNombreForo.Name = "tNombreForo";
+            this.tNombreForo.Size = new System.Drawing.Size(191, 23);
+            this.tNombreForo.TabIndex = 31;
             // 
             // label3
             // 
@@ -76,13 +77,13 @@ namespace ApreServi
             this.label4.TabIndex = 29;
             this.label4.Text = "Nombre del nuevo foro";
             // 
-            // tPassword
+            // tContenido
             // 
-            this.tPassword.Location = new System.Drawing.Point(435, 134);
-            this.tPassword.Multiline = true;
-            this.tPassword.Name = "tPassword";
-            this.tPassword.Size = new System.Drawing.Size(306, 153);
-            this.tPassword.TabIndex = 27;
+            this.tContenido.Location = new System.Drawing.Point(435, 134);
+            this.tContenido.Multiline = true;
+            this.tContenido.Name = "tContenido";
+            this.tContenido.Size = new System.Drawing.Size(306, 153);
+            this.tContenido.TabIndex = 27;
             // 
             // label1
             // 
@@ -90,9 +91,9 @@ namespace ApreServi
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(435, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 23);
+            this.label1.Size = new System.Drawing.Size(107, 23);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Descripcion del foro";
+            this.label1.Text = "Contenido";
             // 
             // bCancelar
             // 
@@ -103,14 +104,19 @@ namespace ApreServi
             this.bCancelar.TabIndex = 24;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
-            // comboBox1
+            // cCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(77, 259);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(186, 23);
-            this.comboBox1.TabIndex = 35;
+            this.cCategoria.FormattingEnabled = true;
+            this.cCategoria.Items.AddRange(new object[] {
+            "Dudas",
+            "Preguntas",
+            "Anuncios"});
+            this.cCategoria.Location = new System.Drawing.Point(77, 259);
+            this.cCategoria.Name = "cCategoria";
+            this.cCategoria.Size = new System.Drawing.Size(186, 23);
+            this.cCategoria.TabIndex = 35;
             // 
             // CrearForo
             // 
@@ -118,12 +124,12 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cCategoria);
             this.Controls.Add(this.bConfirmar);
-            this.Controls.Add(this.tNombreUsuario);
+            this.Controls.Add(this.tNombreForo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tPassword);
+            this.Controls.Add(this.tContenido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bCancelar);
             this.Name = "CrearForo";
@@ -136,12 +142,12 @@ namespace ApreServi
         #endregion
 
         private System.Windows.Forms.Button bConfirmar;
-        private System.Windows.Forms.TextBox tNombreUsuario;
+        private System.Windows.Forms.TextBox tNombreForo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tPassword;
+        private System.Windows.Forms.TextBox tContenido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bCancelar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cCategoria;
     }
 }

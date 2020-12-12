@@ -29,24 +29,24 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
-            this.tNombreUsuario = new System.Windows.Forms.TextBox();
+            this.tNombreCurso = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.tDescripcion = new System.Windows.Forms.TextBox();
+            this.bCancelar = new System.Windows.Forms.Button();
+            this.bCrear = new System.Windows.Forms.Button();
+            this.dInicio = new System.Windows.Forms.DateTimePicker();
+            this.dFin = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tNombreUsuario
+            // tNombreCurso
             // 
-            this.tNombreUsuario.Location = new System.Drawing.Point(43, 76);
-            this.tNombreUsuario.Name = "tNombreUsuario";
-            this.tNombreUsuario.Size = new System.Drawing.Size(191, 23);
-            this.tNombreUsuario.TabIndex = 41;
+            this.tNombreCurso.Location = new System.Drawing.Point(43, 76);
+            this.tNombreCurso.Name = "tNombreCurso";
+            this.tNombreCurso.Size = new System.Drawing.Size(191, 23);
+            this.tNombreCurso.TabIndex = 41;
             // 
             // label4
             // 
@@ -68,47 +68,49 @@ namespace ApreServi
             this.label2.TabIndex = 37;
             this.label2.Text = "Descripcion del curso";
             // 
-            // textBox1
+            // tDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 164);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 153);
-            this.textBox1.TabIndex = 38;
+            this.tDescripcion.Location = new System.Drawing.Point(43, 164);
+            this.tDescripcion.Multiline = true;
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.Size = new System.Drawing.Size(306, 153);
+            this.tDescripcion.TabIndex = 38;
             // 
-            // button1
+            // bCancelar
             // 
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(232, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 65);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCancelar.Location = new System.Drawing.Point(232, 373);
+            this.bCancelar.Name = "bCancelar";
+            this.bCancelar.Size = new System.Drawing.Size(117, 65);
+            this.bCancelar.TabIndex = 36;
+            this.bCancelar.Text = "Cancelar";
+            this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
-            // button2
+            // bCrear
             // 
-            this.button2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(403, 373);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 65);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "Crear curso";
-            this.button2.UseVisualStyleBackColor = true;
+            this.bCrear.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCrear.Location = new System.Drawing.Point(403, 373);
+            this.bCrear.Name = "bCrear";
+            this.bCrear.Size = new System.Drawing.Size(131, 65);
+            this.bCrear.TabIndex = 42;
+            this.bCrear.Text = "Crear curso";
+            this.bCrear.UseVisualStyleBackColor = true;
+            this.bCrear.Click += new System.EventHandler(this.bCrear_Click);
             // 
-            // dateTimePicker1
+            // dInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(483, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(245, 23);
-            this.dateTimePicker1.TabIndex = 46;
+            this.dInicio.Location = new System.Drawing.Point(483, 76);
+            this.dInicio.Name = "dInicio";
+            this.dInicio.Size = new System.Drawing.Size(245, 23);
+            this.dInicio.TabIndex = 46;
             // 
-            // dateTimePicker2
+            // dFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(483, 188);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(245, 23);
-            this.dateTimePicker2.TabIndex = 47;
+            this.dFin.Location = new System.Drawing.Point(483, 188);
+            this.dFin.Name = "dFin";
+            this.dFin.Size = new System.Drawing.Size(245, 23);
+            this.dFin.TabIndex = 47;
             // 
             // label1
             // 
@@ -138,13 +140,13 @@ namespace ApreServi
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.tNombreUsuario);
+            this.Controls.Add(this.dFin);
+            this.Controls.Add(this.dInicio);
+            this.Controls.Add(this.bCrear);
+            this.Controls.Add(this.tNombreCurso);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tDescripcion);
+            this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.label2);
             this.Name = "CrearCurso";
             this.Text = "ApreServi";
@@ -155,14 +157,14 @@ namespace ApreServi
 
         #endregion
 
-        private System.Windows.Forms.TextBox tNombreUsuario;
+        private System.Windows.Forms.TextBox tNombreCurso;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox tDescripcion;
+        private System.Windows.Forms.Button bCancelar;
+        private System.Windows.Forms.Button bCrear;
+        private System.Windows.Forms.DateTimePicker dInicio;
+        private System.Windows.Forms.DateTimePicker dFin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
     }
