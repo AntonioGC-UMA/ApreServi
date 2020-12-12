@@ -21,7 +21,6 @@ namespace ApreServi
             {
                 bCrearCurso.Visible = true;
                 bEliminarCurso.Visible = true;
-                bEntrarCurso.Visible = true;
             }
         }
 

@@ -17,6 +17,12 @@ namespace ApreServi
 
             this.lUsuario.Text = Usuario.getInstance().usuario;
 
+            if (Usuario.getInstance().rol.admin)
+            {
+                bAñadir.Visible = true;
+                bBorrar.Visible = true;
+            }
+
             cargarForos();
         }
 

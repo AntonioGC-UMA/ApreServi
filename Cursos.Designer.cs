@@ -47,7 +47,6 @@ namespace ApreServi
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.lUsuario = new System.Windows.Forms.Label();
             this.bCrearCurso = new System.Windows.Forms.Button();
-            this.bEntrarCurso = new System.Windows.Forms.Button();
             this.bEliminarCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -231,16 +230,6 @@ namespace ApreServi
             this.bCrearCurso.Visible = false;
             this.bCrearCurso.Click += new System.EventHandler(this.bCrearCurso_Click);
             // 
-            // bEntrarCurso
-            // 
-            this.bEntrarCurso.Location = new System.Drawing.Point(540, 406);
-            this.bEntrarCurso.Name = "bEntrarCurso";
-            this.bEntrarCurso.Size = new System.Drawing.Size(92, 23);
-            this.bEntrarCurso.TabIndex = 35;
-            this.bEntrarCurso.Text = "Entrar Curso";
-            this.bEntrarCurso.UseVisualStyleBackColor = true;
-            this.bEntrarCurso.Visible = false;
-            // 
             // bEliminarCurso
             // 
             this.bEliminarCurso.Location = new System.Drawing.Point(662, 355);
@@ -259,7 +248,6 @@ namespace ApreServi
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bEliminarCurso);
-            this.Controls.Add(this.bEntrarCurso);
             this.Controls.Add(this.bCrearCurso);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
@@ -301,7 +289,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.Label lUsuario;
         private System.Windows.Forms.Button bCrearCurso;
-        private System.Windows.Forms.Button bEntrarCurso;
         private System.Windows.Forms.Button bEliminarCurso;
     }
 }
