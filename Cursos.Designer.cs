@@ -48,7 +48,6 @@ namespace ApreServi
             this.lUsuario = new System.Windows.Forms.Label();
             this.bCrearCurso = new System.Windows.Forms.Button();
             this.bEntrarCurso = new System.Windows.Forms.Button();
-            this.bModificarCurso = new System.Windows.Forms.Button();
             this.bEliminarCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -140,7 +139,7 @@ namespace ApreServi
             this.lMisCursos.Name = "lMisCursos";
             this.lMisCursos.Size = new System.Drawing.Size(458, 94);
             this.lMisCursos.TabIndex = 24;
-            this.lMisCursos.SelectedIndexChanged += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
+            this.lMisCursos.DoubleClick += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -190,7 +189,7 @@ namespace ApreServi
             this.lOtrosCursos.Name = "lOtrosCursos";
             this.lOtrosCursos.Size = new System.Drawing.Size(458, 94);
             this.lOtrosCursos.TabIndex = 30;
-            this.lOtrosCursos.SelectedIndexChanged += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
+            this.lOtrosCursos.DoubleClick += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -229,34 +228,29 @@ namespace ApreServi
             this.bCrearCurso.TabIndex = 34;
             this.bCrearCurso.Text = "Crear Curso";
             this.bCrearCurso.UseVisualStyleBackColor = true;
+            this.bCrearCurso.Visible = false;
             this.bCrearCurso.Click += new System.EventHandler(this.bCrearCurso_Click);
             // 
             // bEntrarCurso
             // 
-            this.bEntrarCurso.Location = new System.Drawing.Point(671, 355);
+            this.bEntrarCurso.Location = new System.Drawing.Point(540, 406);
             this.bEntrarCurso.Name = "bEntrarCurso";
             this.bEntrarCurso.Size = new System.Drawing.Size(92, 23);
             this.bEntrarCurso.TabIndex = 35;
             this.bEntrarCurso.Text = "Entrar Curso";
             this.bEntrarCurso.UseVisualStyleBackColor = true;
-            // 
-            // bModificarCurso
-            // 
-            this.bModificarCurso.Location = new System.Drawing.Point(540, 405);
-            this.bModificarCurso.Name = "bModificarCurso";
-            this.bModificarCurso.Size = new System.Drawing.Size(100, 23);
-            this.bModificarCurso.TabIndex = 36;
-            this.bModificarCurso.Text = "Modificar Curso";
-            this.bModificarCurso.UseVisualStyleBackColor = true;
+            this.bEntrarCurso.Visible = false;
             // 
             // bEliminarCurso
             // 
-            this.bEliminarCurso.Location = new System.Drawing.Point(671, 405);
+            this.bEliminarCurso.Location = new System.Drawing.Point(662, 355);
             this.bEliminarCurso.Name = "bEliminarCurso";
             this.bEliminarCurso.Size = new System.Drawing.Size(92, 23);
             this.bEliminarCurso.TabIndex = 37;
             this.bEliminarCurso.Text = "Eliminar Curso";
             this.bEliminarCurso.UseVisualStyleBackColor = true;
+            this.bEliminarCurso.Visible = false;
+            this.bEliminarCurso.Click += new System.EventHandler(this.bEliminarCurso_Click);
             // 
             // Cursos
             // 
@@ -265,7 +259,6 @@ namespace ApreServi
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bEliminarCurso);
-            this.Controls.Add(this.bModificarCurso);
             this.Controls.Add(this.bEntrarCurso);
             this.Controls.Add(this.bCrearCurso);
             this.Controls.Add(this.lUsuario);
@@ -309,7 +302,6 @@ namespace ApreServi
         private System.Windows.Forms.Label lUsuario;
         private System.Windows.Forms.Button bCrearCurso;
         private System.Windows.Forms.Button bEntrarCurso;
-        private System.Windows.Forms.Button bModificarCurso;
         private System.Windows.Forms.Button bEliminarCurso;
     }
 }

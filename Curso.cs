@@ -27,11 +27,42 @@ namespace ApreServi
 
             connection.Open();
 
+            var sql = "select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idCurso =" + curso.id;
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            var rdr = cmd.ExecuteReader();
+
+            if (rdr.HasRows || Usuario.getInstance().rol.admin)
+            {
+                bAñadir.Visible = true;
+                bBorrar.Visible = true;
+                bGuardar.Visible = true;
+                bAbandonar.Visible = false;
+
+                bAñadirForo.Visible = true;
+                bBorrarForo.Visible = true;
+
+                tAñadir.Visible = true;
+            }
+
+            connection.Close();
+
+            cargarForos();
+        }
+
+        private void cargarForos()
+        {
+            lForos.Items.Clear();
+
+            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+            MySqlConnection connection = new MySqlConnection(MyConString);
+
+            connection.Open();
 
             var sql = "select * from Foro f where f.idCurso = " + curso.id;
 
             var cmd = new MySqlCommand(sql, connection);
-
 
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -41,6 +72,7 @@ namespace ApreServi
             }
 
             rdr.Close();
+
             connection.Close();
         }
 
@@ -107,6 +139,43 @@ namespace ApreServi
         {
             Usuario.cerrarSesion();
             this.Close();
+        }
+
+        private void bAñadir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bAñadirForo_Click(object sender, EventArgs e)
+        {
+            CrearForo ventana = new CrearForo(curso.id);
+            this.Visible = false;
+            ventana.ShowDialog();
+            cargarForos();
+            this.Visible = true;
+        }
+
+        private void bBorrarForo_Click(object sender, EventArgs e)
+        {
+            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+            MySqlConnection connection = new MySqlConnection(MyConString);
+
+            connection.Open();
+
+            var sql = "delete from Foro where id = " + ((ForoBD)lForos.SelectedItem).id;
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+
+            cargarForos();
         }
     }
 }

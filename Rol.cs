@@ -9,7 +9,7 @@ namespace ApreServi
     class Rol
     {
         private string rolName;
-        private bool admin;
+        public bool admin{ get; private set;}
         //private List<Permiso> permisos;
 
         /*
@@ -33,7 +33,6 @@ namespace ApreServi
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
-
 
             var sql = "SELECT * FROM Rol WHERE nombreRol = '" + name + "';";
             var cmd = new MySqlCommand(sql, connection);

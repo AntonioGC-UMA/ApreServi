@@ -17,6 +17,12 @@ namespace ApreServi
 
             this.lUsuario.Text = Usuario.getInstance().usuario;
 
+            cargarForos();
+        }
+
+        private void cargarForos()
+        {
+            lForos.Items.Clear();
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
@@ -81,6 +87,38 @@ namespace ApreServi
         {
             Usuario.cerrarSesion();
             this.Close();
+        }
+
+        private void bBorrar_Click(object sender, EventArgs e)
+        {
+            if (lForos.SelectedIndex != -1)
+            {
+                var foro = (ForoBD)lForos.SelectedItem;
+
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                MySqlConnection connection = new MySqlConnection(MyConString);
+
+                connection.Open();
+
+                var sql = "delete from Foro where id =" + foro.id;
+
+                var cmd = new MySqlCommand(sql, connection);
+
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+                cargarForos();
+            }
+        }
+
+        private void bAñadir_Click(object sender, EventArgs e)
+        {
+            CrearForo ventana = new CrearForo();
+            this.Visible = false;
+            ventana.ShowDialog();
+            cargarForos();
+            this.Visible = true;
         }
     }
 }
