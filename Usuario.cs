@@ -41,5 +41,10 @@ namespace ApreServi
 
             return instance;
         }
+
+        public static bool hasInstance()
+        {
+            return instance != null;
+        } 
     }
 }

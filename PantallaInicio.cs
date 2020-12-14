@@ -23,6 +23,7 @@ namespace ApreServi
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             InicioDeSesion ventana = new InicioDeSesion();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
@@ -61,9 +62,10 @@ namespace ApreServi
             if (foro_seleccionado == null) return;
 
             Foro ventana = new Foro(foro_seleccionado);
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
-            this.Close();
+            this.Visible = true;
         }
 
         private void cargarForos()
@@ -84,7 +86,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], rdr[3] == System.DBNull.Value ? 0 : (int)rdr[3]));
             }
 
             rdr.Close();
@@ -94,6 +96,7 @@ namespace ApreServi
         private void bRegistrarse_Click(object sender, EventArgs e)
         {
             Registro ventana = new Registro();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
@@ -102,6 +105,11 @@ namespace ApreServi
         private void bSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PantallaInicio_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

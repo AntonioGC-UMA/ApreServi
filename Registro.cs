@@ -96,6 +96,7 @@ namespace ApreServi
             instance.rol = new Rol("usuario");
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();

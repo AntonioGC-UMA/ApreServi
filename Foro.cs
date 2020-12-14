@@ -15,8 +15,6 @@ namespace ApreServi
 
         public void update()
         {
-            this.lUsuario.Text = Usuario.getInstance().usuario;
-
             lPosts.Items.Clear();
             tRespuesta.Text = "";
 
@@ -50,12 +48,30 @@ namespace ApreServi
 
             this.foro = foro;
 
+            if (Usuario.hasInstance())
+            {
+                this.lUsuario.Text = Usuario.getInstance().usuario;
+                bCursos.Visible = true;
+                lUsuario.Visible = true;
+                bPerfil.Visible = true;
+                pImagen.Visible = true;
+                bCerrarSesion.Visible = true;
+                bAtras.Visible = true;
+            }
+            else
+            {
+                bCerrar.Visible = true;
+                bIniciarSesion.Visible = true;
+                bRegistrarse.Visible = true;
+            }
+
             update();
         }
 
         private void bForos_Click(object sender, EventArgs e)
         {
             ForosGenerales ventana = new ForosGenerales();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -69,6 +85,7 @@ namespace ApreServi
         private void bCursos_Click(object sender, EventArgs e)
         {
             Cursos ventana = new Cursos();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -87,8 +104,16 @@ namespace ApreServi
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
+            String sql;
+            if (Usuario.hasInstance())
+            {
+                sql = String.Format("insert into Post (autor,contenido,idForo) values ('{0}','{1}',{2})", Usuario.getInstance().usuario, tRespuesta.Text, foro.id);
+            }
+            else
+            {
+                sql = String.Format("insert into Post (autor,contenido,idForo) values ('Anónimo','{0}',{1})", tRespuesta.Text, foro.id);
+            }
 
-            var sql = String.Format("insert into Post (autor,contenido,idForo) values ('{0}','{1}',{2})", Usuario.getInstance().usuario, tRespuesta.Text, foro.id);
             var cmd = new MySqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
 
@@ -100,6 +125,46 @@ namespace ApreServi
         private void bCerrarSesion_Click(object sender, EventArgs e)
         {
             Usuario.cerrarSesion();
+            this.Close();
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bIniciarSesion_Click(object sender, EventArgs e)
+        {
+            InicioDeSesion ventana = new InicioDeSesion();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bRegistrarse_Click(object sender, EventArgs e)
+        {
+            Registro ventana = new Registro();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bAtras_Click(object sender, EventArgs e)
+        {
+            ForosGenerales ventana = new ForosGenerales();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+
+        }
+
+        private void bAtrasCurso_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

@@ -27,6 +27,7 @@ namespace ApreServi
         private void bForos_Click(object sender, EventArgs e)
         {
             ForosGenerales ventana = new ForosGenerales();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -40,6 +41,7 @@ namespace ApreServi
         private void bCursos_Click(object sender, EventArgs e)
         {
             Cursos ventana = new Cursos();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -66,15 +68,21 @@ namespace ApreServi
             connection.Close();
 
             Curso ventana = new Curso(curso);
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bCerrarSesion_Click(object sender, EventArgs e)
         {
             Usuario.cerrarSesion();
             this.Close();
+        }
+
+        private void bInscribirse_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
