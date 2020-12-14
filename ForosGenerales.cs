@@ -103,7 +103,14 @@ namespace ApreServi
             ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            if (!Usuario.hasInstance())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
