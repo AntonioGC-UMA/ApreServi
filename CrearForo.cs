@@ -68,5 +68,10 @@ namespace ApreServi
         {
             this.Close();
         }
+
+        private void tNombreForo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

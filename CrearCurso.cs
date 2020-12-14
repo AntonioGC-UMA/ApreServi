@@ -60,5 +60,15 @@ namespace ApreServi
 
             this.Close();
         }
+
+        private void CrearCurso_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tNombreCurso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,11 +28,9 @@ namespace ApreServi
 
             connection.Open();
 
-
             var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
 
             var cmd = new MySqlCommand(sql, connection);
-
 
             MySqlDataReader rdr = cmd.ExecuteReader();
 
@@ -50,6 +48,7 @@ namespace ApreServi
                     instance.rol = new Rol((string)rdr[5]);
 
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+                    ventana.MdiParent = this.MdiParent;
                     this.Visible = false;
                     ventana.ShowDialog();
                     this.Close();

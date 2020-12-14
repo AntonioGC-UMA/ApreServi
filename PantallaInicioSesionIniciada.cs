@@ -15,12 +15,12 @@ namespace ApreServi
             InitializeComponent();
 
             lUsuario.Text = Usuario.getInstance().usuario;
-            lAdmin.Text = Usuario.getInstance().rol.ToString();
         }
 
         private void bForos_Click(object sender, EventArgs e)
         {
             ForosGenerales ventana = new ForosGenerales();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -34,6 +34,7 @@ namespace ApreServi
         private void bCursos_Click(object sender, EventArgs e)
         {
             Cursos ventana = new Cursos();
+            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();

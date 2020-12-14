@@ -40,73 +40,87 @@ namespace ApreServi
             // usuario
             // 
             this.usuario.AutoSize = true;
+            this.usuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.usuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usuario.Location = new System.Drawing.Point(350, 73);
+            this.usuario.Location = new System.Drawing.Point(496, 113);
             this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(83, 23);
+            this.usuario.Padding = new System.Windows.Forms.Padding(5);
+            this.usuario.Size = new System.Drawing.Size(93, 33);
             this.usuario.TabIndex = 0;
             this.usuario.Text = "Usuario";
             // 
             // password
             // 
             this.password.AutoSize = true;
+            this.password.BackColor = System.Drawing.Color.WhiteSmoke;
             this.password.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password.Location = new System.Drawing.Point(335, 181);
+            this.password.Location = new System.Drawing.Point(498, 264);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(117, 23);
+            this.password.Padding = new System.Windows.Forms.Padding(5);
+            this.password.Size = new System.Drawing.Size(127, 33);
             this.password.TabIndex = 1;
             this.password.Text = "Contraseña";
             // 
             // tUsuario
             // 
-            this.tUsuario.Location = new System.Drawing.Point(333, 127);
+            this.tUsuario.Location = new System.Drawing.Point(498, 148);
             this.tUsuario.Name = "tUsuario";
-            this.tUsuario.Size = new System.Drawing.Size(119, 23);
+            this.tUsuario.Size = new System.Drawing.Size(230, 23);
             this.tUsuario.TabIndex = 2;
             // 
             // tPassword
             // 
-            this.tPassword.Location = new System.Drawing.Point(333, 215);
+            this.tPassword.Location = new System.Drawing.Point(498, 300);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '*';
-            this.tPassword.Size = new System.Drawing.Size(119, 23);
+            this.tPassword.Size = new System.Drawing.Size(230, 23);
             this.tPassword.TabIndex = 3;
             // 
             // bIniciar
             // 
+            this.bIniciar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bIniciar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bIniciar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bIniciar.Location = new System.Drawing.Point(430, 322);
+            this.bIniciar.ForeColor = System.Drawing.Color.White;
+            this.bIniciar.Location = new System.Drawing.Point(643, 482);
             this.bIniciar.Name = "bIniciar";
             this.bIniciar.Size = new System.Drawing.Size(117, 65);
             this.bIniciar.TabIndex = 4;
             this.bIniciar.Text = "Iniciar Sesion";
-            this.bIniciar.UseVisualStyleBackColor = true;
+            this.bIniciar.UseVisualStyleBackColor = false;
             this.bIniciar.Click += new System.EventHandler(this.bIniciar_Click);
             // 
             // bCancelar
             // 
+            this.bCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bCancelar.Location = new System.Drawing.Point(200, 322);
+            this.bCancelar.ForeColor = System.Drawing.Color.White;
+            this.bCancelar.Location = new System.Drawing.Point(413, 482);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(117, 65);
             this.bCancelar.TabIndex = 10;
             this.bCancelar.Text = "Cancelar";
-            this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.UseVisualStyleBackColor = false;
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
             // InicioDeSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bIniciar);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.password);
             this.Controls.Add(this.usuario);
+            this.MaximizeBox = false;
             this.Name = "InicioDeSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
             this.ResumeLayout(false);
             this.PerformLayout();
