@@ -23,8 +23,7 @@ namespace ApreServi
             var contraseña = tPassword.Text;
 
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlConnection connection = BD.GetConnection();
 
             connection.Open();
 
@@ -46,7 +45,8 @@ namespace ApreServi
                     instance.nombre = (string)rdr[3];
                     instance.apellido = (string)rdr[4];
                     instance.rol = new Rol((string)rdr[5]);
-
+                    rdr.Close();
+                    connection.Close();
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
                     ventana.MdiParent = this.MdiParent;
                     this.Visible = false;
@@ -56,15 +56,18 @@ namespace ApreServi
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta");
+                    rdr.Close();
+                    connection.Close();
                 }
             }
             else
             {
                 MessageBox.Show("No existe ninguna cuenta con ese usuario");
+                rdr.Close();
+                connection.Close();
             }
 
-            rdr.Close();
-            connection.Close();
+            
         }
 
         private void bCancelar_Click(object sender, EventArgs e)

@@ -89,8 +89,7 @@ namespace ApreServi
         {
             lMisCursos.Items.Clear();
             lOtrosCursos.Items.Clear();
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlConnection connection = BD.GetConnection();
 
             connection.Open();
 
@@ -139,8 +138,7 @@ namespace ApreServi
             {
                 var curso = (CursoBD)lMisCursos.SelectedItem;
 
-                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-                MySqlConnection connection = new MySqlConnection(MyConString);
+                MySqlConnection connection = BD.GetConnection();
 
                 connection.Open();
 
@@ -159,8 +157,7 @@ namespace ApreServi
             {
                 var curso = (CursoBD)lOtrosCursos.SelectedItem;
 
-                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-                MySqlConnection connection = new MySqlConnection(MyConString);
+                MySqlConnection connection = BD.GetConnection();
 
                 connection.Open();
 

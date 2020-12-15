@@ -27,32 +27,7 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
-            /*
-
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
           
-            var sql = "select * from Prueba";
-            
-            var cmd = new MySqlCommand(sql, connection);
-
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                this.listBox1.Items.Add(rdr[0]);
-                Console.WriteLine(rdr[0]);
-            }
-            rdr.Close();
-            
-
-            connection.Close();
-
-            */
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,8 +46,7 @@ namespace ApreServi
         private void cargarForos()
         {
             lForos.Items.Clear();
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlConnection connection = BD.GetConnection();
 
             connection.Open();
 

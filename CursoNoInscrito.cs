@@ -54,8 +54,7 @@ namespace ApreServi
 
         private void bInscribirse_Click(object sender, EventArgs e)
         {
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlConnection connection = BD.GetConnection();
 
             connection.Open();
 
