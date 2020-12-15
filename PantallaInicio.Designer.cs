@@ -63,10 +63,10 @@ namespace ApreServi
             this.titulo.ForeColor = System.Drawing.Color.White;
             this.titulo.Location = new System.Drawing.Point(0, -1);
             this.titulo.Name = "titulo";
-            this.titulo.Padding = new System.Windows.Forms.Padding(0, 25, 800, 25);
-            this.titulo.Size = new System.Drawing.Size(1227, 92);
+            this.titulo.Padding = new System.Windows.Forms.Padding(0, 33, 1100, 33);
+            this.titulo.Size = new System.Drawing.Size(1421, 119);
             this.titulo.TabIndex = 0;
-            this.titulo.Text = "Bienvenido a ApreServi";
+            this.titulo.Text = "Bienvenido a ";
             // 
             // noticias
             // 
@@ -74,10 +74,10 @@ namespace ApreServi
             this.noticias.BackColor = System.Drawing.Color.DodgerBlue;
             this.noticias.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.noticias.ForeColor = System.Drawing.Color.White;
-            this.noticias.Location = new System.Drawing.Point(45, 147);
+            this.noticias.Location = new System.Drawing.Point(51, 196);
             this.noticias.Name = "noticias";
-            this.noticias.Padding = new System.Windows.Forms.Padding(74, 0, 74, 0);
-            this.noticias.Size = new System.Drawing.Size(428, 32);
+            this.noticias.Padding = new System.Windows.Forms.Padding(85, 0, 85, 0);
+            this.noticias.Size = new System.Drawing.Size(522, 41);
             this.noticias.TabIndex = 1;
             this.noticias.Text = "Noticias destacadas";
             // 
@@ -87,10 +87,10 @@ namespace ApreServi
             this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(564, 147);
+            this.label1.Location = new System.Drawing.Point(645, 196);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(188, 0, 189, 10);
-            this.label1.Size = new System.Drawing.Size(605, 42);
+            this.label1.Padding = new System.Windows.Forms.Padding(215, 0, 216, 13);
+            this.label1.Size = new System.Drawing.Size(719, 54);
             this.label1.TabIndex = 2;
             this.label1.Text = "Foros generales";
             // 
@@ -108,85 +108,90 @@ namespace ApreServi
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(42, 182);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(48, 243);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(431, 418);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(493, 557);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(218, 211);
+            this.pictureBox4.Location = new System.Drawing.Point(249, 281);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(210, 161);
+            this.pictureBox4.Size = new System.Drawing.Size(241, 214);
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 211);
+            this.pictureBox3.Location = new System.Drawing.Point(3, 281);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(209, 161);
+            this.pictureBox3.Size = new System.Drawing.Size(240, 214);
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(218, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(249, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(210, 161);
+            this.pictureBox2.Size = new System.Drawing.Size(241, 214);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 167);
+            this.label5.Location = new System.Drawing.Point(249, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.Size = new System.Drawing.Size(50, 20);
             this.label5.TabIndex = 2;
             this.label5.Text = "label5";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 167);
+            this.label4.Location = new System.Drawing.Point(3, 222);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.Size = new System.Drawing.Size(50, 20);
             this.label4.TabIndex = 1;
             this.label4.Text = "label4";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 375);
+            this.label3.Location = new System.Drawing.Point(3, 499);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "label3";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(218, 375);
+            this.label6.Location = new System.Drawing.Point(249, 499);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 15);
+            this.label6.Size = new System.Drawing.Size(50, 20);
             this.label6.TabIndex = 3;
             this.label6.Text = "label6";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(209, 161);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 214);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
@@ -196,9 +201,10 @@ namespace ApreServi
             this.bIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.bIniciarSesion.Location = new System.Drawing.Point(826, 29);
+            this.bIniciarSesion.Location = new System.Drawing.Point(944, 39);
+            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bIniciarSesion.Name = "bIniciarSesion";
-            this.bIniciarSesion.Size = new System.Drawing.Size(122, 33);
+            this.bIniciarSesion.Size = new System.Drawing.Size(139, 44);
             this.bIniciarSesion.TabIndex = 4;
             this.bIniciarSesion.Text = "Iniciar Sesion";
             this.bIniciarSesion.UseVisualStyleBackColor = false;
@@ -210,9 +216,10 @@ namespace ApreServi
             this.bRegistrarse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bRegistrarse.ForeColor = System.Drawing.Color.White;
-            this.bRegistrarse.Location = new System.Drawing.Point(964, 29);
+            this.bRegistrarse.Location = new System.Drawing.Point(1102, 39);
+            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bRegistrarse.Name = "bRegistrarse";
-            this.bRegistrarse.Size = new System.Drawing.Size(127, 33);
+            this.bRegistrarse.Size = new System.Drawing.Size(145, 44);
             this.bRegistrarse.TabIndex = 5;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = false;
@@ -223,10 +230,11 @@ namespace ApreServi
             this.lForos.BackColor = System.Drawing.Color.White;
             this.lForos.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lForos.FormattingEnabled = true;
-            this.lForos.ItemHeight = 23;
-            this.lForos.Location = new System.Drawing.Point(564, 182);
+            this.lForos.ItemHeight = 29;
+            this.lForos.Location = new System.Drawing.Point(645, 243);
+            this.lForos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lForos.Name = "lForos";
-            this.lForos.Size = new System.Drawing.Size(605, 418);
+            this.lForos.Size = new System.Drawing.Size(691, 555);
             this.lForos.TabIndex = 6;
             this.lForos.DoubleClick += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
@@ -236,9 +244,10 @@ namespace ApreServi
             this.bSalir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bSalir.ForeColor = System.Drawing.Color.White;
-            this.bSalir.Location = new System.Drawing.Point(1107, 29);
+            this.bSalir.Location = new System.Drawing.Point(1265, 39);
+            this.bSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bSalir.Name = "bSalir";
-            this.bSalir.Size = new System.Drawing.Size(91, 33);
+            this.bSalir.Size = new System.Drawing.Size(104, 44);
             this.bSalir.TabIndex = 8;
             this.bSalir.Text = "Salir";
             this.bSalir.UseVisualStyleBackColor = false;
@@ -249,18 +258,19 @@ namespace ApreServi
             this.pictureBox5.BackColor = System.Drawing.Color.Navy;
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(242, 21);
+            this.pictureBox5.Location = new System.Drawing.Point(315, 28);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(198, 50);
+            this.pictureBox5.Size = new System.Drawing.Size(226, 67);
             this.pictureBox5.TabIndex = 49;
             this.pictureBox5.TabStop = false;
             // 
             // PantallaInicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.ClientSize = new System.Drawing.Size(1403, 881);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.bSalir);
             this.Controls.Add(this.lForos);
@@ -270,6 +280,7 @@ namespace ApreServi
             this.Controls.Add(this.label1);
             this.Controls.Add(this.noticias);
             this.Controls.Add(this.titulo);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "PantallaInicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
