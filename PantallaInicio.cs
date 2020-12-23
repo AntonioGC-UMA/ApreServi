@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Net.Mail;
+using System.Net;
 
 namespace ApreServi
 {
@@ -18,6 +19,32 @@ namespace ApreServi
         {
             InitializeComponent();
             cargarForos();
+
+            // Ejemplo de como enviar un correo electronico. La cuenta de apreservi si existe, la he creado yo
+
+            var fromAddress = new MailAddress("apreservi@gmail.com", "From Name");
+            var toAddress = new MailAddress("xoseb53885@j24blog.com", "To Name");
+            const string fromPassword = "ApreServi1234";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromAddress.Address, fromPassword),
+                Timeout = 20000
+            };
+
+            using (var message = new MailMessage(fromAddress, toAddress)
+            {
+                Subject = "Subject",
+                Body = "Body 2"
+            })
+            {
+                smtp.Send(message);
+            }
         }
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
