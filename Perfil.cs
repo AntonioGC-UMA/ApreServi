@@ -5,16 +5,22 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace ApreServi
 {
-    public partial class PantallaInicioSesionIniciada : Form
+    public partial class Perfil : Form
     {
-        public PantallaInicioSesionIniciada()
+        public Perfil()
         {
             InitializeComponent();
 
-            lUsuario.Text = Usuario.getInstance().usuario;
+            var instance = Usuario.getInstance();
+
+            lUsuario.Text = instance.usuario;
+            lNombre.Text = instance.nombre;
+            lApellidos.Text = instance.apellido;
+            lCorreo.Text = instance.correo;
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -51,13 +57,38 @@ namespace ApreServi
             this.Close();
         }
 
+
         private void bPerfil_Click(object sender, EventArgs e)
         {
-            Perfil ventana = new Perfil();
-            ventana.MdiParent = this.MdiParent;
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+
+        }
+
+        private void bCambiarContraseña_Click(object sender, EventArgs e)
+        {
+            var contraseña = tContraseña.Text;
+
+
+            if (contraseña.Length == 0)
+            {
+                MessageBox.Show("La nueva contraseña no puede ser nula");
+                return;
+            }
+
+            MySqlConnection connection = BD.GetConnection();
+
+            connection.Open();
+
+            var instance = Usuario.getInstance();
+
+            var sql = "update Usuario set contraseña = '" + contraseña + "' where nombreUsuario = '" + instance.usuario + "'";
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            cmd.ExecuteNonQuery();
+
+            instance.contraseña = contraseña;
+
+            connection.Close();
         }
     }
 }
