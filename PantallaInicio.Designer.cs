@@ -256,7 +256,7 @@ namespace ApreServi
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("logo1.png")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(315, 28);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
