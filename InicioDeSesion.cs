@@ -22,6 +22,16 @@ namespace ApreServi
             var nombre = tUsuario.Text;
             var contraseña = tPassword.Text;
 
+            if (nombre.Length == 0)
+            {
+                MessageBox.Show("El nombre de usuario es obligatorio");
+                return;
+            }
+            if (contraseña.Length == 0)
+            {
+                MessageBox.Show("La contraseña es obligatoria");
+                return;
+            }
 
             MySqlConnection connection = BD.GetConnection();
 
@@ -73,6 +83,47 @@ namespace ApreServi
         private void bCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bOlvido_Click(object sender, EventArgs e)
+        {
+            var nombre = tUsuario.Text;
+
+            if (nombre.Length == 0)
+            {
+                MessageBox.Show("Introduce el nombre de usuario de la cuenta cuya contraseña qieres recuperar");
+                return;
+            }
+
+
+            MySqlConnection connection = BD.GetConnection();
+
+            connection.Open();
+
+            var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            if (rdr.HasRows)
+            {
+                rdr.Read();
+                var correo = (string)rdr[1];
+                var contraseña = (string)rdr[2];
+
+                Correo.Enviar(correo, "Recuperar contraseña", "La contraseña es : " + contraseña);
+
+                MessageBox.Show("Se ha enviado la contraseña a la cuenta de correo asociada");
+            }
+            else
+            {
+                MessageBox.Show("No existe ninguna cuenta con ese usuario");
+            }
+
+
+            rdr.Close();
+            connection.Close();
         }
     }
 }
