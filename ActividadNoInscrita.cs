@@ -9,59 +9,31 @@ using System.Windows.Forms;
 
 namespace ApreServi
 {
-    public partial class ForosGenerales : Form
+    public partial class ActividadNoInscrita : Form
     {
-        public ForosGenerales()
+        ActividadBD curso;
+
+        public ActividadNoInscrita(ActividadBD curso)
         {
             InitializeComponent();
+            this.curso = curso;
+
+            this.tDescripcion.Text = curso.descripcion;
 
             if (Usuario.hasInstance())
             {
                 this.lUsuario.Text = Usuario.getInstance().usuario;
-                bCursos.Visible = true;
-                lUsuario.Visible = true;
-                bPerfil.Visible = true;
-                pImagen.Visible = true;
-                bCerrarSesion.Visible = true;
 
-                if (Usuario.getInstance().rol.admin)
-                {
-                    bAñadir.Visible = true;
-                    bBorrar.Visible = true;
-                }
+                bCerrarSesion.Visible = true;
+                lUsuario.Visible = true;
+                pImagen.Visible = true;
+                bPerfil.Visible = true;
             }
             else
             {
-                bCerrar.Visible = true;
                 bIniciarSesion.Visible = true;
                 bRegistrarse.Visible = true;
             }
-
-            cargarForos();
-        }
-
-        private void cargarForos()
-        {
-            lForos.Items.Clear();
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
-
-            var sql = "select * from Foro f where f.idCurso is null ";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
-            {
-                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], rdr[3] == System.DBNull.Value ? 0 : (int)rdr[3]));
-            }
-
-            rdr.Close();
-            connection.Close();
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -92,23 +64,32 @@ namespace ApreServi
             // TODO
         }
 
-        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
+        private void bInscribirse_Click(object sender, EventArgs e)
         {
-            var foro_seleccionado = (ForoBD)lForos.SelectedItem;
-
-            if (foro_seleccionado == null) return;
-
-            Foro ventana = new Foro(foro_seleccionado);
-            ventana.MdiParent = this.MdiParent;
-            this.Visible = false;
-            ventana.ShowDialog();
-            if (!Usuario.hasInstance())
+            if (Usuario.hasInstance())
             {
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                MySqlConnection connection = new MySqlConnection(MyConString);
+
+                connection.Open();
+
+                var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + curso.id + ")";
+
+                var cmd = new MySqlCommand(sql, connection);
+
+                cmd.ExecuteNonQuery();
+
+                connection.Close();
+
+                Actividad ventana = new Actividad(curso);
+                ventana.MdiParent = this.MdiParent;
+                this.Visible = false;
+                ventana.ShowDialog();
                 this.Close();
             }
             else
             {
-                this.Visible = true;
+                MessageBox.Show("Necesita estar registrado para\npoder inscribirse en un curso");
             }
         }
 
@@ -117,40 +98,6 @@ namespace ApreServi
             Usuario.cerrarSesion();
             this.Close();
         }
-
-        private void bBorrar_Click(object sender, EventArgs e)
-        {
-            if (lForos.SelectedIndex != -1)
-            {
-                var foro = (ForoBD)lForos.SelectedItem;
-
-                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-                MySqlConnection connection = new MySqlConnection(MyConString);
-
-                connection.Open();
-
-                var sql = "delete from Foro where id =" + foro.id;
-
-                var cmd = new MySqlCommand(sql, connection);
-
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
-
-                cargarForos();
-            }
-        }
-
-        private void bAñadir_Click(object sender, EventArgs e)
-        {
-            CrearForo ventana = new CrearForo();
-            ventana.MdiParent = this.MdiParent;
-            this.Visible = false;
-            ventana.ShowDialog();
-            cargarForos();
-            this.Visible = true;
-        }
-
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             InicioDeSesion ventana = new InicioDeSesion();
@@ -166,11 +113,6 @@ namespace ApreServi
             ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
-            this.Close();
-        }
-
-        private void bCerrar_Click(object sender, EventArgs e)
-        {
             this.Close();
         }
 
@@ -192,6 +134,11 @@ namespace ApreServi
             {
                 this.Close();
             }
+        }
+
+        private void CursoNoInscrito_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

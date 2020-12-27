@@ -1,7 +1,7 @@
 ﻿
 namespace ApreServi
 {
-    partial class Cursos
+    partial class Actividades
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Actividades));
             this.mCalendario = new System.Windows.Forms.MonthCalendar();
             this.pImagen = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,17 +38,17 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
-            this.lMisCursos = new System.Windows.Forms.ListBox();
+            this.lMisActividades = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.lCalendario = new System.Windows.Forms.Label();
             this.noticias = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
-            this.lOtrosCursos = new System.Windows.Forms.ListBox();
+            this.lOtrasActividades = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.lUsuario = new System.Windows.Forms.Label();
-            this.bCrearCurso = new System.Windows.Forms.Button();
-            this.bEliminarCurso = new System.Windows.Forms.Button();
+            this.bCrearActividad = new System.Windows.Forms.Button();
+            this.bEliminarActividad = new System.Windows.Forms.Button();
             this.pApreservi = new System.Windows.Forms.PictureBox();
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.bRegistrarse = new System.Windows.Forms.Button();
@@ -170,17 +170,17 @@ namespace ApreServi
             this.bActividades.Text = "Actividades";
             this.bActividades.UseVisualStyleBackColor = false;
             // 
-            // lMisCursos
+            // lMisActividades
             // 
-            this.lMisCursos.ColumnWidth = 60;
-            this.lMisCursos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lMisCursos.FormattingEnabled = true;
-            this.lMisCursos.ItemHeight = 25;
-            this.lMisCursos.Location = new System.Drawing.Point(35, 168);
-            this.lMisCursos.Name = "lMisCursos";
-            this.lMisCursos.Size = new System.Drawing.Size(770, 154);
-            this.lMisCursos.TabIndex = 24;
-            this.lMisCursos.DoubleClick += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
+            this.lMisActividades.ColumnWidth = 60;
+            this.lMisActividades.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lMisActividades.FormattingEnabled = true;
+            this.lMisActividades.ItemHeight = 25;
+            this.lMisActividades.Location = new System.Drawing.Point(35, 168);
+            this.lMisActividades.Name = "lMisActividades";
+            this.lMisActividades.Size = new System.Drawing.Size(770, 154);
+            this.lMisActividades.TabIndex = 24;
+            this.lMisActividades.DoubleClick += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -218,10 +218,10 @@ namespace ApreServi
             this.noticias.ForeColor = System.Drawing.Color.White;
             this.noticias.Location = new System.Drawing.Point(35, 122);
             this.noticias.Name = "noticias";
-            this.noticias.Padding = new System.Windows.Forms.Padding(10, 10, 649, 10);
-            this.noticias.Size = new System.Drawing.Size(770, 43);
+            this.noticias.Padding = new System.Windows.Forms.Padding(10, 10, 605, 10);
+            this.noticias.Size = new System.Drawing.Size(771, 43);
             this.noticias.TabIndex = 21;
-            this.noticias.Text = "Mis cursos";
+            this.noticias.Text = "Mis actividades";
             // 
             // titulo
             // 
@@ -236,17 +236,17 @@ namespace ApreServi
             this.titulo.TabIndex = 20;
             this.titulo.Text = " ApreServ";
             // 
-            // lOtrosCursos
+            // lOtrasActividades
             // 
-            this.lOtrosCursos.ColumnWidth = 60;
-            this.lOtrosCursos.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lOtrosCursos.FormattingEnabled = true;
-            this.lOtrosCursos.ItemHeight = 25;
-            this.lOtrosCursos.Location = new System.Drawing.Point(35, 404);
-            this.lOtrosCursos.Name = "lOtrosCursos";
-            this.lOtrosCursos.Size = new System.Drawing.Size(770, 154);
-            this.lOtrosCursos.TabIndex = 30;
-            this.lOtrosCursos.DoubleClick += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
+            this.lOtrasActividades.ColumnWidth = 60;
+            this.lOtrasActividades.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lOtrasActividades.FormattingEnabled = true;
+            this.lOtrasActividades.ItemHeight = 25;
+            this.lOtrasActividades.Location = new System.Drawing.Point(35, 404);
+            this.lOtrasActividades.Name = "lOtrasActividades";
+            this.lOtrasActividades.Size = new System.Drawing.Size(770, 154);
+            this.lOtrasActividades.TabIndex = 30;
+            this.lOtrasActividades.DoubleClick += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -256,10 +256,10 @@ namespace ApreServi
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 358);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10, 10, 630, 10);
-            this.label2.Size = new System.Drawing.Size(771, 43);
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 10, 587, 10);
+            this.label2.Size = new System.Drawing.Size(772, 43);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Otros cursos";
+            this.label2.Text = "Otras actividades";
             // 
             // bCerrarSesion
             // 
@@ -290,37 +290,37 @@ namespace ApreServi
             this.lUsuario.Text = "label3";
             this.lUsuario.Visible = false;
             // 
-            // bCrearCurso
+            // bCrearActividad
             // 
-            this.bCrearCurso.BackColor = System.Drawing.Color.SteelBlue;
-            this.bCrearCurso.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bCrearCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCrearCurso.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bCrearCurso.ForeColor = System.Drawing.Color.White;
-            this.bCrearCurso.Location = new System.Drawing.Point(34, 610);
-            this.bCrearCurso.Name = "bCrearCurso";
-            this.bCrearCurso.Size = new System.Drawing.Size(111, 39);
-            this.bCrearCurso.TabIndex = 34;
-            this.bCrearCurso.Text = "Crear Curso";
-            this.bCrearCurso.UseVisualStyleBackColor = false;
-            this.bCrearCurso.Visible = false;
-            this.bCrearCurso.Click += new System.EventHandler(this.bCrearCurso_Click);
+            this.bCrearActividad.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCrearActividad.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCrearActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCrearActividad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCrearActividad.ForeColor = System.Drawing.Color.White;
+            this.bCrearActividad.Location = new System.Drawing.Point(34, 610);
+            this.bCrearActividad.Name = "bCrearActividad";
+            this.bCrearActividad.Size = new System.Drawing.Size(117, 39);
+            this.bCrearActividad.TabIndex = 34;
+            this.bCrearActividad.Text = "Crear Actividad";
+            this.bCrearActividad.UseVisualStyleBackColor = false;
+            this.bCrearActividad.Visible = false;
+            this.bCrearActividad.Click += new System.EventHandler(this.bCrearActividad_Click);
             // 
-            // bEliminarCurso
+            // bEliminarActividad
             // 
-            this.bEliminarCurso.BackColor = System.Drawing.Color.SteelBlue;
-            this.bEliminarCurso.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bEliminarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEliminarCurso.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bEliminarCurso.ForeColor = System.Drawing.Color.White;
-            this.bEliminarCurso.Location = new System.Drawing.Point(183, 610);
-            this.bEliminarCurso.Name = "bEliminarCurso";
-            this.bEliminarCurso.Size = new System.Drawing.Size(108, 39);
-            this.bEliminarCurso.TabIndex = 37;
-            this.bEliminarCurso.Text = "Eliminar Curso";
-            this.bEliminarCurso.UseVisualStyleBackColor = false;
-            this.bEliminarCurso.Visible = false;
-            this.bEliminarCurso.Click += new System.EventHandler(this.bEliminarCurso_Click);
+            this.bEliminarActividad.BackColor = System.Drawing.Color.SteelBlue;
+            this.bEliminarActividad.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bEliminarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEliminarActividad.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bEliminarActividad.ForeColor = System.Drawing.Color.White;
+            this.bEliminarActividad.Location = new System.Drawing.Point(183, 610);
+            this.bEliminarActividad.Name = "bEliminarActividad";
+            this.bEliminarActividad.Size = new System.Drawing.Size(129, 39);
+            this.bEliminarActividad.TabIndex = 37;
+            this.bEliminarActividad.Text = "Eliminar Actividad";
+            this.bEliminarActividad.UseVisualStyleBackColor = false;
+            this.bEliminarActividad.Visible = false;
+            this.bEliminarActividad.Click += new System.EventHandler(this.bEliminarActividad_Click);
             // 
             // pApreservi
             // 
@@ -364,7 +364,7 @@ namespace ApreServi
             this.bRegistrarse.Visible = false;
             this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
             // 
-            // Cursos
+            // Actividades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,23 +372,23 @@ namespace ApreServi
             this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.bRegistrarse);
             this.Controls.Add(this.pApreservi);
-            this.Controls.Add(this.bEliminarCurso);
-            this.Controls.Add(this.bCrearCurso);
+            this.Controls.Add(this.bEliminarActividad);
+            this.Controls.Add(this.bCrearActividad);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lOtrosCursos);
+            this.Controls.Add(this.lOtrasActividades);
             this.Controls.Add(this.mCalendario);
             this.Controls.Add(this.pImagen);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.lMisCursos);
+            this.Controls.Add(this.lMisActividades);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.lCalendario);
             this.Controls.Add(this.noticias);
             this.Controls.Add(this.bIniciarSesion);
             this.Controls.Add(this.titulo);
             this.MaximizeBox = false;
-            this.Name = "Cursos";
+            this.Name = "Actividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).EndInit();
@@ -408,17 +408,17 @@ namespace ApreServi
         private System.Windows.Forms.Button bCursos;
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
-        private System.Windows.Forms.ListBox lMisCursos;
+        private System.Windows.Forms.ListBox lMisActividades;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label lCalendario;
         private System.Windows.Forms.Label noticias;
         private System.Windows.Forms.Label titulo;
-        private System.Windows.Forms.ListBox lOtrosCursos;
+        private System.Windows.Forms.ListBox lOtrasActividades;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.Label lUsuario;
-        private System.Windows.Forms.Button bCrearCurso;
-        private System.Windows.Forms.Button bEliminarCurso;
+        private System.Windows.Forms.Button bCrearActividad;
+        private System.Windows.Forms.Button bEliminarActividad;
         private System.Windows.Forms.PictureBox pApreservi;
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.Button bIniciarSesion;

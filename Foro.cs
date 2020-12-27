@@ -172,5 +172,20 @@ namespace ApreServi
         {
 
         }
+
+        private void pApreservi_Click(object sender, EventArgs e)
+        {
+            if (Usuario.hasInstance())
+            {
+                PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
     }
 }

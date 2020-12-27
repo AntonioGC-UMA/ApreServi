@@ -46,7 +46,7 @@ namespace ApreServi
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pApreservi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bAyuda = new System.Windows.Forms.Button();
             this.bCursos = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace ApreServi
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,16 +264,17 @@ namespace ApreServi
             this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.bBorrar_Click);
             // 
-            // pictureBox3
+            // pApreservi
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(198, 50);
-            this.pictureBox3.TabIndex = 71;
-            this.pictureBox3.TabStop = false;
+            this.pApreservi.BackColor = System.Drawing.Color.Navy;
+            this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
+            this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pApreservi.Location = new System.Drawing.Point(12, 17);
+            this.pApreservi.Name = "pApreservi";
+            this.pApreservi.Size = new System.Drawing.Size(198, 50);
+            this.pApreservi.TabIndex = 71;
+            this.pApreservi.TabStop = false;
+            this.pApreservi.Click += new System.EventHandler(this.pApreservi_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -309,6 +310,7 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
+            this.bAyuda.Visible = false;
             this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bCursos
@@ -378,7 +380,7 @@ namespace ApreServi
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrar);
             this.Controls.Add(this.bIniciarSesion);
@@ -400,7 +402,7 @@ namespace ApreServi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ForosGenerales";
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -424,7 +426,7 @@ namespace ApreServi
         private System.Windows.Forms.Button bIniciarSesion;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pApreservi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button bAyuda;
         private System.Windows.Forms.Button bCursos;

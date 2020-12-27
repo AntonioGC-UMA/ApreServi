@@ -55,5 +55,13 @@ namespace ApreServi
         {
 
         }
+
+        private void pApreservi_Click(object sender, EventArgs e)
+        {
+            PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }

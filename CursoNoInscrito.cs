@@ -11,7 +11,6 @@ namespace ApreServi
 {
     public partial class CursoNoInscrito : Form
     {
-
         CursoBD curso;
 
         public CursoNoInscrito(CursoBD curso)
@@ -19,9 +18,22 @@ namespace ApreServi
             InitializeComponent();
             this.curso = curso;
 
-            this.lUsuario.Text = Usuario.getInstance().usuario;
-
             this.tDescripcion.Text = curso.descripcion;
+
+            if (Usuario.hasInstance())
+            {
+                this.lUsuario.Text = Usuario.getInstance().usuario;
+
+                bCerrarSesion.Visible = true;
+                lUsuario.Visible = true;
+                pImagen.Visible = true;
+                bPerfil.Visible = true;
+            }
+            else
+            {
+                bIniciarSesion.Visible = true;
+                bRegistrarse.Visible = true;
+            }
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -54,24 +66,31 @@ namespace ApreServi
 
         private void bInscribirse_Click(object sender, EventArgs e)
         {
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            if (Usuario.hasInstance())
+            {
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                MySqlConnection connection = new MySqlConnection(MyConString);
 
-            connection.Open();
+                connection.Open();
 
-            var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + curso.id + ")";
+                var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + curso.id + ")";
 
-            var cmd = new MySqlCommand(sql, connection);
+                var cmd = new MySqlCommand(sql, connection);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
-            connection.Close();
+                connection.Close();
 
-            Curso ventana = new Curso(curso);
-            ventana.MdiParent = this.MdiParent;
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+                Curso ventana = new Curso(curso);
+                ventana.MdiParent = this.MdiParent;
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Necesita estar registrado para\npoder inscribirse en un curso");
+            }
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
@@ -79,13 +98,45 @@ namespace ApreServi
             Usuario.cerrarSesion();
             this.Close();
         }
+        private void bIniciarSesion_Click(object sender, EventArgs e)
+        {
+            InicioDeSesion ventana = new InicioDeSesion();
+            ventana.MdiParent = this.MdiParent;
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
 
-        private void bInscribirse_Click_1(object sender, EventArgs e)
+        private void bRegistrarse_Click(object sender, EventArgs e)
+        {
+            Registro ventana = new Registro();
+            ventana.MdiParent = this.MdiParent;
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bActividades_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void bActividades_Click(object sender, EventArgs e)
+        private void pApreservi_Click(object sender, EventArgs e)
+        {
+            if (Usuario.hasInstance())
+            {
+                PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void CursoNoInscrito_Load(object sender, EventArgs e)
         {
 
         }

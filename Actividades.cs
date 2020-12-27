@@ -9,20 +9,20 @@ using System.Windows.Forms;
 
 namespace ApreServi
 {
-    public partial class Cursos : Form
+    public partial class Actividades : Form
     {
-        public Cursos()
+        public Actividades()
         {
             InitializeComponent();
 
             if (Usuario.hasInstance())
             {
-                cargarCursos();
+                cargarActividades();
 
                 if (Usuario.getInstance().rol.admin)
                 {
-                    bCrearCurso.Visible = true;
-                    bEliminarCurso.Visible = true;
+                    bCrearActividad.Visible = true;
+                    bEliminarActividad.Visible = true;
                 }
 
                 this.lUsuario.Text = Usuario.getInstance().usuario;
@@ -34,7 +34,7 @@ namespace ApreServi
             }
             else
             {
-                cargarTodosLosCursos();
+                cargarTodasLasActividades();
 
                 bIniciarSesion.Visible = true;
                 bRegistrarse.Visible = true;
@@ -43,12 +43,11 @@ namespace ApreServi
 
         private void lMisCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var curso_seleccionado = (CursoBD)lMisCursos.SelectedItem;
+            var actividad_seleccionada = (ActividadBD)lMisActividades.SelectedItem;
 
-            if (curso_seleccionado == null) return;
+            if (actividad_seleccionada == null) return;
 
-            Curso ventana = new Curso(curso_seleccionado);
-            ventana.MdiParent = this.MdiParent;
+            Actividad ventana = new Actividad(actividad_seleccionada);
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -56,12 +55,11 @@ namespace ApreServi
 
         private void lOtrosCursos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var curso_seleccionado = (CursoBD)lOtrosCursos.SelectedItem;
+            var actividad_seleccionada = (ActividadBD)lOtrasActividades.SelectedItem;
 
-            if (curso_seleccionado == null) return;
+            if (actividad_seleccionada == null) return;
 
-            CursoNoInscrito ventana = new CursoNoInscrito(curso_seleccionado);
-            ventana.MdiParent = this.MdiParent;
+            ActividadNoInscrita ventana = new ActividadNoInscrita(actividad_seleccionada);
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -102,18 +100,16 @@ namespace ApreServi
             this.Close();
         }
 
-        private void cargarTodosLosCursos()
+        private void cargarTodasLasActividades()
         {
-            this.lUsuario.Text = "Anonimo";
-
-            lMisCursos.Items.Clear();
-            lOtrosCursos.Items.Clear();
+            lMisActividades.Items.Clear();
+            lOtrasActividades.Items.Clear();
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
 
-            var sql = "select * from Curso c";
+            var sql = "select * from Actividad";
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -121,22 +117,22 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lOtrasActividades.Items.Add(new ActividadBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
             }
             rdr.Close();
             connection.Close();
         }
 
-        private void cargarCursos()
+        private void cargarActividades()
         {
-            lMisCursos.Items.Clear();
-            lOtrosCursos.Items.Clear();
+            lMisActividades.Items.Clear();
+            lOtrasActividades.Items.Clear();
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
 
-            var sql = "select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
+            var sql = "select * from Actividad a join Inscripcion i on a.id = i.idActividad where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -146,7 +142,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lMisActividades.Items.Add(new ActividadBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
             }
             rdr.Close();
 
@@ -158,35 +154,34 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lOtrasActividades.Items.Add(new ActividadBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
             }
 
             rdr.Close();
             connection.Close();
         }
 
-        private void bCrearCurso_Click(object sender, EventArgs e)
+        private void bCrearActividad_Click(object sender, EventArgs e)
         {
-            CrearCurso ventana = new CrearCurso();
-            ventana.MdiParent = this.MdiParent;
+            CrearActividad ventana = new CrearActividad();
             this.Visible = false;
             ventana.ShowDialog();
-            cargarCursos();
+            cargarActividades();
             this.Visible = true;
         }
 
-        private void bEliminarCurso_Click(object sender, EventArgs e)
+        private void bEliminarActividad_Click(object sender, EventArgs e)
         {
-            if(lMisCursos.SelectedIndex != -1)
+            if(lMisActividades.SelectedIndex != -1)
             {
-                var curso = (CursoBD)lMisCursos.SelectedItem;
+                var actividad = (ActividadBD)lMisActividades.SelectedItem;
 
                 string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
                 MySqlConnection connection = new MySqlConnection(MyConString);
 
                 connection.Open();
 
-                var sql = "delete from Curso where id =" + curso.id;
+                var sql = "delete from Actividad where id =" + actividad.id;
 
                 var cmd = new MySqlCommand(sql, connection);
 
@@ -194,19 +189,19 @@ namespace ApreServi
 
                 connection.Close();
 
-                cargarCursos();
+                cargarActividades();
             }
 
-            if (lOtrosCursos.SelectedIndex != -1)
+            if (lOtrasActividades.SelectedIndex != -1)
             {
-                var curso = (CursoBD)lOtrosCursos.SelectedItem;
+                var actividad = (ActividadBD)lOtrasActividades.SelectedItem;
 
                 string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
                 MySqlConnection connection = new MySqlConnection(MyConString);
 
                 connection.Open();
 
-                var sql = "delete from Curso where id =" + curso.id;
+                var sql = "delete from Actividad where id =" + actividad.id;
 
                 var cmd = new MySqlCommand(sql, connection);
 
@@ -214,7 +209,7 @@ namespace ApreServi
 
                 connection.Close();
 
-                cargarCursos();
+                cargarActividades();
             }
         }
 

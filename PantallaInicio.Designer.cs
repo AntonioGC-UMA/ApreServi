@@ -46,18 +46,18 @@ namespace ApreServi
             this.bRegistrarse = new System.Windows.Forms.Button();
             this.lForos = new System.Windows.Forms.ListBox();
             this.bSalir = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pApreservi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bAyuda = new System.Windows.Forms.Button();
-            this.bCursos = new System.Windows.Forms.Button();
             this.bNoticias = new System.Windows.Forms.Button();
+            this.bCursos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,16 +250,17 @@ namespace ApreServi
             this.bSalir.UseVisualStyleBackColor = false;
             this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
             // 
-            // pictureBox5
+            // pApreservi
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Location = new System.Drawing.Point(242, 21);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(198, 50);
-            this.pictureBox5.TabIndex = 49;
-            this.pictureBox5.TabStop = false;
+            this.pApreservi.BackColor = System.Drawing.Color.Navy;
+            this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
+            this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pApreservi.Location = new System.Drawing.Point(242, 21);
+            this.pApreservi.Name = "pApreservi";
+            this.pApreservi.Size = new System.Drawing.Size(198, 50);
+            this.pApreservi.TabIndex = 49;
+            this.pApreservi.TabStop = false;
+            this.pApreservi.Click += new System.EventHandler(this.pApreservi_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -293,22 +294,8 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
+            this.bAyuda.Visible = false;
             this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
-            // 
-            // bCursos
-            // 
-            this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
-            this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bCursos.ForeColor = System.Drawing.Color.White;
-            this.bCursos.Location = new System.Drawing.Point(92, 3);
-            this.bCursos.Name = "bCursos";
-            this.bCursos.Size = new System.Drawing.Size(65, 35);
-            this.bCursos.TabIndex = 2;
-            this.bCursos.Text = "Cursos";
-            this.bCursos.UseVisualStyleBackColor = false;
-            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bNoticias
             // 
@@ -324,6 +311,21 @@ namespace ApreServi
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = false;
             this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
+            // 
+            // bCursos
+            // 
+            this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCursos.ForeColor = System.Drawing.Color.White;
+            this.bCursos.Location = new System.Drawing.Point(92, 3);
+            this.bCursos.Name = "bCursos";
+            this.bCursos.Size = new System.Drawing.Size(65, 35);
+            this.bCursos.TabIndex = 2;
+            this.bCursos.Text = "Cursos";
+            this.bCursos.UseVisualStyleBackColor = false;
+            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bActividades
             // 
@@ -347,7 +349,7 @@ namespace ApreServi
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.bSalir);
             this.Controls.Add(this.lForos);
             this.Controls.Add(this.bRegistrarse);
@@ -367,7 +369,7 @@ namespace ApreServi
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -392,7 +394,7 @@ namespace ApreServi
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bSalir;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pApreservi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button bAyuda;
         private System.Windows.Forms.Button bNoticias;

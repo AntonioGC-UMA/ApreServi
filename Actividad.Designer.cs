@@ -1,7 +1,7 @@
 ﻿
 namespace ApreServi
 {
-    partial class Curso
+    partial class Actividad
     {
         /// <summary>
         /// Required designer variable.

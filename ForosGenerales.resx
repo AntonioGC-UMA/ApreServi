@@ -61,7 +61,7 @@
   <data name="pImagen.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAcAAAAHACAYAAAA1JbhzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAEuZJREFUeF7t3S2z3EbaBuD31wabGocGLzYNNg0ODjU2PRUQYOp3n+yZqqxXx55u
+        vAAADrwBlbxySQAAEuZJREFUeF7t3S2z3EbaBuD31wabGocGLzYNNg0ODjU2PRUQYOp3n+yZqqxXx55u
         taRu3ddTdSHbPTMal+7pT/3fTz/99BUA0ghAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAA
         IglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAA
         IglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAAIglAACIJQAAiCUAA
@@ -145,7 +145,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pApreservi.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAABUCAYAAAA4ewptAAAABGdBTUEAALGPC/xhBQAAKHZJREFUeF7t
         XQd8FcXW33ZLbt3d0ATpXapUAZHeu6AgIlKkCwiK0ntPI71SfCqi6OMpT6qAdBKEUIKEIoqi4lPfJzZq

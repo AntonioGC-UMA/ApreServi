@@ -35,20 +35,23 @@ namespace ApreServi
             this.lUsuario = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pImagen = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bInscribirse = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pApreservi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.bAyuda = new System.Windows.Forms.Button();
             this.bCursos = new System.Windows.Forms.Button();
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.bRegistrarse = new System.Windows.Forms.Button();
+            this.bIniciarSesion = new System.Windows.Forms.Button();
+            this.bPerfil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +85,7 @@ namespace ApreServi
             this.lUsuario.TabIndex = 57;
             this.lUsuario.Text = "usuario";
             this.lUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lUsuario.Visible = false;
             // 
             // bCerrarSesion
             // 
@@ -95,6 +99,7 @@ namespace ApreServi
             this.bCerrarSesion.TabIndex = 56;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = false;
+            this.bCerrarSesion.Visible = false;
             this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
             // 
             // monthCalendar1
@@ -103,15 +108,16 @@ namespace ApreServi
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 55;
             // 
-            // pictureBox1
+            // pImagen
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1082, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 54;
-            this.pictureBox1.TabStop = false;
+            this.pImagen.Image = ((System.Drawing.Image)(resources.GetObject("pImagen.Image")));
+            this.pImagen.Location = new System.Drawing.Point(1082, 24);
+            this.pImagen.Name = "pImagen";
+            this.pImagen.Size = new System.Drawing.Size(106, 91);
+            this.pImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pImagen.TabIndex = 54;
+            this.pImagen.TabStop = false;
+            this.pImagen.Visible = false;
             // 
             // label1
             // 
@@ -153,16 +159,17 @@ namespace ApreServi
             this.bInscribirse.UseVisualStyleBackColor = false;
             this.bInscribirse.Click += new System.EventHandler(this.bInscribirse_Click);
             // 
-            // pictureBox3
+            // pApreservi
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Navy;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(198, 50);
-            this.pictureBox3.TabIndex = 60;
-            this.pictureBox3.TabStop = false;
+            this.pApreservi.BackColor = System.Drawing.Color.Navy;
+            this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
+            this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pApreservi.Location = new System.Drawing.Point(12, 20);
+            this.pApreservi.Name = "pApreservi";
+            this.pApreservi.Size = new System.Drawing.Size(198, 50);
+            this.pApreservi.TabIndex = 60;
+            this.pApreservi.TabStop = false;
+            this.pApreservi.Click += new System.EventHandler(this.pApreservi_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -198,6 +205,7 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
+            this.bAyuda.Visible = false;
             this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bCursos
@@ -259,19 +267,67 @@ namespace ApreServi
             this.bActividades.Text = "Actividades";
             this.bActividades.UseVisualStyleBackColor = false;
             // 
+            // bRegistrarse
+            // 
+            this.bRegistrarse.BackColor = System.Drawing.Color.SteelBlue;
+            this.bRegistrarse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bRegistrarse.ForeColor = System.Drawing.Color.White;
+            this.bRegistrarse.Location = new System.Drawing.Point(998, 35);
+            this.bRegistrarse.Name = "bRegistrarse";
+            this.bRegistrarse.Size = new System.Drawing.Size(79, 33);
+            this.bRegistrarse.TabIndex = 69;
+            this.bRegistrarse.Text = "Registrarse";
+            this.bRegistrarse.UseVisualStyleBackColor = false;
+            this.bRegistrarse.Visible = false;
+            this.bRegistrarse.Click += new System.EventHandler(this.bRegistrarse_Click);
+            // 
+            // bIniciarSesion
+            // 
+            this.bIniciarSesion.BackColor = System.Drawing.Color.SteelBlue;
+            this.bIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.bIniciarSesion.Location = new System.Drawing.Point(881, 35);
+            this.bIniciarSesion.Name = "bIniciarSesion";
+            this.bIniciarSesion.Size = new System.Drawing.Size(89, 33);
+            this.bIniciarSesion.TabIndex = 70;
+            this.bIniciarSesion.Text = "Iniciar Sesión";
+            this.bIniciarSesion.UseVisualStyleBackColor = false;
+            this.bIniciarSesion.Visible = false;
+            this.bIniciarSesion.Click += new System.EventHandler(this.bIniciarSesion_Click);
+            // 
+            // bPerfil
+            // 
+            this.bPerfil.BackColor = System.Drawing.Color.SteelBlue;
+            this.bPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bPerfil.ForeColor = System.Drawing.Color.White;
+            this.bPerfil.Location = new System.Drawing.Point(1084, 121);
+            this.bPerfil.Name = "bPerfil";
+            this.bPerfil.Size = new System.Drawing.Size(106, 36);
+            this.bPerfil.TabIndex = 71;
+            this.bPerfil.Text = "Mi perfil";
+            this.bPerfil.UseVisualStyleBackColor = false;
+            this.bPerfil.Visible = false;
+            // 
             // CursoNoInscrito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.bInscribirse);
+            this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.lUsuario);
+            this.Controls.Add(this.bRegistrarse);
+            this.Controls.Add(this.bIniciarSesion);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.pApreservi);
+            this.Controls.Add(this.bInscribirse);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pImagen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tDescripcion);
@@ -280,9 +336,10 @@ namespace ApreServi
             this.Name = "CursoNoInscrito";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
+            this.Load += new System.EventHandler(this.CursoNoInscrito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pImagen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,17 +352,19 @@ namespace ApreServi
         private System.Windows.Forms.Label lUsuario;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button bPerfil;
+        private System.Windows.Forms.PictureBox pImagen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button bInscribirse;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pApreservi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button bAyuda;
         private System.Windows.Forms.Button bCursos;
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.Button bRegistrarse;
+        private System.Windows.Forms.Button bIniciarSesion;
+        private System.Windows.Forms.Button bPerfil;
     }
 }

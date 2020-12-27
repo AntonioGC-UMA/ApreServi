@@ -9,24 +9,24 @@ using System.Windows.Forms;
 
 namespace ApreServi
 {
-    public partial class Curso : Form
+    public partial class Actividad : Form
     {
-        CursoBD curso;
+        ActividadBD actividad;
 
-        public Curso(CursoBD curso)
+        public Actividad(ActividadBD actividad)
         {
             InitializeComponent();
 
-            this.curso = curso;
+            this.actividad = actividad;
             this.lUsuario.Text = Usuario.getInstance().usuario;
-            this.tDescripcion.Text = curso.descripcion;
+            this.tDescripcion.Text = actividad.descripcion;
 
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
 
-            var sql = "select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idCurso =" + curso.id;
+            var sql = "select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idActividad =" + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -60,7 +60,7 @@ namespace ApreServi
 
             connection.Open();
 
-            var sql = "select * from Foro f where f.idCurso = " + curso.id;
+            var sql = "select * from Foro f where f.idActividad = " + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -111,7 +111,7 @@ namespace ApreServi
 
             connection.Open();
 
-            var sql = "delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + curso.id;
+            var sql = "delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -163,7 +163,7 @@ namespace ApreServi
 
             connection.Open();
 
-            var sql = "update Curso set descripcion ='" + tDescripcion.Text + "' where id =" + curso.id;
+            var sql = "update Curso set descripcion ='" + tDescripcion.Text + "' where id =" + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -174,7 +174,7 @@ namespace ApreServi
 
         private void bAñadirForo_Click(object sender, EventArgs e)
         {
-            CrearForo ventana = new CrearForo(curso.id);
+            CrearForo ventana = new CrearForo(actividad.id);
             ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
