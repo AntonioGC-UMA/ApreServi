@@ -35,6 +35,7 @@ namespace ApreServi
             this.tPassword = new System.Windows.Forms.TextBox();
             this.bIniciar = new System.Windows.Forms.Button();
             this.bCancelar = new System.Windows.Forms.Button();
+            this.bOlvido = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usuario
@@ -42,10 +43,10 @@ namespace ApreServi
             this.usuario.AutoSize = true;
             this.usuario.BackColor = System.Drawing.Color.WhiteSmoke;
             this.usuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usuario.Location = new System.Drawing.Point(496, 113);
+            this.usuario.Location = new System.Drawing.Point(567, 151);
             this.usuario.Name = "usuario";
-            this.usuario.Padding = new System.Windows.Forms.Padding(5);
-            this.usuario.Size = new System.Drawing.Size(93, 33);
+            this.usuario.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.usuario.Size = new System.Drawing.Size(116, 43);
             this.usuario.TabIndex = 0;
             this.usuario.Text = "Usuario";
             // 
@@ -54,26 +55,28 @@ namespace ApreServi
             this.password.AutoSize = true;
             this.password.BackColor = System.Drawing.Color.WhiteSmoke;
             this.password.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password.Location = new System.Drawing.Point(498, 264);
+            this.password.Location = new System.Drawing.Point(569, 352);
             this.password.Name = "password";
-            this.password.Padding = new System.Windows.Forms.Padding(5);
-            this.password.Size = new System.Drawing.Size(127, 33);
+            this.password.Padding = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.password.Size = new System.Drawing.Size(161, 43);
             this.password.TabIndex = 1;
             this.password.Text = "Contraseña";
             // 
             // tUsuario
             // 
-            this.tUsuario.Location = new System.Drawing.Point(498, 148);
+            this.tUsuario.Location = new System.Drawing.Point(569, 197);
+            this.tUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tUsuario.Name = "tUsuario";
-            this.tUsuario.Size = new System.Drawing.Size(230, 23);
+            this.tUsuario.Size = new System.Drawing.Size(262, 27);
             this.tUsuario.TabIndex = 2;
             // 
             // tPassword
             // 
-            this.tPassword.Location = new System.Drawing.Point(498, 300);
+            this.tPassword.Location = new System.Drawing.Point(569, 400);
+            this.tPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '*';
-            this.tPassword.Size = new System.Drawing.Size(230, 23);
+            this.tPassword.Size = new System.Drawing.Size(262, 27);
             this.tPassword.TabIndex = 3;
             // 
             // bIniciar
@@ -83,9 +86,10 @@ namespace ApreServi
             this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bIniciar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bIniciar.ForeColor = System.Drawing.Color.White;
-            this.bIniciar.Location = new System.Drawing.Point(689, 482);
+            this.bIniciar.Location = new System.Drawing.Point(787, 643);
+            this.bIniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bIniciar.Name = "bIniciar";
-            this.bIniciar.Size = new System.Drawing.Size(117, 65);
+            this.bIniciar.Size = new System.Drawing.Size(134, 87);
             this.bIniciar.TabIndex = 4;
             this.bIniciar.Text = "Iniciar Sesion";
             this.bIniciar.UseVisualStyleBackColor = false;
@@ -98,26 +102,45 @@ namespace ApreServi
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCancelar.ForeColor = System.Drawing.Color.White;
-            this.bCancelar.Location = new System.Drawing.Point(435, 482);
+            this.bCancelar.Location = new System.Drawing.Point(497, 643);
+            this.bCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bCancelar.Name = "bCancelar";
-            this.bCancelar.Size = new System.Drawing.Size(117, 65);
+            this.bCancelar.Size = new System.Drawing.Size(134, 87);
             this.bCancelar.TabIndex = 10;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = false;
             this.bCancelar.Click += new System.EventHandler(this.bCancelar_Click);
             // 
+            // bOlvido
+            // 
+            this.bOlvido.BackColor = System.Drawing.Color.SteelBlue;
+            this.bOlvido.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bOlvido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bOlvido.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bOlvido.ForeColor = System.Drawing.Color.White;
+            this.bOlvido.Location = new System.Drawing.Point(497, 810);
+            this.bOlvido.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bOlvido.Name = "bOlvido";
+            this.bOlvido.Size = new System.Drawing.Size(424, 46);
+            this.bOlvido.TabIndex = 11;
+            this.bOlvido.Text = "He olvidado mi contraseña";
+            this.bOlvido.UseVisualStyleBackColor = false;
+            this.bOlvido.Click += new System.EventHandler(this.bOlvido_Click);
+            // 
             // InicioDeSesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.ClientSize = new System.Drawing.Size(1403, 881);
+            this.Controls.Add(this.bOlvido);
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.bIniciar);
             this.Controls.Add(this.tPassword);
             this.Controls.Add(this.tUsuario);
             this.Controls.Add(this.password);
             this.Controls.Add(this.usuario);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "InicioDeSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -135,5 +158,6 @@ namespace ApreServi
         private System.Windows.Forms.TextBox tPassword;
         private System.Windows.Forms.Button bIniciar;
         private System.Windows.Forms.Button bCancelar;
+        private System.Windows.Forms.Button bOlvido;
     }
 }

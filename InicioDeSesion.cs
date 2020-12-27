@@ -22,9 +22,18 @@ namespace ApreServi
             var nombre = tUsuario.Text;
             var contraseña = tPassword.Text;
 
+            if (nombre.Length == 0)
+            {
+                MessageBox.Show("El nombre de usuario es obligatorio");
+                return;
+            }
+            if (contraseña.Length == 0)
+            {
+                MessageBox.Show("La contraseña es obligatoria");
+                return;
+            }
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            MySqlConnection connection = BD.GetConnection();
 
             connection.Open();
 
@@ -46,7 +55,8 @@ namespace ApreServi
                     instance.nombre = (string)rdr[3];
                     instance.apellido = (string)rdr[4];
                     instance.rol = new Rol((string)rdr[5]);
-
+                    rdr.Close();
+                    connection.Close();
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
                     ventana.MdiParent = this.MdiParent;
                     this.Visible = false;
@@ -56,20 +66,64 @@ namespace ApreServi
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta");
+                    rdr.Close();
+                    connection.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("No existe ninguna cuenta con ese usuario");
+                rdr.Close();
+                connection.Close();
+            }
+
+            
+        }
+
+        private void bCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bOlvido_Click(object sender, EventArgs e)
+        {
+            var nombre = tUsuario.Text;
+
+            if (nombre.Length == 0)
+            {
+                MessageBox.Show("Introduce el nombre de usuario de la cuenta cuya contraseña qieres recuperar");
+                return;
+            }
+
+
+            MySqlConnection connection = BD.GetConnection();
+
+            connection.Open();
+
+            var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
+
+            var cmd = new MySqlCommand(sql, connection);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            if (rdr.HasRows)
+            {
+                rdr.Read();
+                var correo = (string)rdr[1];
+                var contraseña = (string)rdr[2];
+
+                Correo.Enviar(correo, "Recuperar contraseña", "La contraseña es : " + contraseña);
+
+                MessageBox.Show("Se ha enviado la contraseña a la cuenta de correo asociada");
             }
             else
             {
                 MessageBox.Show("No existe ninguna cuenta con ese usuario");
             }
 
+
             rdr.Close();
             connection.Close();
-        }
-
-        private void bCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
