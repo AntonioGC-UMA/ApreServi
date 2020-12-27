@@ -32,11 +32,6 @@ namespace ApreServi
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Curso));
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.bAyuda = new System.Windows.Forms.Button();
-            this.bNoticias = new System.Windows.Forms.Button();
-            this.bForos = new System.Windows.Forms.Button();
-            this.bCursos = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bAbandonar = new System.Windows.Forms.Button();
@@ -57,13 +52,19 @@ namespace ApreServi
             this.tPestañas = new System.Windows.Forms.TabControl();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.bAyuda = new System.Windows.Forms.Button();
+            this.bCursos = new System.Windows.Forms.Button();
+            this.bNoticias = new System.Windows.Forms.Button();
+            this.bForos = new System.Windows.Forms.Button();
+            this.bActividades = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Pestañas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tPestañas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // monthCalendar1
@@ -81,82 +82,6 @@ namespace ApreServi
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Navy;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.bAyuda, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bNoticias, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bForos, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.bCursos, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(238, 29);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 41);
-            this.tableLayoutPanel2.TabIndex = 37;
-            // 
-            // bAyuda
-            // 
-            this.bAyuda.BackColor = System.Drawing.Color.SteelBlue;
-            this.bAyuda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAyuda.ForeColor = System.Drawing.Color.White;
-            this.bAyuda.Location = new System.Drawing.Point(285, 3);
-            this.bAyuda.Name = "bAyuda";
-            this.bAyuda.Size = new System.Drawing.Size(88, 35);
-            this.bAyuda.TabIndex = 3;
-            this.bAyuda.Text = "Ayuda";
-            this.bAyuda.UseVisualStyleBackColor = false;
-            this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
-            // 
-            // bNoticias
-            // 
-            this.bNoticias.BackColor = System.Drawing.Color.SteelBlue;
-            this.bNoticias.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bNoticias.ForeColor = System.Drawing.Color.White;
-            this.bNoticias.Location = new System.Drawing.Point(97, 3);
-            this.bNoticias.Name = "bNoticias";
-            this.bNoticias.Size = new System.Drawing.Size(88, 35);
-            this.bNoticias.TabIndex = 1;
-            this.bNoticias.Text = "Noticias";
-            this.bNoticias.UseVisualStyleBackColor = false;
-            this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
-            // 
-            // bForos
-            // 
-            this.bForos.BackColor = System.Drawing.Color.SteelBlue;
-            this.bForos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bForos.ForeColor = System.Drawing.Color.White;
-            this.bForos.Location = new System.Drawing.Point(3, 3);
-            this.bForos.Name = "bForos";
-            this.bForos.Size = new System.Drawing.Size(88, 35);
-            this.bForos.TabIndex = 0;
-            this.bForos.Text = "Foros";
-            this.bForos.UseVisualStyleBackColor = false;
-            this.bForos.Click += new System.EventHandler(this.bForos_Click);
-            // 
-            // bCursos
-            // 
-            this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
-            this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bCursos.ForeColor = System.Drawing.Color.White;
-            this.bCursos.Location = new System.Drawing.Point(191, 3);
-            this.bCursos.Name = "bCursos";
-            this.bCursos.Size = new System.Drawing.Size(88, 35);
-            this.bCursos.TabIndex = 2;
-            this.bCursos.Text = "Cursos";
-            this.bCursos.UseVisualStyleBackColor = false;
-            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
             // 
             // bPerfil
             // 
@@ -412,12 +337,110 @@ namespace ApreServi
             this.pictureBox3.TabIndex = 48;
             this.pictureBox3.TabStop = false;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Navy;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel1.Controls.Add(this.bAyuda, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bCursos, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bNoticias, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bForos, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bActividades, 3, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(240, 29);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(376, 41);
+            this.tableLayoutPanel1.TabIndex = 81;
+            // 
+            // bAyuda
+            // 
+            this.bAyuda.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAyuda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAyuda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAyuda.ForeColor = System.Drawing.Color.White;
+            this.bAyuda.Location = new System.Drawing.Point(310, 3);
+            this.bAyuda.Name = "bAyuda";
+            this.bAyuda.Size = new System.Drawing.Size(63, 35);
+            this.bAyuda.TabIndex = 3;
+            this.bAyuda.Text = "Ayuda";
+            this.bAyuda.UseVisualStyleBackColor = false;
+            this.bAyuda.Visible = false;
+            this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
+            // 
+            // bCursos
+            // 
+            this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCursos.ForeColor = System.Drawing.Color.White;
+            this.bCursos.Location = new System.Drawing.Point(138, 3);
+            this.bCursos.Name = "bCursos";
+            this.bCursos.Size = new System.Drawing.Size(61, 35);
+            this.bCursos.TabIndex = 2;
+            this.bCursos.Text = "Cursos";
+            this.bCursos.UseVisualStyleBackColor = false;
+            this.bCursos.Click += new System.EventHandler(this.bCursos_Click);
+            // 
+            // bNoticias
+            // 
+            this.bNoticias.BackColor = System.Drawing.Color.SteelBlue;
+            this.bNoticias.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNoticias.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bNoticias.ForeColor = System.Drawing.Color.White;
+            this.bNoticias.Location = new System.Drawing.Point(63, 3);
+            this.bNoticias.Name = "bNoticias";
+            this.bNoticias.Size = new System.Drawing.Size(69, 35);
+            this.bNoticias.TabIndex = 1;
+            this.bNoticias.Text = "Noticias";
+            this.bNoticias.UseVisualStyleBackColor = false;
+            this.bNoticias.Click += new System.EventHandler(this.bNoticias_Click);
+            // 
+            // bForos
+            // 
+            this.bForos.BackColor = System.Drawing.Color.SteelBlue;
+            this.bForos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bForos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bForos.ForeColor = System.Drawing.Color.White;
+            this.bForos.Location = new System.Drawing.Point(3, 3);
+            this.bForos.Name = "bForos";
+            this.bForos.Size = new System.Drawing.Size(54, 35);
+            this.bForos.TabIndex = 0;
+            this.bForos.Text = "Foros";
+            this.bForos.UseVisualStyleBackColor = false;
+            this.bForos.Click += new System.EventHandler(this.bForos_Click);
+            // 
+            // bActividades
+            // 
+            this.bActividades.BackColor = System.Drawing.Color.SteelBlue;
+            this.bActividades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bActividades.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bActividades.ForeColor = System.Drawing.Color.White;
+            this.bActividades.Location = new System.Drawing.Point(205, 3);
+            this.bActividades.Name = "bActividades";
+            this.bActividades.Size = new System.Drawing.Size(99, 35);
+            this.bActividades.TabIndex = 4;
+            this.bActividades.Text = "Actividades";
+            this.bActividades.UseVisualStyleBackColor = false;
+            this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
+            // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.tAñadir);
             this.Controls.Add(this.bGuardar);
@@ -429,7 +452,6 @@ namespace ApreServi
             this.Controls.Add(this.tPestañas);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -438,13 +460,13 @@ namespace ApreServi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.Pestañas.ResumeLayout(false);
             this.Pestañas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tPestañas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,11 +476,6 @@ namespace ApreServi
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button bAyuda;
-        private System.Windows.Forms.Button bCursos;
-        private System.Windows.Forms.Button bNoticias;
-        private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bAbandonar;
@@ -479,5 +496,11 @@ namespace ApreServi
         private System.Windows.Forms.Button bAñadirForo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button bAyuda;
+        private System.Windows.Forms.Button bCursos;
+        private System.Windows.Forms.Button bNoticias;
+        private System.Windows.Forms.Button bForos;
+        private System.Windows.Forms.Button bActividades;
     }
 }

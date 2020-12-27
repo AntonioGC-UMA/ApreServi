@@ -111,5 +111,29 @@ namespace ApreServi
         {
 
         }
+
+        private void bNoticias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bCursos_Click(object sender, EventArgs e)
+        {
+            Cursos ventana = new Cursos();
+            ventana.MdiParent = this.MdiParent;
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bAyuda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -199,5 +199,10 @@ namespace ApreServi
 
             cargarForos();
         }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

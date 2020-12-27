@@ -50,5 +50,10 @@ namespace ApreServi
             Usuario.cerrarSesion();
             this.Close();
         }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

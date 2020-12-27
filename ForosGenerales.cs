@@ -174,5 +174,10 @@ namespace ApreServi
         {
             this.Close();
         }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

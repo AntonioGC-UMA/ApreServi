@@ -37,6 +37,7 @@ namespace ApreServi
             this.bCursos = new System.Windows.Forms.Button();
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
+            this.bActividades = new System.Windows.Forms.Button();
             this.lMisCursos = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,20 +74,21 @@ namespace ApreServi
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.Color.Navy;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Controls.Add(this.bAyuda, 3, 0);
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this.tableLayoutPanel2.Controls.Add(this.bAyuda, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.bCursos, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.bNoticias, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bForos, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.bActividades, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(240, 29);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 41);
             this.tableLayoutPanel2.TabIndex = 26;
             // 
@@ -95,10 +97,11 @@ namespace ApreServi
             this.bAyuda.BackColor = System.Drawing.Color.SteelBlue;
             this.bAyuda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAyuda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAyuda.ForeColor = System.Drawing.Color.White;
-            this.bAyuda.Location = new System.Drawing.Point(285, 3);
+            this.bAyuda.Location = new System.Drawing.Point(310, 3);
             this.bAyuda.Name = "bAyuda";
-            this.bAyuda.Size = new System.Drawing.Size(88, 35);
+            this.bAyuda.Size = new System.Drawing.Size(63, 35);
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
@@ -109,10 +112,11 @@ namespace ApreServi
             this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
             this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCursos.ForeColor = System.Drawing.Color.White;
-            this.bCursos.Location = new System.Drawing.Point(191, 3);
+            this.bCursos.Location = new System.Drawing.Point(138, 3);
             this.bCursos.Name = "bCursos";
-            this.bCursos.Size = new System.Drawing.Size(88, 35);
+            this.bCursos.Size = new System.Drawing.Size(61, 35);
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = false;
@@ -123,10 +127,11 @@ namespace ApreServi
             this.bNoticias.BackColor = System.Drawing.Color.SteelBlue;
             this.bNoticias.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bNoticias.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bNoticias.ForeColor = System.Drawing.Color.White;
-            this.bNoticias.Location = new System.Drawing.Point(97, 3);
+            this.bNoticias.Location = new System.Drawing.Point(63, 3);
             this.bNoticias.Name = "bNoticias";
-            this.bNoticias.Size = new System.Drawing.Size(88, 35);
+            this.bNoticias.Size = new System.Drawing.Size(69, 35);
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = false;
@@ -137,14 +142,29 @@ namespace ApreServi
             this.bForos.BackColor = System.Drawing.Color.SteelBlue;
             this.bForos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bForos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bForos.ForeColor = System.Drawing.Color.White;
             this.bForos.Location = new System.Drawing.Point(3, 3);
             this.bForos.Name = "bForos";
-            this.bForos.Size = new System.Drawing.Size(88, 35);
+            this.bForos.Size = new System.Drawing.Size(54, 35);
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = false;
             this.bForos.Click += new System.EventHandler(this.bForos_Click);
+            // 
+            // bActividades
+            // 
+            this.bActividades.BackColor = System.Drawing.Color.SteelBlue;
+            this.bActividades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bActividades.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bActividades.ForeColor = System.Drawing.Color.White;
+            this.bActividades.Location = new System.Drawing.Point(205, 3);
+            this.bActividades.Name = "bActividades";
+            this.bActividades.Size = new System.Drawing.Size(99, 35);
+            this.bActividades.TabIndex = 4;
+            this.bActividades.Text = "Actividades";
+            this.bActividades.UseVisualStyleBackColor = false;
             // 
             // lMisCursos
             // 
@@ -163,6 +183,7 @@ namespace ApreServi
             this.bPerfil.BackColor = System.Drawing.Color.SteelBlue;
             this.bPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bPerfil.ForeColor = System.Drawing.Color.White;
             this.bPerfil.Location = new System.Drawing.Point(1084, 121);
             this.bPerfil.Name = "bPerfil";
@@ -240,10 +261,11 @@ namespace ApreServi
             this.bCerrarSesion.BackColor = System.Drawing.Color.SteelBlue;
             this.bCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrarSesion.ForeColor = System.Drawing.Color.White;
             this.bCerrarSesion.Location = new System.Drawing.Point(763, 35);
             this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(91, 35);
+            this.bCerrarSesion.Size = new System.Drawing.Size(109, 35);
             this.bCerrarSesion.TabIndex = 32;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = false;
@@ -266,6 +288,7 @@ namespace ApreServi
             this.bCrearCurso.BackColor = System.Drawing.Color.SteelBlue;
             this.bCrearCurso.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCrearCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCrearCurso.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCrearCurso.ForeColor = System.Drawing.Color.White;
             this.bCrearCurso.Location = new System.Drawing.Point(34, 610);
             this.bCrearCurso.Name = "bCrearCurso";
@@ -281,10 +304,11 @@ namespace ApreServi
             this.bEliminarCurso.BackColor = System.Drawing.Color.SteelBlue;
             this.bEliminarCurso.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bEliminarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEliminarCurso.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bEliminarCurso.ForeColor = System.Drawing.Color.White;
             this.bEliminarCurso.Location = new System.Drawing.Point(183, 610);
             this.bEliminarCurso.Name = "bEliminarCurso";
-            this.bEliminarCurso.Size = new System.Drawing.Size(103, 39);
+            this.bEliminarCurso.Size = new System.Drawing.Size(108, 39);
             this.bEliminarCurso.TabIndex = 37;
             this.bEliminarCurso.Text = "Eliminar Curso";
             this.bEliminarCurso.UseVisualStyleBackColor = false;
@@ -356,5 +380,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bCrearCurso;
         private System.Windows.Forms.Button bEliminarCurso;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button bActividades;
     }
 }
