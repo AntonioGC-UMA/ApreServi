@@ -100,7 +100,10 @@ namespace ApreServi
 
         private void bActividades_Click(object sender, EventArgs e)
         {
-
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
 
         private void bAyuda_Click(object sender, EventArgs e)

@@ -169,6 +169,7 @@ namespace ApreServi
             this.bActividades.TabIndex = 4;
             this.bActividades.Text = "Actividades";
             this.bActividades.UseVisualStyleBackColor = false;
+            this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
             // lMisActividades
             // 
@@ -180,7 +181,7 @@ namespace ApreServi
             this.lMisActividades.Name = "lMisActividades";
             this.lMisActividades.Size = new System.Drawing.Size(770, 154);
             this.lMisActividades.TabIndex = 24;
-            this.lMisActividades.DoubleClick += new System.EventHandler(this.lMisCursos_SelectedIndexChanged);
+            this.lMisActividades.DoubleClick += new System.EventHandler(this.lMisActividades_SelectedIndexChanged);
             // 
             // bPerfil
             // 
@@ -196,6 +197,7 @@ namespace ApreServi
             this.bPerfil.Text = "Mi perfil";
             this.bPerfil.UseVisualStyleBackColor = false;
             this.bPerfil.Visible = false;
+            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
             // 
             // lCalendario
             // 
@@ -246,7 +248,7 @@ namespace ApreServi
             this.lOtrasActividades.Name = "lOtrasActividades";
             this.lOtrasActividades.Size = new System.Drawing.Size(770, 154);
             this.lOtrasActividades.TabIndex = 30;
-            this.lOtrasActividades.DoubleClick += new System.EventHandler(this.lOtrosCursos_SelectedIndexChanged);
+            this.lOtrasActividades.DoubleClick += new System.EventHandler(this.lOtrasActividades_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -268,7 +270,7 @@ namespace ApreServi
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.bCerrarSesion.Location = new System.Drawing.Point(763, 35);
+            this.bCerrarSesion.Location = new System.Drawing.Point(738, 35);
             this.bCerrarSesion.Name = "bCerrarSesion";
             this.bCerrarSesion.Size = new System.Drawing.Size(109, 35);
             this.bCerrarSesion.TabIndex = 32;
@@ -339,10 +341,11 @@ namespace ApreServi
             this.bIniciarSesion.BackColor = System.Drawing.Color.SteelBlue;
             this.bIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.bIniciarSesion.Location = new System.Drawing.Point(881, 35);
+            this.bIniciarSesion.Location = new System.Drawing.Point(856, 35);
             this.bIniciarSesion.Name = "bIniciarSesion";
-            this.bIniciarSesion.Size = new System.Drawing.Size(89, 33);
+            this.bIniciarSesion.Size = new System.Drawing.Size(111, 33);
             this.bIniciarSesion.TabIndex = 68;
             this.bIniciarSesion.Text = "Iniciar Sesión";
             this.bIniciarSesion.UseVisualStyleBackColor = false;
@@ -354,10 +357,11 @@ namespace ApreServi
             this.bRegistrarse.BackColor = System.Drawing.Color.SteelBlue;
             this.bRegistrarse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bRegistrarse.ForeColor = System.Drawing.Color.White;
-            this.bRegistrarse.Location = new System.Drawing.Point(998, 35);
+            this.bRegistrarse.Location = new System.Drawing.Point(973, 35);
             this.bRegistrarse.Name = "bRegistrarse";
-            this.bRegistrarse.Size = new System.Drawing.Size(79, 33);
+            this.bRegistrarse.Size = new System.Drawing.Size(90, 33);
             this.bRegistrarse.TabIndex = 67;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = false;
@@ -391,6 +395,7 @@ namespace ApreServi
             this.Name = "Actividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
+            this.Load += new System.EventHandler(this.Actividades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();

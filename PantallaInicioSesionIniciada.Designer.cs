@@ -67,6 +67,7 @@ namespace ApreServi
             this.bPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bPerfil.ForeColor = System.Drawing.Color.White;
             this.bPerfil.Location = new System.Drawing.Point(1084, 121);
             this.bPerfil.Name = "bPerfil";
@@ -74,6 +75,7 @@ namespace ApreServi
             this.bPerfil.TabIndex = 13;
             this.bPerfil.Text = "Mi perfil";
             this.bPerfil.UseVisualStyleBackColor = false;
+            this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click_1);
             // 
             // noticias
             // 
@@ -147,10 +149,11 @@ namespace ApreServi
             this.bCerrarSesion.BackColor = System.Drawing.Color.SteelBlue;
             this.bCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.bCerrarSesion.Location = new System.Drawing.Point(763, 35);
+            this.bCerrarSesion.Location = new System.Drawing.Point(738, 35);
             this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(91, 35);
+            this.bCerrarSesion.Size = new System.Drawing.Size(109, 35);
             this.bCerrarSesion.TabIndex = 21;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = false;

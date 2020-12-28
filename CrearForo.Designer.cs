@@ -46,7 +46,7 @@ namespace ApreServi
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bConfirmar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bConfirmar.ForeColor = System.Drawing.Color.White;
-            this.bConfirmar.Location = new System.Drawing.Point(898, 314);
+            this.bConfirmar.Location = new System.Drawing.Point(793, 406);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(117, 65);
             this.bConfirmar.TabIndex = 34;
@@ -116,7 +116,7 @@ namespace ApreServi
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCancelar.ForeColor = System.Drawing.Color.White;
-            this.bCancelar.Location = new System.Drawing.Point(898, 436);
+            this.bCancelar.Location = new System.Drawing.Point(1020, 406);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(117, 65);
             this.bCancelar.TabIndex = 24;

@@ -90,7 +90,7 @@ namespace ApreServi
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCancelar.ForeColor = System.Drawing.Color.White;
-            this.bCancelar.Location = new System.Drawing.Point(441, 533);
+            this.bCancelar.Location = new System.Drawing.Point(684, 539);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(117, 65);
             this.bCancelar.TabIndex = 36;
@@ -105,7 +105,7 @@ namespace ApreServi
             this.bCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCrear.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCrear.ForeColor = System.Drawing.Color.White;
-            this.bCrear.Location = new System.Drawing.Point(612, 533);
+            this.bCrear.Location = new System.Drawing.Point(488, 539);
             this.bCrear.Name = "bCrear";
             this.bCrear.Size = new System.Drawing.Size(131, 65);
             this.bCrear.TabIndex = 42;

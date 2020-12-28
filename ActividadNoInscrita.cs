@@ -11,14 +11,14 @@ namespace ApreServi
 {
     public partial class ActividadNoInscrita : Form
     {
-        ActividadBD curso;
+        ActividadBD actividad;
 
-        public ActividadNoInscrita(ActividadBD curso)
+        public ActividadNoInscrita(ActividadBD actividad)
         {
             InitializeComponent();
-            this.curso = curso;
+            this.actividad = actividad;
 
-            this.tDescripcion.Text = curso.descripcion;
+            this.tDescripcion.Text = actividad.descripcion;
 
             if (Usuario.hasInstance())
             {
@@ -68,12 +68,14 @@ namespace ApreServi
         {
             if (Usuario.hasInstance())
             {
+                //TODO REVISAR SENTENCIAS SQL
+                /*
                 string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
                 MySqlConnection connection = new MySqlConnection(MyConString);
 
                 connection.Open();
 
-                var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + curso.id + ")";
+                var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + actividad.id + ")";
 
                 var cmd = new MySqlCommand(sql, connection);
 
@@ -81,15 +83,16 @@ namespace ApreServi
 
                 connection.Close();
 
-                Actividad ventana = new Actividad(curso);
+                Actividad ventana = new Actividad(actividad);
                 ventana.MdiParent = this.MdiParent;
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Close();
+                */
             }
             else
             {
-                MessageBox.Show("Necesita estar registrado para\npoder inscribirse en un curso");
+                MessageBox.Show("Necesita estar registrado para\npoder inscribirse en una actividad");
             }
         }
 
@@ -118,7 +121,10 @@ namespace ApreServi
 
         private void bActividades_Click(object sender, EventArgs e)
         {
-
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void pApreservi_Click(object sender, EventArgs e)
@@ -139,6 +145,14 @@ namespace ApreServi
         private void CursoNoInscrito_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil ventana = new Perfil();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
     }
 }

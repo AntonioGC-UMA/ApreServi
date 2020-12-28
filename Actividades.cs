@@ -41,7 +41,7 @@ namespace ApreServi
             }
         }
 
-        private void lMisCursos_SelectedIndexChanged(object sender, EventArgs e)
+        private void lMisActividades_SelectedIndexChanged(object sender, EventArgs e)
         {
             var actividad_seleccionada = (ActividadBD)lMisActividades.SelectedItem;
 
@@ -53,7 +53,7 @@ namespace ApreServi
             this.Close();
         }
 
-        private void lOtrosCursos_SelectedIndexChanged(object sender, EventArgs e)
+        private void lOtrasActividades_SelectedIndexChanged(object sender, EventArgs e)
         {
             var actividad_seleccionada = (ActividadBD)lOtrasActividades.SelectedItem;
 
@@ -129,7 +129,8 @@ namespace ApreServi
             lOtrasActividades.Items.Clear();
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
-
+            //TODO REVISAR SENTENCIAS SQL
+            /*
             connection.Open();
 
             var sql = "select * from Actividad a join Inscripcion i on a.id = i.idActividad where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
@@ -158,6 +159,7 @@ namespace ApreServi
             }
 
             rdr.Close();
+            */
             connection.Close();
         }
 
@@ -244,6 +246,27 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
+        }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil ventana = new Perfil();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void Actividades_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

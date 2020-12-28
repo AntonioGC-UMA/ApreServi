@@ -23,9 +23,9 @@ namespace ApreServi
 
         private void bCrear_Click(object sender, EventArgs e)
         {
-            if(tNombreCurso.Text.Length == 0)
+            if(tNombreActividad.Text.Length == 0)
             {
-                MessageBox.Show("El nombre del curso es obligatorio");
+                MessageBox.Show("El nombre de la actividad es obligatorio");
                 return;
             }
 
@@ -37,13 +37,13 @@ namespace ApreServi
 
             if(dInicio.Value > dFin.Value)
             {
-                MessageBox.Show("El curso no puede tener duración negativa");
+                MessageBox.Show("La actividad no puede tener duración negativa");
                 return;
             }
 
             if(dInicio.Value < System.DateTime.Now || dFin.Value < System.DateTime.Now)
             {
-                MessageBox.Show("No puedes iniciar un curso en el pasado");
+                MessageBox.Show("No puedes iniciar una actividad en el pasado");
                 return;
             }
 
@@ -52,7 +52,7 @@ namespace ApreServi
 
             connection.Open();
 
-            var sql = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", tNombreCurso.Text, tDescripcion.Text, dInicio.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), dFin.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+            var sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", tNombreActividad.Text, tDescripcion.Text, dInicio.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), dFin.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"));
             var cmd = new MySqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
             
@@ -63,12 +63,12 @@ namespace ApreServi
 
         private void CrearCurso_Load(object sender, EventArgs e)
         {
-
+            //NO USADO
         }
 
         private void tNombreCurso_TextChanged(object sender, EventArgs e)
         {
-
+            //NO USADO
         }
     }
 }

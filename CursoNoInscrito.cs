@@ -140,5 +140,21 @@ namespace ApreServi
         {
 
         }
+
+        private void bActividades_Click_1(object sender, EventArgs e)
+        {
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil ventana = new Perfil();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }

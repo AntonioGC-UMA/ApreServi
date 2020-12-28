@@ -148,13 +148,16 @@
   <metadata name="tDescripcion.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
+  <metadata name="tDescripcion.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <data name="tDescripcion.Text" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sem orci, viverra a tellus in, dapibus efficitur elit. Nulla consectetur porttitor metus quis accumsan. Aenean lobortis eros at augue vulputate viverra. Donec vitae lorem a mauris pharetra semper eget a mauris. Quisque sit amet venenatis libero. Curabitur lobortis justo felis, eu pretium ipsum venenatis ut. Nunc eget sapien sodales, tristique sem a, viverra metus. Sed pellentesque viverra pharetra. Integer tincidunt elit a ornare commodo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sem orci, viverra a tellus in, dapibus efficitur elit. Nulla consectetur porttitor metus quis accumsan. Aenean lobortis eros at augue vulputate viverra. Donec vitae lorem a mauris pharetra semper eget a mauris. Quisque sit amet venenatis libero. Curabitur lobortis justo felis, eu pretium ipsum venenatis ut. Nunc eget sapien sodales, tristique sem a, viverra metus. Sed pellentesque viverra pharetra. Integer tincidunt elit a ornare commodo.</value>
   </data>
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsNAAALDQHtB8AsAAAAGXRF
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsMAAALDAE/QCLIAAAAGXRF
         WHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAUc1JREFUeF7tnQfUNVtd3q/XK9gRJCpoFAs2
         DKDGshKMaDQqaixEI/YeYiFG0Yi9oEGNqFFX1CW67C02wIodl0ZFsWCXKGJFEkURI8Xk/6yPnXfOnGfO
         mbL3s2fveX5r/daFfb/v3D3PPLNn3jPznnNbh9wevmh4RwbxOi8SmnOcswbnrME5a3DOGpALsr5kd9lh

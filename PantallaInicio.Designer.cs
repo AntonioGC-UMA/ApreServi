@@ -201,6 +201,7 @@ namespace ApreServi
             this.bIniciarSesion.BackColor = System.Drawing.Color.SteelBlue;
             this.bIniciarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bIniciarSesion.ForeColor = System.Drawing.Color.White;
             this.bIniciarSesion.Location = new System.Drawing.Point(826, 29);
             this.bIniciarSesion.Name = "bIniciarSesion";
@@ -215,6 +216,7 @@ namespace ApreServi
             this.bRegistrarse.BackColor = System.Drawing.Color.SteelBlue;
             this.bRegistrarse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bRegistrarse.ForeColor = System.Drawing.Color.White;
             this.bRegistrarse.Location = new System.Drawing.Point(964, 29);
             this.bRegistrarse.Name = "bRegistrarse";
@@ -241,6 +243,7 @@ namespace ApreServi
             this.bSalir.BackColor = System.Drawing.Color.SteelBlue;
             this.bSalir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSalir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bSalir.ForeColor = System.Drawing.Color.White;
             this.bSalir.Location = new System.Drawing.Point(1107, 29);
             this.bSalir.Name = "bSalir";

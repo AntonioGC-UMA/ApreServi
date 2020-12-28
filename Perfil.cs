@@ -90,5 +90,28 @@ namespace ApreServi
 
             connection.Close();
         }
+
+        private void pApreservi_Click(object sender, EventArgs e)
+        {
+            if (Usuario.hasInstance())
+            {
+                PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void bActividades_Click(object sender, EventArgs e)
+        {
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }

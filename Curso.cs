@@ -200,12 +200,23 @@ namespace ApreServi
 
         private void bActividades_Click(object sender, EventArgs e)
         {
-
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void pApreservi_Click(object sender, EventArgs e)
         {
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil ventana = new Perfil();
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();

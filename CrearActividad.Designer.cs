@@ -29,7 +29,7 @@ namespace ApreServi
         /// </summary>
         private void InitializeComponent()
         {
-            this.tNombreCurso = new System.Windows.Forms.TextBox();
+            this.tNombreActividad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tDescripcion = new System.Windows.Forms.TextBox();
@@ -41,13 +41,13 @@ namespace ApreServi
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // tNombreCurso
+            // tNombreActividad
             // 
-            this.tNombreCurso.Location = new System.Drawing.Point(43, 96);
-            this.tNombreCurso.Name = "tNombreCurso";
-            this.tNombreCurso.Size = new System.Drawing.Size(382, 23);
-            this.tNombreCurso.TabIndex = 41;
-            this.tNombreCurso.TextChanged += new System.EventHandler(this.tNombreCurso_TextChanged);
+            this.tNombreActividad.Location = new System.Drawing.Point(43, 96);
+            this.tNombreActividad.Name = "tNombreActividad";
+            this.tNombreActividad.Size = new System.Drawing.Size(382, 23);
+            this.tNombreActividad.TabIndex = 41;
+            this.tNombreActividad.TextChanged += new System.EventHandler(this.tNombreCurso_TextChanged);
             // 
             // label4
             // 
@@ -57,10 +57,10 @@ namespace ApreServi
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(43, 50);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(10, 10, 128, 10);
+            this.label4.Padding = new System.Windows.Forms.Padding(10, 10, 77, 10);
             this.label4.Size = new System.Drawing.Size(383, 43);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Nombre del nuevo curso";
+            this.label4.Text = "Nombre de la nueva actividad";
             // 
             // label2
             // 
@@ -70,10 +70,10 @@ namespace ApreServi
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(43, 184);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(10, 10, 366, 10);
-            this.label2.Size = new System.Drawing.Size(593, 43);
+            this.label2.Padding = new System.Windows.Forms.Padding(10, 10, 315, 10);
+            this.label2.Size = new System.Drawing.Size(594, 43);
             this.label2.TabIndex = 37;
-            this.label2.Text = "Descripcion del curso";
+            this.label2.Text = "Descripcion de la actividad";
             // 
             // tDescripcion
             // 
@@ -90,7 +90,7 @@ namespace ApreServi
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCancelar.ForeColor = System.Drawing.Color.White;
-            this.bCancelar.Location = new System.Drawing.Point(441, 533);
+            this.bCancelar.Location = new System.Drawing.Point(686, 533);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(117, 65);
             this.bCancelar.TabIndex = 36;
@@ -105,11 +105,11 @@ namespace ApreServi
             this.bCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCrear.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCrear.ForeColor = System.Drawing.Color.White;
-            this.bCrear.Location = new System.Drawing.Point(612, 533);
+            this.bCrear.Location = new System.Drawing.Point(506, 533);
             this.bCrear.Name = "bCrear";
             this.bCrear.Size = new System.Drawing.Size(131, 65);
             this.bCrear.TabIndex = 42;
-            this.bCrear.Text = "Crear curso";
+            this.bCrear.Text = "Crear actividad";
             this.bCrear.UseVisualStyleBackColor = false;
             this.bCrear.Click += new System.EventHandler(this.bCrear_Click);
             // 
@@ -153,7 +153,7 @@ namespace ApreServi
             this.label3.TabIndex = 49;
             this.label3.Text = "Fecha de fin";
             // 
-            // CrearCurso
+            // CrearActividad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,13 +164,13 @@ namespace ApreServi
             this.Controls.Add(this.dFin);
             this.Controls.Add(this.dInicio);
             this.Controls.Add(this.bCrear);
-            this.Controls.Add(this.tNombreCurso);
+            this.Controls.Add(this.tNombreActividad);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tDescripcion);
             this.Controls.Add(this.bCancelar);
             this.Controls.Add(this.label2);
             this.MaximizeBox = false;
-            this.Name = "CrearCurso";
+            this.Name = "CrearActividad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
             this.Load += new System.EventHandler(this.CrearCurso_Load);
@@ -181,7 +181,7 @@ namespace ApreServi
 
         #endregion
 
-        private System.Windows.Forms.TextBox tNombreCurso;
+        private System.Windows.Forms.TextBox tNombreActividad;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tDescripcion;

@@ -26,6 +26,8 @@ namespace ApreServi
 
             connection.Open();
 
+            //TODO MODIFICAR ESTA SENTENCIA
+            /*
             var sql = "select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idActividad =" + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
@@ -45,7 +47,7 @@ namespace ApreServi
                 tAñadir.Visible = true;
                 tDescripcion.ReadOnly = false;
             }
-
+            */
             connection.Close();
 
             cargarForos();
@@ -79,7 +81,6 @@ namespace ApreServi
         private void bForos_Click(object sender, EventArgs e)
         {
             ForosGenerales ventana = new ForosGenerales();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -93,7 +94,6 @@ namespace ApreServi
         private void bCursos_Click(object sender, EventArgs e)
         {
             Cursos ventana = new Cursos();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -110,12 +110,14 @@ namespace ApreServi
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
-
+            //TODO MODIFICAR ESTA SENTENCIA
+            /*
             var sql = "delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
             cmd.ExecuteNonQuery();
+            */
 
             connection.Close();
 
@@ -132,7 +134,6 @@ namespace ApreServi
             if (foro_seleccionado == null) return;
 
             Foro ventana = new Foro(foro_seleccionado);
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             if (!Usuario.hasInstance())
@@ -158,24 +159,26 @@ namespace ApreServi
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
+            //TODO REVISAR SENTENCIAS SQL
+            /*
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
             connection.Open();
 
-            var sql = "update Curso set descripcion ='" + tDescripcion.Text + "' where id =" + actividad.id;
+            var sql = "update Actividad set descripcion ='" + tDescripcion.Text + "' where id =" + actividad.id;
 
             var cmd = new MySqlCommand(sql, connection);
 
             cmd.ExecuteNonQuery();
 
             connection.Close();
+            */
         }
 
         private void bAñadirForo_Click(object sender, EventArgs e)
         {
             CrearForo ventana = new CrearForo(actividad.id);
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             cargarForos();
@@ -184,6 +187,8 @@ namespace ApreServi
 
         private void bBorrarForo_Click(object sender, EventArgs e)
         {
+            //TODO REVISAR SENTENCIAS SQL
+            /*
             string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
             MySqlConnection connection = new MySqlConnection(MyConString);
 
@@ -198,16 +203,33 @@ namespace ApreServi
             connection.Close();
 
             cargarForos();
+            */
         }
 
         private void bActividades_Click(object sender, EventArgs e)
         {
-
+            Actividades ventana = new Actividades();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void pApreservi_Click(object sender, EventArgs e)
         {
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
+
+        private void tPestañas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil ventana = new Perfil();
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
