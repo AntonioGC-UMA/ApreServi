@@ -81,6 +81,7 @@ namespace ApreServi
             // bIniciar
             // 
             this.bIniciar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bIniciar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bIniciar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bIniciar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -96,6 +97,7 @@ namespace ApreServi
             // bCancelar
             // 
             this.bCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -111,6 +113,7 @@ namespace ApreServi
             // bOlvido
             // 
             this.bOlvido.BackColor = System.Drawing.Color.SteelBlue;
+            this.bOlvido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bOlvido.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bOlvido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bOlvido.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

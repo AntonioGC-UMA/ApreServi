@@ -113,6 +113,7 @@ namespace ApreServi
             // bAbandonar
             // 
             this.bAbandonar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAbandonar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAbandonar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAbandonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAbandonar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

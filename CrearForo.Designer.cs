@@ -42,6 +42,7 @@ namespace ApreServi
             // bConfirmar
             // 
             this.bConfirmar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bConfirmar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -56,6 +57,7 @@ namespace ApreServi
             // 
             // tNombreForo
             // 
+            this.tNombreForo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tNombreForo.Location = new System.Drawing.Point(82, 142);
             this.tNombreForo.Name = "tNombreForo";
             this.tNombreForo.Size = new System.Drawing.Size(342, 23);
@@ -90,6 +92,7 @@ namespace ApreServi
             // 
             // tContenido
             // 
+            this.tContenido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tContenido.Location = new System.Drawing.Point(75, 309);
             this.tContenido.Multiline = true;
             this.tContenido.Name = "tContenido";
@@ -112,6 +115,7 @@ namespace ApreServi
             // bCancelar
             // 
             this.bCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -126,6 +130,7 @@ namespace ApreServi
             // 
             // cCategoria
             // 
+            this.cCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cCategoria.FormattingEnabled = true;
             this.cCategoria.Items.AddRange(new object[] {
             "Dudas",

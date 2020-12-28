@@ -43,6 +43,7 @@ namespace ApreServi
             // 
             // tNombreActividad
             // 
+            this.tNombreActividad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tNombreActividad.Location = new System.Drawing.Point(43, 96);
             this.tNombreActividad.Name = "tNombreActividad";
             this.tNombreActividad.Size = new System.Drawing.Size(382, 23);
@@ -77,6 +78,7 @@ namespace ApreServi
             // 
             // tDescripcion
             // 
+            this.tDescripcion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tDescripcion.Location = new System.Drawing.Point(43, 230);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
@@ -86,6 +88,7 @@ namespace ApreServi
             // bCancelar
             // 
             this.bCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -101,6 +104,7 @@ namespace ApreServi
             // bCrear
             // 
             this.bCrear.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCrear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCrear.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCrear.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -115,6 +119,7 @@ namespace ApreServi
             // 
             // dInicio
             // 
+            this.dInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dInicio.Location = new System.Drawing.Point(730, 96);
             this.dInicio.Name = "dInicio";
             this.dInicio.Size = new System.Drawing.Size(245, 23);
@@ -122,6 +127,7 @@ namespace ApreServi
             // 
             // dFin
             // 
+            this.dFin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dFin.Location = new System.Drawing.Point(730, 230);
             this.dFin.Name = "dFin";
             this.dFin.Size = new System.Drawing.Size(245, 23);

@@ -86,6 +86,7 @@ namespace ApreServi
             // bPerfil
             // 
             this.bPerfil.BackColor = System.Drawing.Color.SteelBlue;
+            this.bPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bPerfil.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -114,6 +115,7 @@ namespace ApreServi
             // bAbandonar
             // 
             this.bAbandonar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAbandonar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAbandonar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAbandonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAbandonar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -129,6 +131,7 @@ namespace ApreServi
             // bCerrarSesion
             // 
             this.bCerrarSesion.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -157,6 +160,7 @@ namespace ApreServi
             // bAñadir
             // 
             this.bAñadir.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAñadir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAñadir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -173,6 +177,7 @@ namespace ApreServi
             // bBorrar
             // 
             this.bBorrar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBorrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -188,6 +193,7 @@ namespace ApreServi
             // bGuardar
             // 
             this.bGuardar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bGuardar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -338,6 +344,7 @@ namespace ApreServi
             this.pApreservi.BackColor = System.Drawing.Color.Navy;
             this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
             this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pApreservi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pApreservi.Location = new System.Drawing.Point(12, 20);
             this.pApreservi.Name = "pApreservi";
             this.pApreservi.Size = new System.Drawing.Size(198, 50);
@@ -369,6 +376,7 @@ namespace ApreServi
             // bAyuda
             // 
             this.bAyuda.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAyuda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bAyuda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAyuda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -385,6 +393,7 @@ namespace ApreServi
             // bCursos
             // 
             this.bCursos.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCursos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCursos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -400,6 +409,7 @@ namespace ApreServi
             // bNoticias
             // 
             this.bNoticias.BackColor = System.Drawing.Color.SteelBlue;
+            this.bNoticias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bNoticias.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bNoticias.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -415,6 +425,7 @@ namespace ApreServi
             // bForos
             // 
             this.bForos.BackColor = System.Drawing.Color.SteelBlue;
+            this.bForos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bForos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bForos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -430,6 +441,7 @@ namespace ApreServi
             // bActividades
             // 
             this.bActividades.BackColor = System.Drawing.Color.SteelBlue;
+            this.bActividades.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bActividades.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bActividades.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -463,6 +475,7 @@ namespace ApreServi
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MaximizeBox = false;
             this.Name = "Curso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

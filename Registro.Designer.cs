@@ -49,6 +49,7 @@ namespace ApreServi
             // bCancelar
             // 
             this.bCancelar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -173,7 +174,7 @@ namespace ApreServi
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, -2);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.label5.Padding = new System.Windows.Forms.Padding(10);
             this.label5.Size = new System.Drawing.Size(604, 62);
             this.label5.TabIndex = 18;
             this.label5.Text = "Introduzca sus datos personales";
@@ -181,6 +182,7 @@ namespace ApreServi
             // bConfirmar
             // 
             this.bConfirmar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bConfirmar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bConfirmar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
