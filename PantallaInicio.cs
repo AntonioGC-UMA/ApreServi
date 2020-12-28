@@ -69,7 +69,6 @@ namespace ApreServi
         private void bRegistrarse_Click(object sender, EventArgs e)
         {
             Registro ventana = new Registro();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;

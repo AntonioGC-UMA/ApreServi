@@ -25,7 +25,6 @@ namespace ApreServi
             var contraseña = tPassword.Text;
             var contraseña2 = tConfirmPassword.Text;
 
-
             if(nombreUsuario.Length == 0)
             {
                 MessageBox.Show("El nombre de usuario es obligatorio");
@@ -94,7 +93,6 @@ namespace ApreServi
             instance.rol = new Rol("usuario");
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();

@@ -48,7 +48,6 @@ namespace ApreServi
             if (curso_seleccionado == null) return;
 
             Curso ventana = new Curso(curso_seleccionado);
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -61,7 +60,6 @@ namespace ApreServi
             if (curso_seleccionado == null) return;
 
             CursoNoInscrito ventana = new CursoNoInscrito(curso_seleccionado);
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -71,7 +69,6 @@ namespace ApreServi
         private void bForos_Click(object sender, EventArgs e)
         {
             ForosGenerales ventana = new ForosGenerales();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -85,7 +82,6 @@ namespace ApreServi
         private void bCursos_Click(object sender, EventArgs e)
         {
             Cursos ventana = new Cursos();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -167,7 +163,6 @@ namespace ApreServi
         private void bCrearCurso_Click(object sender, EventArgs e)
         {
             CrearCurso ventana = new CrearCurso();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             cargarCursos();
@@ -233,7 +228,6 @@ namespace ApreServi
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             InicioDeSesion ventana = new InicioDeSesion();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -242,7 +236,6 @@ namespace ApreServi
         private void bRegistrarse_Click(object sender, EventArgs e)
         {
             Registro ventana = new Registro();
-            ventana.MdiParent = this.MdiParent;
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
