@@ -10,12 +10,12 @@ namespace ApreServi
         public int id { get; private set; }
         public string nombre { get; private set; }
         public string descripcion { get; private set; }
-        //List<string> foros;
         public int idCurso { get; private set; }
-
-        public ForoBD(int i, string n, string d, int ic)
+        public int idActividad { get; private set; }       
+        public int categoria { get; private set; }
+        public ForoBD(int i, string n, string d, int c, int ic, int ia)
         {
-            id = i; nombre = n; descripcion = d; idCurso = ic;
+            id = i; nombre = n; descripcion = d; idCurso = ic; idActividad = ia; categoria = c;
         }
 
         public override string ToString()

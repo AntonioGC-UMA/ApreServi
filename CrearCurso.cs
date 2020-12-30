@@ -47,17 +47,8 @@ namespace ApreServi
                 return;
             }
 
+            BD.Insert(new CursoBD(-1, tNombreCurso.Text, tDescripcion.Text, dInicio.Value, dFin.Value));
             
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-            var sql = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", tNombreCurso.Text, tDescripcion.Text, dInicio.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), dFin.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-            var cmd = new MySqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-            
-            connection.Close();
-
             this.Close();
         }
 

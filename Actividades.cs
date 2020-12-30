@@ -115,7 +115,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lOtrasActividades.Items.Add(new ActividadBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lOtrasActividades.Items.Add(new ActividadBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (DateTime)rdr[3], (DateTime)rdr[4]));
             }
             rdr.Close();
             connection.Close();

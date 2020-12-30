@@ -13,15 +13,17 @@ namespace ApreServi
     {
 
         private int curso;
+        private int actividad;
         public CrearForo()
         {
             InitializeComponent();
         }
 
-        public CrearForo(int curso)
+        public CrearForo(int curso, int actividad)
         {
             InitializeComponent();
             this.curso = curso;
+            this.actividad = actividad;
         }
 
         private void bConfirmar_Click(object sender, EventArgs e)
@@ -42,23 +44,7 @@ namespace ApreServi
                 return;
             }
 
-            MySqlConnection connection = BD.GetConnection();
-            connection.Open();
-            String sql = null;
-
-            if (curso == 0)
-            {
-                sql = String.Format("insert into Foro (nombre, descripcion, categoria) values ('{0}','{1}','{2}')", tNombreForo.Text, tContenido.Text, cCategoria.SelectedItem.ToString());
-            }
-            else
-            {
-                sql = String.Format("insert into Foro (nombre, descripcion, categoria, idCurso) values ('{0}','{1}','{2}', {3})", tNombreForo.Text, tContenido.Text, cCategoria.SelectedItem.ToString(), curso);
-            }
-            
-            var cmd = new MySqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
+            BD.Insert(new ForoBD(-1, tNombreForo.Text, tContenido.Text, curso, actividad, cCategoria.SelectedIndex));
             this.Close();
         }
 

@@ -47,17 +47,7 @@ namespace ApreServi
                 return;
             }
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
-            var sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", tNombreActividad.Text, tDescripcion.Text, dInicio.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"), dFin.Value.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-            var cmd = new MySqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-            
-            connection.Close();
-
+            BD.Insert(new ActividadBD(-1, tNombreActividad.Text, tDescripcion.Text, dInicio.Value, dFin.Value));
             this.Close();
         }
 

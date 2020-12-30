@@ -117,7 +117,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], DateTime.Parse((string)rdr[3]), DateTime.Parse((string)rdr[4])));
             }
             rdr.Close();
             connection.Close();
@@ -141,7 +141,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (DateTime)rdr[3], (DateTime)rdr[4]));
             }
             rdr.Close();
 
@@ -153,7 +153,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (DateTime)rdr[3], (DateTime)rdr[4]));
             }
 
             rdr.Close();

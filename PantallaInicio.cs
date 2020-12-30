@@ -50,7 +50,7 @@ namespace ApreServi
             connection.Open();
 
 
-            var sql = "select * from Foro f where f.idCurso is null ";
+            var sql = "select * from Foro f where f.idCurso is null and f.idActividad is null";
 
             var cmd = new MySqlCommand(sql, connection);
 
@@ -59,7 +59,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], rdr[3] == System.DBNull.Value ? 0 : (int)rdr[3]));
+                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], rdr[3] == System.DBNull.Value ? 0 : (int) rdr[3], 0, 0));
             }
 
             rdr.Close();

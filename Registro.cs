@@ -78,10 +78,6 @@ namespace ApreServi
 
             rdr.Close();
 
-            sql = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', 'usuario')", nombreUsuario, correo, contraseña, nombre, apellido);
-            cmd = new MySqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-
             connection.Close();
 
             var instance = Usuario.getInstance();
@@ -91,6 +87,8 @@ namespace ApreServi
             instance.nombre = nombre;
             instance.apellido = apellido;
             instance.rol = new Rol("usuario");
+
+            BD.Insert(instance);
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
             this.Visible = false;

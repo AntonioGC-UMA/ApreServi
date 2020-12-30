@@ -70,7 +70,7 @@ namespace ApreServi
 
             while (rdr.Read())
             {
-                this.lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], rdr[3] == System.DBNull.Value ? 0 : (int)rdr[3]));
+                this.lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (int)rdr[3], rdr[4] == System.DBNull.Value ? 0 : (int)rdr[4], rdr[5] == System.DBNull.Value ? 0 : (int)rdr[5]));
             }
 
             rdr.Close();
@@ -178,7 +178,7 @@ namespace ApreServi
 
         private void bAñadirForo_Click(object sender, EventArgs e)
         {
-            CrearForo ventana = new CrearForo(actividad.id);
+            CrearForo ventana = new CrearForo(0, actividad.id);
             this.Visible = false;
             ventana.ShowDialog();
             cargarForos();
