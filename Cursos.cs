@@ -104,60 +104,26 @@ namespace ApreServi
 
             lMisCursos.Items.Clear();
             lOtrosCursos.Items.Clear();
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
 
-            connection.Open();
-
-            var sql = "select * from Curso c";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach(var elem in BD.Select("select * from Curso"))
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], DateTime.Parse((string)rdr[3]), DateTime.Parse((string)rdr[4])));
+                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            rdr.Close();
-            connection.Close();
         }
 
         private void cargarCursos()
         {
             lMisCursos.Items.Clear();
             lOtrosCursos.Items.Clear();
-            MySqlConnection connection = BD.GetConnection();
 
-            connection.Open();
-
-            var sql = "select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            this.lUsuario.Text = Usuario.getInstance().usuario;
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach (var elem in BD.Select("select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
             {
-                lMisCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (DateTime)rdr[3], (DateTime)rdr[4]));
+                lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            rdr.Close();
-
-            sql = "select * from Curso c where c.id not in (select c.id from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "');";
-
-            cmd = new MySqlCommand(sql, connection);
-
-            rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach (var elem in BD.Select("select * from Curso where id not in (select c.id from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "');"))
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (DateTime)rdr[3], (DateTime)rdr[4]));
+                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-
-            rdr.Close();
-            connection.Close();
         }
 
         private void bCrearCurso_Click(object sender, EventArgs e)

@@ -65,28 +65,17 @@ namespace ApreServi
         {
             var contraseña = tContraseña.Text;
 
-
             if (contraseña.Length == 0)
             {
                 MessageBox.Show("La nueva contraseña no puede ser nula");
                 return;
             }
 
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
             var instance = Usuario.getInstance();
 
-            var sql = "update Usuario set contraseña = '" + contraseña + "' where nombreUsuario = '" + instance.usuario + "'";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            cmd.ExecuteNonQuery();
+            BD.Update("update Usuario set contraseña = '" + contraseña + "' where nombreUsuario = '" + instance.usuario + "'");
 
             instance.contraseña = contraseña;
-
-            connection.Close();
         }
 
         private void pApreservi_Click(object sender, EventArgs e)

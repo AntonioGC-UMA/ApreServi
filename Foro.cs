@@ -18,27 +18,12 @@ namespace ApreServi
             lPosts.Items.Clear();
             tRespuesta.Text = "";
 
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-
-            var sql = "select * from Post p where p.idForo = " + foro.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach(var elem in BD.Select("select * from Post p where p.idForo = " + foro.id))
             {
-                this.lPosts.Items.Add(new PostBD((int)rdr[0], (string)rdr[1], (string)rdr[2]));
+                this.lPosts.Items.Add(new PostBD((int)elem[0], (string)elem[1], (string)elem[2]));
             }
 
             lableTitulo.Text = foro.nombre;
-
-            rdr.Close();
-            connection.Close();
         }
 
         public Foro(ForoBD foro)
@@ -97,9 +82,7 @@ namespace ApreServi
         {
             if (tRespuesta.Text.Trim().Length == 0) return;
 
-            MySqlConnection connection = BD.GetConnection();
 
-            connection.Open();
             String sql;
             if (Usuario.hasInstance())
             {
@@ -110,10 +93,7 @@ namespace ApreServi
                 sql = String.Format("insert into Post (autor,contenido,idForo) values ('Anónimo','{0}',{1})", tRespuesta.Text, foro.id);
             }
 
-            var cmd = new MySqlCommand(sql, connection);
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
+            BD.Insert(sql);
 
             update();
         }

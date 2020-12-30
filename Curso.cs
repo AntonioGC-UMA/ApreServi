@@ -36,6 +36,8 @@ namespace ApreServi
                 tAñadir.Visible = true;
                 tDescripcion.ReadOnly = false;
             }
+
+            cargarForos();
         }
 
         private void cargarForos()

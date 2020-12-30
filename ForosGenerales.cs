@@ -43,24 +43,10 @@ namespace ApreServi
         private void cargarForos()
         {
             lForos.Items.Clear();
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-
-            var sql = "select * from Foro f where f.idCurso is null ";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach(var elem in BD.Select("select * from Foro f where f.idCurso is null and f.idActividad is null"))
             {
-                lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (int)rdr[3] , rdr[4] == System.DBNull.Value ? 0 : (int)rdr[4], rdr[5] == System.DBNull.Value ? 0 : (int)rdr[5]));
+                lForos.Items.Add(new ForoBD((int)elem[0], (string)elem[1], (string)elem[2], (int)elem[3] , elem[4] == System.DBNull.Value ? 0 : (int)elem[4], elem[5] == System.DBNull.Value ? 0 : (int)elem[5]));
             }
-
-            rdr.Close();
-            connection.Close();
         }
 
         private void bForos_Click(object sender, EventArgs e)

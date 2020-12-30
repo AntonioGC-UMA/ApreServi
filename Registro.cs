@@ -57,28 +57,11 @@ namespace ApreServi
                 return;
             }
 
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-
-            var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-
-            if (rdr.HasRows)
+            if (BD.Select("select * from Usuario where nombreUsuario = '" + nombre + "'").Count > 0)
             {
                 MessageBox.Show("Ya existe una cuenta con ese nombre de usuario");
                 return;
             }
-
-            rdr.Close();
-
-            connection.Close();
 
             var instance = Usuario.getInstance();
             instance.usuario = nombreUsuario;

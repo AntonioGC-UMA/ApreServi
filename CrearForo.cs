@@ -44,7 +44,7 @@ namespace ApreServi
                 return;
             }
 
-            BD.Insert(new ForoBD(-1, tNombreForo.Text, tContenido.Text, curso, actividad, cCategoria.SelectedIndex));
+            BD.Insert(new ForoBD(-1, tNombreForo.Text, tContenido.Text, cCategoria.SelectedIndex, curso, actividad));
             this.Close();
         }
 

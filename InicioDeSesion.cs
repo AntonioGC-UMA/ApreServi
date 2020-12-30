@@ -33,32 +33,22 @@ namespace ApreServi
                 return;
             }
 
-            MySqlConnection connection = BD.GetConnection();
+            var list = BD.Select("select * from Usuario where nombreUsuario = BINARY '" + nombre + "'");
 
-            connection.Open();
-
-            var sql = "select * from Usuario where nombreUsuario = BINARY '" + nombre + "'";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            if (rdr.HasRows)
+            if (list.Count > 0)
             {
-                rdr.Read();
-                if(((string)rdr[2]).Equals(contraseña))
+                var elem = list[0];
+                if(((string)elem[2]).Equals(contraseña))
                 {
                     var instance = Usuario.getInstance();
-                    instance.usuario = (string)rdr[0];
-                    instance.correo = (string)rdr[1];
-                    instance.contraseña = (string)rdr[2];
-                    instance.nombre = (string)rdr[3];
-                    instance.apellido = (string)rdr[4];
-                    instance.rol = new Rol((string)rdr[5]);
-                    rdr.Close();
-                    connection.Close();
+                    instance.usuario = (string)elem[0];
+                    instance.correo = (string)elem[1];
+                    instance.contraseña = (string)elem[2];
+                    instance.nombre = (string)elem[3];
+                    instance.apellido = (string)elem[4];
+                    instance.rol = new Rol((string)elem[5]);
+
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
-                    ventana.MdiParent = this.MdiParent;
                     this.Visible = false;
                     ventana.ShowDialog();
                     this.Close();
@@ -66,18 +56,12 @@ namespace ApreServi
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta");
-                    rdr.Close();
-                    connection.Close();
                 }
             }
             else
             {
                 MessageBox.Show("No existe ninguna cuenta con ese usuario");
-                rdr.Close();
-                connection.Close();
-            }
-
-            
+            }            
         }
 
         private void bOlvido_Click(object sender, EventArgs e)
@@ -90,22 +74,13 @@ namespace ApreServi
                 return;
             }
 
+            var list = BD.Select("select * from Usuario where nombreUsuario = '" + nombre + "'");
 
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-            var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            if (rdr.HasRows)
+            if (list.Count > 0)
             {
-                rdr.Read();
-                var correo = (string)rdr[1];
-                var contraseña = (string)rdr[2];
+                var elem = list[0];
+                var correo = (string)elem[1];
+                var contraseña = (string)elem[2];
 
                 Correo.Enviar(correo, "Recuperar contraseña", "La contraseña es : " + contraseña);
 
@@ -115,10 +90,6 @@ namespace ApreServi
             {
                 MessageBox.Show("No existe ninguna cuenta con ese usuario");
             }
-
-
-            rdr.Close();
-            connection.Close();
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
