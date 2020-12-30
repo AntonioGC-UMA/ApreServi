@@ -66,26 +66,12 @@ namespace ApreServi
         {
             if (Usuario.hasInstance())
             {
-                //TODO REVISAR SENTENCIAS SQL
-                /*
-                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-                MySqlConnection connection = new MySqlConnection(MyConString);
-
-                connection.Open();
-
-                var sql = "insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + actividad.id + ")";
-
-                var cmd = new MySqlCommand(sql, connection);
-
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
+                BD.Insert("insert into Inscripcion (nombreUsuario, idActividad) values ('" + Usuario.getInstance().usuario + "', " + actividad.id + ")");
 
                 Actividad ventana = new Actividad(actividad);
                 this.Visible = false;
                 ventana.ShowDialog();
                 this.Close();
-                */
             }
             else
             {

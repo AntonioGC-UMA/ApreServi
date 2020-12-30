@@ -9,6 +9,15 @@ namespace ApreServi
     {
         static MySqlConnection connection;
 
+        public static void EnsureConection()
+        {
+            if (connection == null)
+            {
+                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
+                connection = new MySqlConnection(MyConString);
+            }
+        }
+
         public static MySqlConnection GetConnection(){
             if(connection == null)
             {
@@ -18,13 +27,18 @@ namespace ApreServi
             return connection;
         }
 
+        public static void Insert(string sql)
+        {
+            EnsureConection();
+            connection.Open();
+            var cmd = new MySqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public static void Insert(Object obj)
         {
-            if (connection == null)
-            {
-                string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-                connection = new MySqlConnection(MyConString);
-            }
+            EnsureConection();
             connection.Open();
 
             string sql = "";
@@ -52,7 +66,6 @@ namespace ApreServi
                     } break;
                 case ActividadBD a:
                     {
-
                         sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", a.nombre, a.descripcion, a.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"));
                     } break;
                 case Usuario u:
@@ -69,5 +82,65 @@ namespace ApreServi
             connection.Close();
         }
 
+
+        public static void Delete(string table, int id)
+        {
+            EnsureConection();
+            connection.Open();
+
+            string sql = String.Format("delete from {0} where id = {1}", table, id);
+            var cmd = new MySqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public static void Delete(string sql)
+        {
+            EnsureConection();
+            connection.Open();
+
+            var cmd = new MySqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public static void Update(string sql)
+        {
+            EnsureConection();
+            connection.Open();
+
+
+            var cmd = new MySqlCommand(sql, connection);
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public static List<object[]> Select(string sql)
+        {
+            EnsureConection();
+            connection.Open();
+
+            var cmd = new MySqlCommand(sql, connection);
+            var reader = cmd.ExecuteReader();
+
+            List<object[]> res = new List<object[]>();
+
+            while (reader.Read())
+            {
+                int numColumnas = reader.FieldCount;
+                object[] fila = new object[numColumnas];
+                for (int i = 0; i < numColumnas; ++i) fila[i] = reader[i];
+                res.Add(fila);
+            }
+            
+
+            reader.Close();
+            connection.Close();
+
+            return res;
+        }
     }
 }

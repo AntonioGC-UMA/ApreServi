@@ -37,7 +37,7 @@ namespace ApreServi
 
             connection.Open();
 
-            var sql = "select * from Usuario where nombreUsuario = '" + nombre + "'";
+            var sql = "select * from Usuario where nombreUsuario = BINARY '" + nombre + "'";
 
             var cmd = new MySqlCommand(sql, connection);
 

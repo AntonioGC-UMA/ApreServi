@@ -68,16 +68,18 @@ namespace ApreServi
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(996, 216);
+            this.monthCalendar1.Location = new System.Drawing.Point(1138, 288);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 39;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1082, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(1237, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 91);
+            this.pictureBox1.Size = new System.Drawing.Size(121, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
@@ -89,9 +91,10 @@ namespace ApreServi
             this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bPerfil.ForeColor = System.Drawing.Color.White;
-            this.bPerfil.Location = new System.Drawing.Point(1082, 121);
+            this.bPerfil.Location = new System.Drawing.Point(1237, 161);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bPerfil.Name = "bPerfil";
-            this.bPerfil.Size = new System.Drawing.Size(106, 36);
+            this.bPerfil.Size = new System.Drawing.Size(121, 48);
             this.bPerfil.TabIndex = 35;
             this.bPerfil.Text = "Mi perfil";
             this.bPerfil.UseVisualStyleBackColor = false;
@@ -103,10 +106,10 @@ namespace ApreServi
             this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(996, 179);
+            this.label1.Location = new System.Drawing.Point(1138, 239);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(20, 10, 17, 10);
-            this.label1.Size = new System.Drawing.Size(191, 36);
+            this.label1.Padding = new System.Windows.Forms.Padding(23, 13, 19, 13);
+            this.label1.Size = new System.Drawing.Size(242, 46);
             this.label1.TabIndex = 34;
             this.label1.Text = "Calendario de eventos";
             // 
@@ -118,11 +121,12 @@ namespace ApreServi
             this.bAbandonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAbandonar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAbandonar.ForeColor = System.Drawing.Color.White;
-            this.bAbandonar.Location = new System.Drawing.Point(1055, 595);
+            this.bAbandonar.Location = new System.Drawing.Point(1206, 793);
+            this.bAbandonar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bAbandonar.Name = "bAbandonar";
-            this.bAbandonar.Size = new System.Drawing.Size(133, 36);
+            this.bAbandonar.Size = new System.Drawing.Size(152, 48);
             this.bAbandonar.TabIndex = 40;
-            this.bAbandonar.Text = "Abandonar Curso";
+            this.bAbandonar.Text = "Abandonar Actividad";
             this.bAbandonar.UseVisualStyleBackColor = false;
             this.bAbandonar.Click += new System.EventHandler(this.bAbandonar_Click);
             // 
@@ -133,9 +137,10 @@ namespace ApreServi
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.bCerrarSesion.Location = new System.Drawing.Point(738, 35);
+            this.bCerrarSesion.Location = new System.Drawing.Point(843, 47);
+            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(104, 35);
+            this.bCerrarSesion.Size = new System.Drawing.Size(119, 47);
             this.bCerrarSesion.TabIndex = 41;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = false;
@@ -147,9 +152,9 @@ namespace ApreServi
             this.lUsuario.BackColor = System.Drawing.Color.DarkBlue;
             this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lUsuario.ForeColor = System.Drawing.Color.White;
-            this.lUsuario.Location = new System.Drawing.Point(909, 38);
+            this.lUsuario.Location = new System.Drawing.Point(1039, 51);
             this.lUsuario.Name = "lUsuario";
-            this.lUsuario.Size = new System.Drawing.Size(81, 23);
+            this.lUsuario.Size = new System.Drawing.Size(101, 29);
             this.lUsuario.TabIndex = 42;
             this.lUsuario.Text = "usuario";
             this.lUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -161,9 +166,10 @@ namespace ApreServi
             this.bAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAñadir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAñadir.ForeColor = System.Drawing.Color.White;
-            this.bAñadir.Location = new System.Drawing.Point(996, 390);
+            this.bAñadir.Location = new System.Drawing.Point(1138, 520);
+            this.bAñadir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bAñadir.Name = "bAñadir";
-            this.bAñadir.Size = new System.Drawing.Size(83, 38);
+            this.bAñadir.Size = new System.Drawing.Size(95, 51);
             this.bAñadir.TabIndex = 43;
             this.bAñadir.Text = "Añadir";
             this.bAñadir.UseVisualStyleBackColor = false;
@@ -177,9 +183,10 @@ namespace ApreServi
             this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBorrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bBorrar.ForeColor = System.Drawing.Color.White;
-            this.bBorrar.Location = new System.Drawing.Point(1100, 390);
+            this.bBorrar.Location = new System.Drawing.Point(1257, 520);
+            this.bBorrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(104, 39);
+            this.bBorrar.Size = new System.Drawing.Size(119, 52);
             this.bBorrar.TabIndex = 44;
             this.bBorrar.Text = "Borrar";
             this.bBorrar.UseVisualStyleBackColor = false;
@@ -192,9 +199,10 @@ namespace ApreServi
             this.bGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bGuardar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bGuardar.ForeColor = System.Drawing.Color.White;
-            this.bGuardar.Location = new System.Drawing.Point(996, 454);
+            this.bGuardar.Location = new System.Drawing.Point(1138, 605);
+            this.bGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bGuardar.Name = "bGuardar";
-            this.bGuardar.Size = new System.Drawing.Size(106, 38);
+            this.bGuardar.Size = new System.Drawing.Size(121, 51);
             this.bGuardar.TabIndex = 45;
             this.bGuardar.Text = "Guardar";
             this.bGuardar.UseVisualStyleBackColor = false;
@@ -203,9 +211,10 @@ namespace ApreServi
             // 
             // tAñadir
             // 
-            this.tAñadir.Location = new System.Drawing.Point(996, 514);
+            this.tAñadir.Location = new System.Drawing.Point(1138, 685);
+            this.tAñadir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tAñadir.Name = "tAñadir";
-            this.tAñadir.Size = new System.Drawing.Size(208, 23);
+            this.tAñadir.Size = new System.Drawing.Size(237, 27);
             this.tAñadir.TabIndex = 46;
             this.tAñadir.Visible = false;
             // 
@@ -214,10 +223,11 @@ namespace ApreServi
             this.tabPage2.Controls.Add(this.bBorrarForo);
             this.tabPage2.Controls.Add(this.bAñadirForo);
             this.tabPage2.Controls.Add(this.lForos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(948, 500);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1085, 671);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Foros";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -228,9 +238,10 @@ namespace ApreServi
             this.bBorrarForo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bBorrarForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBorrarForo.ForeColor = System.Drawing.Color.White;
-            this.bBorrarForo.Location = new System.Drawing.Point(97, 463);
+            this.bBorrarForo.Location = new System.Drawing.Point(111, 617);
+            this.bBorrarForo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bBorrarForo.Name = "bBorrarForo";
-            this.bBorrarForo.Size = new System.Drawing.Size(87, 34);
+            this.bBorrarForo.Size = new System.Drawing.Size(99, 45);
             this.bBorrarForo.TabIndex = 10;
             this.bBorrarForo.Text = "Borrar";
             this.bBorrarForo.UseVisualStyleBackColor = false;
@@ -243,9 +254,10 @@ namespace ApreServi
             this.bAñadirForo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.bAñadirForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAñadirForo.ForeColor = System.Drawing.Color.White;
-            this.bAñadirForo.Location = new System.Drawing.Point(3, 463);
+            this.bAñadirForo.Location = new System.Drawing.Point(3, 617);
+            this.bAñadirForo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bAñadirForo.Name = "bAñadirForo";
-            this.bAñadirForo.Size = new System.Drawing.Size(87, 34);
+            this.bAñadirForo.Size = new System.Drawing.Size(99, 45);
             this.bAñadirForo.TabIndex = 9;
             this.bAñadirForo.Text = "Añadir";
             this.bAñadirForo.UseVisualStyleBackColor = false;
@@ -257,11 +269,11 @@ namespace ApreServi
             this.lForos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lForos.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lForos.FormattingEnabled = true;
-            this.lForos.ItemHeight = 23;
-            this.lForos.Location = new System.Drawing.Point(3, 3);
-            this.lForos.Margin = new System.Windows.Forms.Padding(3, 5, 5, 3);
+            this.lForos.ItemHeight = 29;
+            this.lForos.Location = new System.Drawing.Point(3, 4);
+            this.lForos.Margin = new System.Windows.Forms.Padding(3, 7, 6, 4);
             this.lForos.Name = "lForos";
-            this.lForos.Size = new System.Drawing.Size(940, 437);
+            this.lForos.Size = new System.Drawing.Size(1074, 580);
             this.lForos.TabIndex = 8;
             this.lForos.DoubleClick += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
@@ -269,10 +281,11 @@ namespace ApreServi
             // 
             this.Pestañas.Controls.Add(this.tDescripcion);
             this.Pestañas.Controls.Add(this.pictureBox2);
-            this.Pestañas.Location = new System.Drawing.Point(4, 24);
+            this.Pestañas.Location = new System.Drawing.Point(4, 29);
+            this.Pestañas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Pestañas.Name = "Pestañas";
-            this.Pestañas.Padding = new System.Windows.Forms.Padding(3);
-            this.Pestañas.Size = new System.Drawing.Size(948, 500);
+            this.Pestañas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Pestañas.Size = new System.Drawing.Size(1085, 671);
             this.Pestañas.TabIndex = 0;
             this.Pestañas.Text = "Descripcion";
             this.Pestañas.UseVisualStyleBackColor = true;
@@ -282,11 +295,12 @@ namespace ApreServi
             this.tDescripcion.BackColor = System.Drawing.Color.White;
             this.tDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tDescripcion.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tDescripcion.Location = new System.Drawing.Point(177, 12);
+            this.tDescripcion.Location = new System.Drawing.Point(202, 16);
+            this.tDescripcion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
             this.tDescripcion.ReadOnly = true;
-            this.tDescripcion.Size = new System.Drawing.Size(751, 474);
+            this.tDescripcion.Size = new System.Drawing.Size(858, 632);
             this.tDescripcion.TabIndex = 2;
             this.tDescripcion.Text = resources.GetString("tDescripcion.Text");
             // 
@@ -294,9 +308,10 @@ namespace ApreServi
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(19, 34);
+            this.pictureBox2.Location = new System.Drawing.Point(22, 45);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(134, 134);
+            this.pictureBox2.Size = new System.Drawing.Size(153, 179);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -304,10 +319,11 @@ namespace ApreServi
             // 
             this.tPestañas.Controls.Add(this.Pestañas);
             this.tPestañas.Controls.Add(this.tabPage2);
-            this.tPestañas.Location = new System.Drawing.Point(12, 121);
+            this.tPestañas.Location = new System.Drawing.Point(14, 161);
+            this.tPestañas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tPestañas.Name = "tPestañas";
             this.tPestañas.SelectedIndex = 0;
-            this.tPestañas.Size = new System.Drawing.Size(956, 528);
+            this.tPestañas.Size = new System.Drawing.Size(1093, 704);
             this.tPestañas.TabIndex = 2;
             this.tPestañas.SelectedIndexChanged += new System.EventHandler(this.tPestañas_SelectedIndexChanged);
             // 
@@ -319,8 +335,8 @@ namespace ApreServi
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, -1);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(0, 25, 1038, 25);
-            this.label2.Size = new System.Drawing.Size(1240, 92);
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 33, 1186, 33);
+            this.label2.Size = new System.Drawing.Size(1439, 119);
             this.label2.TabIndex = 47;
             this.label2.Text = " ApreServi";
             // 
@@ -329,9 +345,10 @@ namespace ApreServi
             this.pApreservi.BackColor = System.Drawing.Color.Navy;
             this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
             this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pApreservi.Location = new System.Drawing.Point(12, 20);
+            this.pApreservi.Location = new System.Drawing.Point(14, 27);
+            this.pApreservi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pApreservi.Name = "pApreservi";
-            this.pApreservi.Size = new System.Drawing.Size(198, 50);
+            this.pApreservi.Size = new System.Drawing.Size(226, 67);
             this.pApreservi.TabIndex = 48;
             this.pApreservi.TabStop = false;
             this.pApreservi.Click += new System.EventHandler(this.pApreservi_Click);
@@ -350,11 +367,12 @@ namespace ApreServi
             this.tableLayoutPanel1.Controls.Add(this.bNoticias, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bForos, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bActividades, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(240, 29);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(274, 39);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(376, 41);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 55);
             this.tableLayoutPanel1.TabIndex = 81;
             // 
             // bAyuda
@@ -364,9 +382,10 @@ namespace ApreServi
             this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAyuda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAyuda.ForeColor = System.Drawing.Color.White;
-            this.bAyuda.Location = new System.Drawing.Point(310, 3);
+            this.bAyuda.Location = new System.Drawing.Point(354, 4);
+            this.bAyuda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bAyuda.Name = "bAyuda";
-            this.bAyuda.Size = new System.Drawing.Size(63, 35);
+            this.bAyuda.Size = new System.Drawing.Size(72, 47);
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
@@ -380,9 +399,10 @@ namespace ApreServi
             this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCursos.ForeColor = System.Drawing.Color.White;
-            this.bCursos.Location = new System.Drawing.Point(138, 3);
+            this.bCursos.Location = new System.Drawing.Point(157, 4);
+            this.bCursos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bCursos.Name = "bCursos";
-            this.bCursos.Size = new System.Drawing.Size(61, 35);
+            this.bCursos.Size = new System.Drawing.Size(70, 47);
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = false;
@@ -395,9 +415,10 @@ namespace ApreServi
             this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bNoticias.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bNoticias.ForeColor = System.Drawing.Color.White;
-            this.bNoticias.Location = new System.Drawing.Point(63, 3);
+            this.bNoticias.Location = new System.Drawing.Point(71, 4);
+            this.bNoticias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bNoticias.Name = "bNoticias";
-            this.bNoticias.Size = new System.Drawing.Size(69, 35);
+            this.bNoticias.Size = new System.Drawing.Size(79, 47);
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = false;
@@ -410,9 +431,10 @@ namespace ApreServi
             this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bForos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bForos.ForeColor = System.Drawing.Color.White;
-            this.bForos.Location = new System.Drawing.Point(3, 3);
+            this.bForos.Location = new System.Drawing.Point(3, 4);
+            this.bForos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bForos.Name = "bForos";
-            this.bForos.Size = new System.Drawing.Size(54, 35);
+            this.bForos.Size = new System.Drawing.Size(62, 47);
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = false;
@@ -425,9 +447,10 @@ namespace ApreServi
             this.bActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bActividades.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bActividades.ForeColor = System.Drawing.Color.White;
-            this.bActividades.Location = new System.Drawing.Point(205, 3);
+            this.bActividades.Location = new System.Drawing.Point(234, 4);
+            this.bActividades.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bActividades.Name = "bActividades";
-            this.bActividades.Size = new System.Drawing.Size(99, 35);
+            this.bActividades.Size = new System.Drawing.Size(113, 47);
             this.bActividades.TabIndex = 4;
             this.bActividades.Text = "Actividades";
             this.bActividades.UseVisualStyleBackColor = false;
@@ -435,10 +458,10 @@ namespace ApreServi
             // 
             // Actividad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.ClientSize = new System.Drawing.Size(1403, 881);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.tAñadir);
@@ -454,6 +477,7 @@ namespace ApreServi
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Actividad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

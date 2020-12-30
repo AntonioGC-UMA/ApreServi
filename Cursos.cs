@@ -175,17 +175,7 @@ namespace ApreServi
             {
                 var curso = (CursoBD)lMisCursos.SelectedItem;
 
-                MySqlConnection connection = BD.GetConnection();
-
-                connection.Open();
-
-                var sql = "delete from Curso where id =" + curso.id;
-
-                var cmd = new MySqlCommand(sql, connection);
-
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
+                BD.Delete("Curso", curso.id);
 
                 cargarCursos();
             }
@@ -194,17 +184,7 @@ namespace ApreServi
             {
                 var curso = (CursoBD)lOtrosCursos.SelectedItem;
 
-                MySqlConnection connection = BD.GetConnection();
-
-                connection.Open();
-
-                var sql = "delete from Curso where id =" + curso.id;
-
-                var cmd = new MySqlCommand(sql, connection);
-
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
+                BD.Delete("Curso", curso.id);
 
                 cargarCursos();
             }

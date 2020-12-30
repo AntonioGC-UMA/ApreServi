@@ -120,17 +120,7 @@ namespace ApreServi
             {
                 var foro = (ForoBD)lForos.SelectedItem;
 
-                MySqlConnection connection = BD.GetConnection();
-
-                connection.Open();
-
-                var sql = "delete from Foro where id =" + foro.id;
-
-                var cmd = new MySqlCommand(sql, connection);
-
-                cmd.ExecuteNonQuery();
-
-                connection.Close();
+                BD.Delete("Foro", foro.id);
 
                 cargarForos();
             }

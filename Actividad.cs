@@ -21,20 +21,9 @@ namespace ApreServi
             this.lUsuario.Text = Usuario.getInstance().usuario;
             this.tDescripcion.Text = actividad.descripcion;
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
+            var list = BD.Select("select * from Organizar where nombreOrganizador ='" + Usuario.getInstance().usuario + "' and idActividad =" + actividad.id);
 
-            connection.Open();
-
-            //TODO MODIFICAR ESTA SENTENCIA
-            /*
-            var sql = "select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idActividad =" + actividad.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            var rdr = cmd.ExecuteReader();
-
-            if (rdr.HasRows || Usuario.getInstance().rol.admin)
+            if (list.Count > 0 || Usuario.getInstance().rol.admin)
             {
                 bAñadir.Visible = true;
                 bBorrar.Visible = true;
@@ -47,8 +36,6 @@ namespace ApreServi
                 tAñadir.Visible = true;
                 tDescripcion.ReadOnly = false;
             }
-            */
-            connection.Close();
 
             cargarForos();
         }
@@ -57,25 +44,10 @@ namespace ApreServi
         {
             lForos.Items.Clear();
 
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
-            var sql = "select * from Foro f where f.idActividad = " + actividad.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            MySqlDataReader rdr = cmd.ExecuteReader();
-
-            while (rdr.Read())
+            foreach (var elem in BD.Select("select * from Foro f where f.idActividad = " + actividad.id))
             {
-                this.lForos.Items.Add(new ForoBD((int)rdr[0], (string)rdr[1], (string)rdr[2], (int)rdr[3], rdr[4] == System.DBNull.Value ? 0 : (int)rdr[4], rdr[5] == System.DBNull.Value ? 0 : (int)rdr[5]));
+                this.lForos.Items.Add(new ForoBD((int)elem[0], (string)elem[1], (string)elem[2], (int)elem[3], elem[4] == System.DBNull.Value ? 0 : (int)elem[4], elem[5] == System.DBNull.Value ? 0 : (int)elem[5]));
             }
-
-            rdr.Close();
-
-            connection.Close();
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -106,22 +78,9 @@ namespace ApreServi
 
         private void bAbandonar_Click(object sender, EventArgs e)
         {
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-            //TODO MODIFICAR ESTA SENTENCIA
-            /*
-            var sql = "delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + actividad.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            cmd.ExecuteNonQuery();
-            */
-
-            connection.Close();
-
-            Cursos ventana = new Cursos();
+            BD.Delete("delete from Inscripcion i where i.nombreUsuario = '" + Usuario.getInstance().usuario + "' and i.idActividad = " + actividad.id);
+           
+            Actividades ventana = new Actividades();
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
@@ -159,21 +118,7 @@ namespace ApreServi
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
-            //TODO REVISAR SENTENCIAS SQL
-            /*
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
-            var sql = "update Actividad set descripcion ='" + tDescripcion.Text + "' where id =" + actividad.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
-            */
+            BD.Update("update Actividad set descripcion ='" + tDescripcion.Text + "' where id =" + actividad.id);
         }
 
         private void bAñadirForo_Click(object sender, EventArgs e)
@@ -187,23 +132,8 @@ namespace ApreServi
 
         private void bBorrarForo_Click(object sender, EventArgs e)
         {
-            //TODO REVISAR SENTENCIAS SQL
-            /*
-            string MyConString = "SERVER=ingreq2021-mysql.cobadwnzalab.eu-central-1.rds.amazonaws.com; DATABASE=apsgrupo04; UID=grupo04; PASSWORD=morillasmanuel2021;";
-            MySqlConnection connection = new MySqlConnection(MyConString);
-
-            connection.Open();
-
-            var sql = "delete from Foro where id = " + ((ForoBD)lForos.SelectedItem).id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
-
+            BD.Delete("Foro", ((ForoBD)lForos.SelectedItem).id);
             cargarForos();
-            */
         }
 
         private void bActividades_Click(object sender, EventArgs e)
