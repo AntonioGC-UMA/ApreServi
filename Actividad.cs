@@ -21,7 +21,7 @@ namespace ApreServi
             this.lUsuario.Text = Usuario.getInstance().usuario;
             this.tDescripcion.Text = actividad.descripcion;
 
-            var list = BD.Select("select * from Organizar where nombreOrganizador ='" + Usuario.getInstance().usuario + "' and idActividad =" + actividad.id);
+            var list = BD.Select("select * from Actividad a where a.propietario ='" + Usuario.getInstance().usuario + "' and a.id =" + actividad.id);
 
             if (list.Count > 0 || Usuario.getInstance().rol.admin)
             {

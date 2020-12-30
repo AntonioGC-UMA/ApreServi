@@ -21,7 +21,7 @@ namespace ApreServi
             this.lUsuario.Text = Usuario.getInstance().usuario;
             this.tDescripcion.Text = curso.descripcion;
 
-            var lista = BD.Select("select * from Impartir where nombreProfesor ='" + Usuario.getInstance().usuario + "' and idCurso =" + curso.id);
+            var lista = BD.Select("select * from Curso c where c.propietario ='" + Usuario.getInstance().usuario + "' and c.id =" + curso.id);
 
             if (lista.Count > 0 || Usuario.getInstance().rol.admin)
             {
@@ -119,17 +119,7 @@ namespace ApreServi
 
         private void bGuardar_Click(object sender, EventArgs e)
         {
-            MySqlConnection connection = BD.GetConnection();
-
-            connection.Open();
-
-            var sql = "update Curso set descripcion ='" + tDescripcion.Text + "' where id =" + curso.id;
-
-            var cmd = new MySqlCommand(sql, connection);
-
-            cmd.ExecuteNonQuery();
-
-            connection.Close();
+            BD.Update("update Curso set descripcion ='" + tDescripcion.Text + "' where id =" + curso.id);
         }
 
         private void bAñadirForo_Click(object sender, EventArgs e)

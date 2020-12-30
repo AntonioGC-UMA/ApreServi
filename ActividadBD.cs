@@ -12,12 +12,13 @@ namespace ApreServi
         public string descripcion { get; private set; }
         public DateTime fecha_inicio { get; private set; }
         public DateTime fecha_fin { get; private set; }
+        public string dueño { get; private set; }
 
-      
 
-        public ActividadBD(int i, string n, string d, DateTime fi, DateTime ff)
+
+        public ActividadBD(int i, string n, string d, DateTime fi, DateTime ff, string du = "")
         {
-            id = i; nombre = n; descripcion = d; fecha_inicio = fi; fecha_fin = ff;
+            id = i; nombre = n; descripcion = d; fecha_inicio = fi; fecha_fin = ff;  dueño = du;
         }
 
         public override string ToString()

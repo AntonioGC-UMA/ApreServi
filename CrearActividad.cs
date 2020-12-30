@@ -47,7 +47,7 @@ namespace ApreServi
                 return;
             }
 
-            BD.Insert(new ActividadBD(-1, tNombreActividad.Text, tDescripcion.Text, dInicio.Value, dFin.Value));
+            BD.Insert(new ActividadBD(-1, tNombreActividad.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
             this.Close();
         }
 

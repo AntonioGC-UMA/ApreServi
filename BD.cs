@@ -27,6 +27,7 @@ namespace ApreServi
             return connection;
         }
 
+
         public static void Insert(string sql)
         {
             EnsureConection();
@@ -35,6 +36,7 @@ namespace ApreServi
             cmd.ExecuteNonQuery();
             connection.Close();
         }
+
 
         public static void Insert(Object obj)
         {
@@ -47,7 +49,7 @@ namespace ApreServi
             {
                 case CursoBD c:
                     {
-                        sql = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", c.nombre, c.descripcion, c.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                        sql = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin,propietario) values ('{0}','{1}','{2}','{3}', '{4}')", c.nombre, c.descripcion, c.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.dueño);
                     }break;
                 case ForoBD f:
                     {
@@ -66,7 +68,7 @@ namespace ApreServi
                     } break;
                 case ActividadBD a:
                     {
-                        sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin) values ('{0}','{1}','{2}','{3}')", a.nombre, a.descripcion, a.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                        sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin, propietario) values ('{0}','{1}','{2}','{3}', '{4}')", a.nombre, a.descripcion, a.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.dueño);
                     } break;
                 case Usuario u:
                     {
@@ -110,11 +112,8 @@ namespace ApreServi
         {
             EnsureConection();
             connection.Open();
-
-
             var cmd = new MySqlCommand(sql, connection);
             cmd.ExecuteNonQuery();
-
             connection.Close();
         }
 
