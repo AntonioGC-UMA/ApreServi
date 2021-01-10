@@ -48,6 +48,13 @@ namespace ApreServi
             }
 
             BD.Insert(new ActividadBD(-1, tNombreActividad.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
+            foreach (var persona in BD.Select("SELECT * FROM Usuario WHERE admin = 0"))
+            {
+                Correo.Enviar((string)persona[1], "Nueva actividad disponible",
+                    "Buenas,\nEn Apreservi se acaba de introducir una nueva actividad que podría ser de su interes: " + tNombreActividad.Text
+                    + ".\nEsta actividad empieza el " + dInicio.Value + ". Si es de su interes, acceda a Apreservi y registrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
+                    + tDescripcion.Text);
+            }
             this.Close();
         }
 

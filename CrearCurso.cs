@@ -48,7 +48,13 @@ namespace ApreServi
             }
 
             BD.Insert(new CursoBD(-1, tNombreCurso.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
-            
+            foreach(var persona in BD.Select("SELECT * FROM Usuario WHERE admin = 0"))
+            {
+                Correo.Enviar((string)persona[1], "Nuevo curso disponible",
+                    "Buenas,\nEn Apreservi se acaba de introducir un nuevo curso que podría ser de su interes: " + tNombreCurso.Text
+                    + ".\nEste curso empieza el " + dInicio.Value + ". Si es de su interes, acceda a Apreservi y registrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
+                    + tDescripcion.Text);
+            }
             this.Close();
         }
 
