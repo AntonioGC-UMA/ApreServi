@@ -23,6 +23,12 @@
     <Compile Update="ActividadNoInscrita.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Noticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Noticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
