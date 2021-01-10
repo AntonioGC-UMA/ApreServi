@@ -25,8 +25,8 @@ namespace ApreServi
 
             if (lista.Count > 0 || Usuario.getInstance().admin)
             {
-                bAñadir.Visible = true;
-                bBorrar.Visible = true;
+                bAñadirTest.Visible = true;
+                bBorrarTest.Visible = true;
                 bGuardar.Visible = true;
                 bAbandonar.Visible = false;
 
@@ -38,6 +38,7 @@ namespace ApreServi
             }
 
             cargarForos();
+            cargarTests();
 
             foreach (var a in Usuario.get_eventos())
             {
@@ -55,6 +56,28 @@ namespace ApreServi
             foreach(var elm in list)
             {
                 lForos.Items.Add(new ForoBD((int)elm[0], (string)elm[1], (string)elm[2], (int)elm[3], elm[4] == System.DBNull.Value ? 0 : (int)elm[4], elm[5] == System.DBNull.Value ? 0 : (int)elm[5]));
+            }
+        }
+
+        private void cargarTests()
+        {
+            lTest.Items.Clear();
+
+            var list = BD.Select("select * from Test t where t.idCurso = " + curso.id);
+
+            foreach (var elm in list)
+            {
+                var preguntas = new List<PreguntaBD>();
+                foreach(var p in BD.Select("select * from Pregunta p where p.idTest = " + (int)elm[0]))
+                {
+                    var opciones = new List<string>();
+                    foreach (var o in BD.Select("select * from Opcion o where o.idPreguta = " + (int)p[0]))
+                        opciones.Add((string)o[1]);
+
+                    preguntas.Add(new PreguntaBD((int)p[0], (int)p[1], (string)p[2], opciones, (int)p[3]));
+                }
+
+                lTest.Items.Add(new TestBD((int)elm[0], curso.id, (string)elm[2], preguntas));
             }
         }
 
@@ -124,7 +147,10 @@ namespace ApreServi
 
         private void bAñadir_Click(object sender, EventArgs e)
         {
-
+            CrearTest ventana = new CrearTest(curso);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
 
         private void bGuardar_Click(object sender, EventArgs e)
@@ -182,6 +208,32 @@ namespace ApreServi
             }
             if (lista != "")
                 MessageBox.Show(lista);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var test_seleccionado = (TestBD)lTest.SelectedItem;
+
+            if (test_seleccionado == null) return;
+
+            Test ventana = new Test(test_seleccionado);
+            this.Visible = false;
+            ventana.ShowDialog();
+            if (!Usuario.hasInstance())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
+        }
+
+        private void bBorrarTest_Click(object sender, EventArgs e)
+        {
+            BD.Delete("Test", ((TestBD)lTest.SelectedItem).id);
+
+            cargarTests();
         }
     }
 }

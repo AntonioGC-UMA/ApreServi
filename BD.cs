@@ -90,6 +90,10 @@ namespace ApreServi
                         cmd.Parameters.Add(paramUserImage);
                     }
                     break;
+                case TestBD t:
+                    {
+                        cmd.CommandText = String.Format("INSERT INTO Test (idCurso,nombre) VALUES({0},'{1}');", t.idCurso, t.nombre);                        
+                    } break;
                 case Usuario u:
                     {
                         cmd.CommandText = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', {5})", u.usuario, u.correo, u.contraseña, u.nombre, u.apellido, u.admin ? 1 : 0);

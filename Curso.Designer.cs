@@ -37,8 +37,8 @@ namespace ApreServi
             this.bAbandonar = new System.Windows.Forms.Button();
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.lUsuario = new System.Windows.Forms.Label();
-            this.bAñadir = new System.Windows.Forms.Button();
-            this.bBorrar = new System.Windows.Forms.Button();
+            this.bAñadirTest = new System.Windows.Forms.Button();
+            this.bBorrarTest = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
             this.tAñadir = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -58,7 +58,9 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.lTest = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.Pestañas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -158,38 +160,39 @@ namespace ApreServi
             this.lUsuario.Text = "usuario";
             this.lUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // bAñadir
+            // bAñadirTest
             // 
-            this.bAñadir.BackColor = System.Drawing.Color.SteelBlue;
-            this.bAñadir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bAñadir.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bAñadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAñadir.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAñadir.ForeColor = System.Drawing.Color.White;
-            this.bAñadir.Location = new System.Drawing.Point(996, 390);
-            this.bAñadir.Name = "bAñadir";
-            this.bAñadir.Size = new System.Drawing.Size(83, 38);
-            this.bAñadir.TabIndex = 43;
-            this.bAñadir.Text = "Añadir";
-            this.bAñadir.UseVisualStyleBackColor = false;
-            this.bAñadir.Visible = false;
-            this.bAñadir.Click += new System.EventHandler(this.bAñadir_Click);
+            this.bAñadirTest.BackColor = System.Drawing.Color.SteelBlue;
+            this.bAñadirTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAñadirTest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bAñadirTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bAñadirTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bAñadirTest.ForeColor = System.Drawing.Color.White;
+            this.bAñadirTest.Location = new System.Drawing.Point(3, 462);
+            this.bAñadirTest.Name = "bAñadirTest";
+            this.bAñadirTest.Size = new System.Drawing.Size(83, 38);
+            this.bAñadirTest.TabIndex = 43;
+            this.bAñadirTest.Text = "Añadir";
+            this.bAñadirTest.UseVisualStyleBackColor = false;
+            this.bAñadirTest.Visible = false;
+            this.bAñadirTest.Click += new System.EventHandler(this.bAñadir_Click);
             // 
-            // bBorrar
+            // bBorrarTest
             // 
-            this.bBorrar.BackColor = System.Drawing.Color.SteelBlue;
-            this.bBorrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bBorrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bBorrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bBorrar.ForeColor = System.Drawing.Color.White;
-            this.bBorrar.Location = new System.Drawing.Point(1100, 390);
-            this.bBorrar.Name = "bBorrar";
-            this.bBorrar.Size = new System.Drawing.Size(104, 39);
-            this.bBorrar.TabIndex = 44;
-            this.bBorrar.Text = "Borrar";
-            this.bBorrar.UseVisualStyleBackColor = false;
-            this.bBorrar.Visible = false;
+            this.bBorrarTest.BackColor = System.Drawing.Color.SteelBlue;
+            this.bBorrarTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bBorrarTest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bBorrarTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bBorrarTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bBorrarTest.ForeColor = System.Drawing.Color.White;
+            this.bBorrarTest.Location = new System.Drawing.Point(111, 462);
+            this.bBorrarTest.Name = "bBorrarTest";
+            this.bBorrarTest.Size = new System.Drawing.Size(104, 39);
+            this.bBorrarTest.TabIndex = 44;
+            this.bBorrarTest.Text = "Borrar";
+            this.bBorrarTest.UseVisualStyleBackColor = false;
+            this.bBorrarTest.Visible = false;
+            this.bBorrarTest.Click += new System.EventHandler(this.bBorrarTest_Click);
             // 
             // bGuardar
             // 
@@ -218,6 +221,9 @@ namespace ApreServi
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.lTest);
+            this.tabPage5.Controls.Add(this.bAñadirTest);
+            this.tabPage5.Controls.Add(this.bBorrarTest);
             this.tabPage5.Location = new System.Drawing.Point(4, 24);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(948, 500);
@@ -455,6 +461,16 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
+            // lTest
+            // 
+            this.lTest.FormattingEnabled = true;
+            this.lTest.ItemHeight = 15;
+            this.lTest.Location = new System.Drawing.Point(0, 0);
+            this.lTest.Name = "lTest";
+            this.lTest.Size = new System.Drawing.Size(948, 454);
+            this.lTest.TabIndex = 0;
+            this.lTest.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -465,8 +481,6 @@ namespace ApreServi
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.tAñadir);
             this.Controls.Add(this.bGuardar);
-            this.Controls.Add(this.bBorrar);
-            this.Controls.Add(this.bAñadir);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.bAbandonar);
@@ -482,6 +496,7 @@ namespace ApreServi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApreServi";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.Pestañas.ResumeLayout(false);
             this.Pestañas.PerformLayout();
@@ -503,8 +518,8 @@ namespace ApreServi
         private System.Windows.Forms.Button bAbandonar;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.Label lUsuario;
-        private System.Windows.Forms.Button bAñadir;
-        private System.Windows.Forms.Button bBorrar;
+        private System.Windows.Forms.Button bAñadirTest;
+        private System.Windows.Forms.Button bBorrarTest;
         private System.Windows.Forms.Button bGuardar;
         private System.Windows.Forms.TextBox tAñadir;
         private System.Windows.Forms.TabPage tabPage5;
@@ -524,5 +539,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.ListBox lTest;
     }
 }
