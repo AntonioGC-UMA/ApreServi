@@ -69,9 +69,11 @@ namespace ApreServi
             instance.contraseña = contraseña;
             instance.nombre = nombre;
             instance.apellido = apellido;
-            instance.rol = new Rol("usuario");
-
+                        
             BD.Insert(instance);
+
+            if (cbRol.SelectedIndex == 1) BD.Insert("INSERT INTO Profesor (nombreUsuario) VALUES( '" + nombreUsuario + "')");
+            if (cbRol.SelectedIndex == 2) BD.Insert("INSERT INTO ONG (nombreUsuario) VALUES( '" + nombreUsuario + "')");
 
             PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
             this.Visible = false;

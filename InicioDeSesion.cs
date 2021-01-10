@@ -46,7 +46,7 @@ namespace ApreServi
                     instance.contraseña = (string)elem[2];
                     instance.nombre = (string)elem[3];
                     instance.apellido = (string)elem[4];
-                    instance.rol = new Rol((string)elem[5]);
+                    instance.admin = (SByte)elem[5] != 0;
 
                     PantallaInicioSesionIniciada ventana = new PantallaInicioSesionIniciada();
                     this.Visible = false;

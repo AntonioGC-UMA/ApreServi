@@ -44,6 +44,8 @@ namespace ApreServi
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bConfirmar = new System.Windows.Forms.Button();
+            this.cbRol = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bCancelar
@@ -195,12 +197,36 @@ namespace ApreServi
             this.bConfirmar.UseVisualStyleBackColor = false;
             this.bConfirmar.Click += new System.EventHandler(this.bConfirmar_Click);
             // 
+            // cbRol
+            // 
+            this.cbRol.FormattingEnabled = true;
+            this.cbRol.Items.AddRange(new object[] {
+            "Usuario",
+            "Profesor",
+            "ONG"});
+            this.cbRol.Location = new System.Drawing.Point(690, 37);
+            this.cbRol.Name = "cbRol";
+            this.cbRol.Size = new System.Drawing.Size(121, 23);
+            this.cbRol.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(690, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 23);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Rol";
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbRol);
             this.Controls.Add(this.bConfirmar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tNombre);
@@ -242,5 +268,7 @@ namespace ApreServi
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bConfirmar;
+        private System.Windows.Forms.ComboBox cbRol;
+        private System.Windows.Forms.Label label6;
     }
 }

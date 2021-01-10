@@ -19,7 +19,9 @@ namespace ApreServi
             {
                 cargarCursos();
 
-                if (Usuario.getInstance().rol.admin)
+                var res = BD.Select("SELECT * FROM Profesor WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "'");
+
+                if (res.Count != 0 || Usuario.getInstance().admin)
                 {
                     bCrearCurso.Visible = true;
                     bEliminarCurso.Visible = true;

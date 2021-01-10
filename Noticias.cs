@@ -24,7 +24,7 @@ namespace ApreServi
                 pImagen.Visible = true;
                 bCerrarSesion.Visible = true;
 
-                if (Usuario.getInstance().rol.admin)
+                if (Usuario.getInstance().admin)
                 {
                     bAñadir.Visible = true;
                     bBorrar.Visible = true;

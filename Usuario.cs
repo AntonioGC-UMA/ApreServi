@@ -13,7 +13,7 @@ namespace ApreServi
         public string apellido { get; set;}
         public string contraseña { get; set;}
         public string correo { get; set;}
-        public Rol rol { get; set;}
+        public bool admin { get; set;}
 
         private Usuario()
         {
@@ -45,7 +45,7 @@ namespace ApreServi
             instance.apellido = null;
             instance.correo = null;
             instance.contraseña = null;
-            instance.rol = null;
+            instance.admin = false;
 
             instance = null;
         }

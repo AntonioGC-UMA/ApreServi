@@ -72,7 +72,7 @@ namespace ApreServi
                     } break;
                 case Usuario u:
                     {
-                        sql = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', 'usuario')", u.usuario, u.correo, u.contraseña, u.nombre, u.apellido);
+                        sql = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', {5})", u.usuario, u.correo, u.contraseña, u.nombre, u.apellido, u.admin ? 1 : 0);
                     } break;
                 default: throw new Exception("No sabemos como insertar esta clase en la base de datos");
             }

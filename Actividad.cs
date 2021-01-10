@@ -23,7 +23,7 @@ namespace ApreServi
 
             var list = BD.Select("select * from Actividad a where a.propietario ='" + Usuario.getInstance().usuario + "' and a.id =" + actividad.id);
 
-            if (list.Count > 0 || Usuario.getInstance().rol.admin)
+            if (list.Count > 0 || Usuario.getInstance().admin)
             {
                 bAñadir.Visible = true;
                 bBorrar.Visible = true;
