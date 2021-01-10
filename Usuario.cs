@@ -22,6 +22,8 @@ namespace ApreServi
 
         public static List<(DateTime dia, string descripcion)> get_eventos()
         {
+            if (instance == null) return new List<(DateTime dia, string descripcion)>();
+
             List<(DateTime dia, string descripcion)> res = new List<(DateTime dia, string descripcion)>();
 
             foreach (var elem in BD.Select("select * from Actividad a join Inscripcion i on a.id = i.idActividad where i.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
