@@ -49,6 +49,7 @@ namespace ApreServi
             this.bIniciarSesion = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
             this.lTitular = new System.Windows.Forms.Label();
+            this.lAutor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
@@ -67,9 +68,11 @@ namespace ApreServi
             // 
             // pbImagen
             // 
+            this.pbImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbImagen.Location = new System.Drawing.Point(49, 145);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(140, 147);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 49;
             this.pbImagen.TabStop = false;
             // 
@@ -323,12 +326,23 @@ namespace ApreServi
             this.lTitular.TabIndex = 72;
             this.lTitular.Text = "Titular de la noticia";
             // 
+            // lAutor
+            // 
+            this.lAutor.AutoSize = true;
+            this.lAutor.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lAutor.Location = new System.Drawing.Point(49, 603);
+            this.lAutor.Name = "lAutor";
+            this.lAutor.Size = new System.Drawing.Size(140, 17);
+            this.lAutor.TabIndex = 73;
+            this.lAutor.Text = "Titular de la noticia";
+            // 
             // Noticia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.lAutor);
             this.Controls.Add(this.lTitular);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.lUsuario);
@@ -377,5 +391,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bIniciarSesion;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label lTitular;
+        private System.Windows.Forms.Label lAutor;
     }
 }

@@ -53,6 +53,18 @@ namespace ApreServi
 
             var picture = new PictureBox();
             picture.Image = n.image;
+            picture.BackgroundImageLayout = ImageLayout.Stretch;
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture.Width = 200;
+            picture.Height = 180;
+
+            picture.Click += (object sender, EventArgs e) =>
+            {
+                Noticia ventana = new Noticia(n);
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            };
 
             var lable = new Label();
             lable.Text = n.titulo;
@@ -64,9 +76,30 @@ namespace ApreServi
             fNoticias.Controls.Add(template);
         }
 
+        public static Bitmap GetImageFromByteArray(byte[] byteArray)
+        {
+            Bitmap bm = (Bitmap)new ImageConverter().ConvertFrom(byteArray);
+
+            if (bm != null && (bm.HorizontalResolution != (int)bm.HorizontalResolution ||
+                               bm.VerticalResolution != (int)bm.VerticalResolution))
+            {
+                // Correct a strange glitch that has been observed in the test program when converting 
+                //  from a PNG file image created by CopyImageToByteArray() - the dpi value "drifts" 
+                //  slightly away from the nominal integer value
+                bm.SetResolution((int)(bm.HorizontalResolution + 0.5f),
+                                 (int)(bm.VerticalResolution + 0.5f));
+            }
+
+            return bm;
+        }
+
         private void cargarNoticias()
         {
-            throw new Exception("TODO"); // TODO
+            fNoticias.Controls.Clear();
+            foreach (var n in BD.Select("SELECT * FROM Noticia ORDER BY fechaPublicacion LIMIT 6"))
+            {
+                cargarNoticia(new NoticiaBD((int)n[0], (string)n[2], (string)n[1], (string)n[5], GetImageFromByteArray((byte[])n[3]), (DateTime)n[4]));
+            }
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -79,7 +112,6 @@ namespace ApreServi
 
         private void bNoticias_Click(object sender, EventArgs e)
         {
-            // TODO
         }
 
         private void bCursos_Click(object sender, EventArgs e)
@@ -93,27 +125,6 @@ namespace ApreServi
         private void bAyuda_Click(object sender, EventArgs e)
         {
             // TODO
-        }
-
-        private void lForos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            var foro_seleccionado = (ForoBD)lForos.SelectedItem;
-
-            if (foro_seleccionado == null) return;
-
-            Foro ventana = new Foro(foro_seleccionado);
-            this.Visible = false;
-            ventana.ShowDialog();
-            if (!Usuario.hasInstance())
-            {
-                this.Close();
-            }
-            else
-            {
-                this.Visible = true;
-            }
-            */
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
@@ -137,7 +148,7 @@ namespace ApreServi
 
         private void bAñadir_Click(object sender, EventArgs e)
         {
-            CrearForo ventana = new CrearForo();
+            CrearNoticia ventana = new CrearNoticia();
             this.Visible = false;
             ventana.ShowDialog();
             cargarNoticias();
@@ -195,5 +206,6 @@ namespace ApreServi
             ventana.ShowDialog();
             this.Close();
         }
+
     }
 }

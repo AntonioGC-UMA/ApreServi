@@ -11,14 +11,17 @@ namespace ApreServi
 {
     public partial class Noticia : Form
     {
-        NoticiaBD curso;
+        NoticiaBD noticia;
 
-        public Noticia(NoticiaBD curso)
+        public Noticia(NoticiaBD noticia)
         {
             InitializeComponent();
-            this.curso = curso;
+            this.noticia = noticia;
 
-            //this.tCuerpo.Text = curso.descripcion;
+            this.lAutor.Text = String.Format("Noticia redactada por {0} el dia {1}", noticia.autor, noticia.fecha);
+            this.lTitular.Text = noticia.titulo;
+            this.tCuerpo.Text = noticia.cuerpo;
+            this.pbImagen.Image = noticia.image;
 
             if (Usuario.hasInstance())
             {

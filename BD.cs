@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace ApreServi
 {
@@ -37,48 +40,63 @@ namespace ApreServi
             connection.Close();
         }
 
-
+        public static byte[] ImageToByteArray(Image theImage)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                theImage.Save(memoryStream, ImageFormat.Png);
+                return memoryStream.ToArray();
+            }
+        }
         public static void Insert(Object obj)
         {
             EnsureConection();
             connection.Open();
 
-            string sql = "";
+            var cmd = new MySqlCommand("", connection);
 
             switch(obj)
             {
+
                 case CursoBD c:
                     {
-                        sql = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin,propietario) values ('{0}','{1}','{2}','{3}', '{4}')", c.nombre, c.descripcion, c.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.dueño);
+                        cmd.CommandText = String.Format("insert into Curso (nombre,descripcion,fechaInicio,fechaFin,propietario) values ('{0}','{1}','{2}','{3}', '{4}')", c.nombre, c.descripcion, c.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), c.dueño);
                     }break;
                 case ForoBD f:
                     {
                         if (f.idCurso == 0 && f.idActividad == 0)
                         {
-                            sql = String.Format("insert into Foro (nombre, descripcion, categoria) values ('{0}','{1}','{2}')", f.nombre, f.descripcion, f.categoria);
+                            cmd.CommandText = String.Format("insert into Foro (nombre, descripcion, categoria) values ('{0}','{1}','{2}')", f.nombre, f.descripcion, f.categoria);
                         }
                         else if (f.idActividad == 0)
                         {
-                            sql = String.Format("insert into Foro (nombre, descripcion, categoria, idCurso) values ('{0}','{1}','{2}', {3})", f.nombre, f.descripcion, f.categoria, f.idCurso);
+                            cmd.CommandText = String.Format("insert into Foro (nombre, descripcion, categoria, idCurso) values ('{0}','{1}','{2}', {3})", f.nombre, f.descripcion, f.categoria, f.idCurso);
                         }
                         else
                         {
-                            sql = String.Format("insert into Foro (nombre, descripcion, categoria, idActividad) values ('{0}','{1}','{2}', {3})", f.nombre, f.descripcion, f.categoria, f.idActividad);
+                            cmd.CommandText = String.Format("insert into Foro (nombre, descripcion, categoria, idActividad) values ('{0}','{1}','{2}', {3})", f.nombre, f.descripcion, f.categoria, f.idActividad);
                         }
                     } break;
                 case ActividadBD a:
                     {
-                        sql = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin, propietario) values ('{0}','{1}','{2}','{3}', '{4}')", a.nombre, a.descripcion, a.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.dueño);
+                        cmd.CommandText = String.Format("insert into Actividad (nombre,descripcion,fechaInicio,fechaFin, propietario) values ('{0}','{1}','{2}','{3}', '{4}')", a.nombre, a.descripcion, a.fecha_inicio.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.fecha_fin.ToString("yyyy-MM-dd HH:mm:ss.fff"), a.dueño);
                     } break;
+                case NoticiaBD n:
+                    {
+                        cmd.CommandText = String.Format("insert into Noticia (titular,cuerpo,imagen,fechaPublicacion, autor) values ('{0}','{1}',@userImage,'{2}', '{3}')", n.titulo, n.cuerpo, n.fecha.ToString("yyyy-MM-dd HH:mm:ss.fff"), n.autor);
+                        var userImage = ImageToByteArray(n.image);
+                        var paramUserImage = new MySqlParameter("@userImage", MySqlDbType.Blob, userImage.Length);
+                        paramUserImage.Value = userImage;
+                        cmd.Parameters.Add(paramUserImage);
+                    }
+                    break;
                 case Usuario u:
                     {
-                        sql = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', {5})", u.usuario, u.correo, u.contraseña, u.nombre, u.apellido, u.admin ? 1 : 0);
+                        cmd.CommandText = String.Format("insert into Usuario values ('{0}','{1}','{2}','{3}','{4}', {5})", u.usuario, u.correo, u.contraseña, u.nombre, u.apellido, u.admin ? 1 : 0);
                     } break;
                 default: throw new Exception("No sabemos como insertar esta clase en la base de datos");
             }
-
-            
-            var cmd = new MySqlCommand(sql, connection);
+                        
             cmd.ExecuteNonQuery();
 
             connection.Close();

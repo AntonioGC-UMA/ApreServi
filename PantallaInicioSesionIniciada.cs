@@ -32,7 +32,10 @@ namespace ApreServi
 
         private void bNoticias_Click(object sender, EventArgs e)
         {
-            // TODO
+            Noticias ventana = new Noticias();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void bCursos_Click(object sender, EventArgs e)
