@@ -14,6 +14,11 @@ namespace ApreServi
         {
             InitializeComponent();
 
+            foreach(var a in Usuario.get_eventos())
+            {
+                monthCalendar1.AddBoldedDate(a.dia);
+            }
+
             lUsuario.Text = Usuario.getInstance().usuario;
         }
 
@@ -79,6 +84,18 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            var lista = "";
+            foreach (var a in Usuario.get_eventos())
+            {
+                if(e.Start == a.dia)
+                    lista += a.descripcion + "\n";
+            }
+            if(lista != "")
+                MessageBox.Show(lista);
         }
     }
 }

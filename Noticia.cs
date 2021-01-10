@@ -18,7 +18,7 @@ namespace ApreServi
             InitializeComponent();
             this.curso = curso;
 
-            this.tCuerpo.Text = curso.descripcion;
+            //this.tCuerpo.Text = curso.descripcion;
 
             if (Usuario.hasInstance())
             {
@@ -62,22 +62,6 @@ namespace ApreServi
             // TODO
         }
 
-        private void bInscribirse_Click(object sender, EventArgs e)
-        {
-            if (Usuario.hasInstance())
-            {
-                BD.Insert("insert into Matricula values ('" + Usuario.getInstance().usuario + "', " + curso.id + ")");
-
-                Curso ventana = new Curso(curso);
-                this.Visible = false;
-                ventana.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Necesita estar registrado para\npoder inscribirse en un curso");
-            }
-        }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
         {

@@ -20,6 +20,24 @@ namespace ApreServi
 
         }
 
+        public static List<(DateTime dia, string descripcion)> get_eventos()
+        {
+            List<(DateTime dia, string descripcion)> res = new List<(DateTime dia, string descripcion)>();
+
+            foreach (var elem in BD.Select("select * from Actividad a join Inscripcion i on a.id = i.idActividad where i.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            {
+                res.Add(((DateTime)elem[3], "Comienza la actividad: " + (string)elem[1]));
+                res.Add(((DateTime)elem[4], "Termina la actividad: " + (string)elem[1]));
+            }
+            foreach (var elem in BD.Select("select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            {
+                res.Add(((DateTime)elem[3], "Comienza el curso: " + (string)elem[1]));
+                res.Add(((DateTime)elem[4], "Termina el curso: " + (string)elem[1]));
+            }
+
+            return res;
+        }
+
         public static void cerrarSesion()
         {
             instance.usuario = null;
