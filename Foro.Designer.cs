@@ -43,7 +43,7 @@ namespace ApreServi
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
-            this.monthCalendar2 = new System.Windows.Forms.MonthCalendar();
+            this.mCalendario = new System.Windows.Forms.MonthCalendar();
             this.pImagen = new System.Windows.Forms.PictureBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -236,11 +236,12 @@ namespace ApreServi
             this.bCerrarSesion.Visible = false;
             this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
             // 
-            // monthCalendar2
+            // mCalendario
             // 
-            this.monthCalendar2.Location = new System.Drawing.Point(998, 216);
-            this.monthCalendar2.Name = "monthCalendar2";
-            this.monthCalendar2.TabIndex = 72;
+            this.mCalendario.Location = new System.Drawing.Point(998, 216);
+            this.mCalendario.Name = "mCalendario";
+            this.mCalendario.TabIndex = 72;
+            this.mCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar2_DateChanged);
             // 
             // pImagen
             // 
@@ -439,7 +440,7 @@ namespace ApreServi
             this.Controls.Add(this.bAtras);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
-            this.Controls.Add(this.monthCalendar2);
+            this.Controls.Add(this.mCalendario);
             this.Controls.Add(this.pImagen);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label4);
@@ -477,7 +478,7 @@ namespace ApreServi
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bCerrarSesion;
-        private System.Windows.Forms.MonthCalendar monthCalendar2;
+        private System.Windows.Forms.MonthCalendar mCalendario;
         private System.Windows.Forms.PictureBox pImagen;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label4;

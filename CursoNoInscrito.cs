@@ -34,6 +34,11 @@ namespace ApreServi
                 bIniciarSesion.Visible = true;
                 bRegistrarse.Visible = true;
             }
+
+            foreach (var a in Usuario.get_eventos())
+            {
+                mCalendario.AddBoldedDate(a.dia);
+            }
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -46,7 +51,10 @@ namespace ApreServi
 
         private void bNoticias_Click(object sender, EventArgs e)
         {
-            // TODO
+            Noticias ventana = new Noticias();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void bCursos_Click(object sender, EventArgs e)
@@ -139,6 +147,18 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            var lista = "";
+            foreach (var a in Usuario.get_eventos())
+            {
+                if (e.Start == a.dia)
+                    lista += a.descripcion + "\n";
+            }
+            if (lista != "")
+                MessageBox.Show(lista);
         }
     }
 }

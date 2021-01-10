@@ -62,6 +62,7 @@ namespace ApreServi
             this.mCalendario.Location = new System.Drawing.Point(998, 216);
             this.mCalendario.Name = "mCalendario";
             this.mCalendario.TabIndex = 29;
+            this.mCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mCalendario_DateChanged);
             // 
             // pImagen
             // 

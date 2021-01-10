@@ -16,10 +16,15 @@ namespace ApreServi
 
             foreach(var a in Usuario.get_eventos())
             {
-                monthCalendar1.AddBoldedDate(a.dia);
+                mCalendario.AddBoldedDate(a.dia);
             }
 
             lUsuario.Text = Usuario.getInstance().usuario;
+
+            foreach (var a in Usuario.get_eventos())
+            {
+                mCalendario.AddBoldedDate(a.dia);
+            }
         }
 
         private void bForos_Click(object sender, EventArgs e)

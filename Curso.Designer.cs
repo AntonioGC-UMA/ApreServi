@@ -30,7 +30,7 @@ namespace ApreServi
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Curso));
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mCalendario = new System.Windows.Forms.MonthCalendar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bPerfil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,11 +67,12 @@ namespace ApreServi
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // mCalendario
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(996, 216);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 39;
+            this.mCalendario.Location = new System.Drawing.Point(996, 216);
+            this.mCalendario.Name = "mCalendario";
+            this.mCalendario.TabIndex = 39;
+            this.mCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // pictureBox1
             // 
@@ -470,7 +471,7 @@ namespace ApreServi
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.bAbandonar);
             this.Controls.Add(this.tPestañas);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.mCalendario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
@@ -495,7 +496,7 @@ namespace ApreServi
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mCalendario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button bPerfil;
         private System.Windows.Forms.Label label1;

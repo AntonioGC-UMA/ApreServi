@@ -36,7 +36,7 @@ namespace ApreServi
             this.titulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mCalendario = new System.Windows.Forms.MonthCalendar();
             this.lUsuario = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
             this.pApreservi = new System.Windows.Forms.PictureBox();
@@ -127,12 +127,12 @@ namespace ApreServi
             this.label1.TabIndex = 10;
             this.label1.Text = "Calendario de eventos";
             // 
-            // monthCalendar1
+            // mCalendario
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(998, 216);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 19;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.mCalendario.Location = new System.Drawing.Point(998, 216);
+            this.mCalendario.Name = "mCalendario";
+            this.mCalendario.TabIndex = 19;
+            this.mCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // lUsuario
             // 
@@ -287,7 +287,7 @@ namespace ApreServi
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.lUsuario);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.mCalendario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.bPerfil);
@@ -313,7 +313,7 @@ namespace ApreServi
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mCalendario;
         private System.Windows.Forms.Label lUsuario;
         private System.Windows.Forms.Button bCerrarSesion;
         private System.Windows.Forms.PictureBox pApreservi;
