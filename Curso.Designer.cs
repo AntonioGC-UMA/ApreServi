@@ -40,8 +40,8 @@ namespace ApreServi
             this.bAñadirTest = new System.Windows.Forms.Button();
             this.bBorrarTest = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
-            this.tAñadir = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.lTest = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bBorrarForo = new System.Windows.Forms.Button();
             this.bAñadirForo = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
-            this.lTest = new System.Windows.Forms.ListBox();
+            this.bIntegrantes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -168,7 +168,7 @@ namespace ApreServi
             this.bAñadirTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAñadirTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAñadirTest.ForeColor = System.Drawing.Color.White;
-            this.bAñadirTest.Location = new System.Drawing.Point(3, 462);
+            this.bAñadirTest.Location = new System.Drawing.Point(3, 459);
             this.bAñadirTest.Name = "bAñadirTest";
             this.bAñadirTest.Size = new System.Drawing.Size(83, 38);
             this.bAñadirTest.TabIndex = 43;
@@ -185,7 +185,7 @@ namespace ApreServi
             this.bBorrarTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBorrarTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bBorrarTest.ForeColor = System.Drawing.Color.White;
-            this.bBorrarTest.Location = new System.Drawing.Point(111, 462);
+            this.bBorrarTest.Location = new System.Drawing.Point(102, 458);
             this.bBorrarTest.Name = "bBorrarTest";
             this.bBorrarTest.Size = new System.Drawing.Size(104, 39);
             this.bBorrarTest.TabIndex = 44;
@@ -202,7 +202,7 @@ namespace ApreServi
             this.bGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bGuardar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bGuardar.ForeColor = System.Drawing.Color.White;
-            this.bGuardar.Location = new System.Drawing.Point(996, 454);
+            this.bGuardar.Location = new System.Drawing.Point(19, 448);
             this.bGuardar.Name = "bGuardar";
             this.bGuardar.Size = new System.Drawing.Size(106, 38);
             this.bGuardar.TabIndex = 45;
@@ -210,14 +210,6 @@ namespace ApreServi
             this.bGuardar.UseVisualStyleBackColor = false;
             this.bGuardar.Visible = false;
             this.bGuardar.Click += new System.EventHandler(this.bGuardar_Click);
-            // 
-            // tAñadir
-            // 
-            this.tAñadir.Location = new System.Drawing.Point(996, 514);
-            this.tAñadir.Name = "tAñadir";
-            this.tAñadir.Size = new System.Drawing.Size(208, 23);
-            this.tAñadir.TabIndex = 46;
-            this.tAñadir.Visible = false;
             // 
             // tabPage5
             // 
@@ -230,6 +222,16 @@ namespace ApreServi
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Examenes";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // lTest
+            // 
+            this.lTest.FormattingEnabled = true;
+            this.lTest.ItemHeight = 15;
+            this.lTest.Location = new System.Drawing.Point(0, 0);
+            this.lTest.Name = "lTest";
+            this.lTest.Size = new System.Drawing.Size(948, 454);
+            this.lTest.TabIndex = 0;
+            this.lTest.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -291,6 +293,7 @@ namespace ApreServi
             // 
             this.Pestañas.Controls.Add(this.tDescripcion);
             this.Pestañas.Controls.Add(this.pictureBox2);
+            this.Pestañas.Controls.Add(this.bGuardar);
             this.Pestañas.Location = new System.Drawing.Point(4, 24);
             this.Pestañas.Name = "Pestañas";
             this.Pestañas.Padding = new System.Windows.Forms.Padding(3);
@@ -461,15 +464,22 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
-            // lTest
+            // bIntegrantes
             // 
-            this.lTest.FormattingEnabled = true;
-            this.lTest.ItemHeight = 15;
-            this.lTest.Location = new System.Drawing.Point(0, 0);
-            this.lTest.Name = "lTest";
-            this.lTest.Size = new System.Drawing.Size(948, 454);
-            this.lTest.TabIndex = 0;
-            this.lTest.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.bIntegrantes.BackColor = System.Drawing.Color.SteelBlue;
+            this.bIntegrantes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bIntegrantes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bIntegrantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIntegrantes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bIntegrantes.ForeColor = System.Drawing.Color.White;
+            this.bIntegrantes.Location = new System.Drawing.Point(1055, 531);
+            this.bIntegrantes.Name = "bIntegrantes";
+            this.bIntegrantes.Size = new System.Drawing.Size(106, 38);
+            this.bIntegrantes.TabIndex = 46;
+            this.bIntegrantes.Text = "Integrantes";
+            this.bIntegrantes.UseVisualStyleBackColor = false;
+            this.bIntegrantes.Visible = false;
+            this.bIntegrantes.Click += new System.EventHandler(this.bIntegrantes_Click);
             // 
             // Curso
             // 
@@ -477,10 +487,9 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.bIntegrantes);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pApreservi);
-            this.Controls.Add(this.tAñadir);
-            this.Controls.Add(this.bGuardar);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.bAbandonar);
@@ -521,7 +530,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bAñadirTest;
         private System.Windows.Forms.Button bBorrarTest;
         private System.Windows.Forms.Button bGuardar;
-        private System.Windows.Forms.TextBox tAñadir;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox lForos;
@@ -540,5 +548,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.ListBox lTest;
+        private System.Windows.Forms.Button bIntegrantes;
     }
 }

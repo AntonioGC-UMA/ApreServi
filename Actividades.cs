@@ -148,22 +148,26 @@ namespace ApreServi
 
         private void bEliminarActividad_Click(object sender, EventArgs e)
         {
-            if(lMisActividades.SelectedIndex != -1)
+            DialogResult result = MessageBox.Show("¿Seguro que quiere borrar la actividad?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                var actividad = (ActividadBD)lMisActividades.SelectedItem;
+                if (lMisActividades.SelectedIndex != -1)
+                {
+                    var actividad = (ActividadBD)lMisActividades.SelectedItem;
 
-                BD.Delete("Actividad", actividad.id);
+                    BD.Delete("Actividad", actividad.id);
 
-                cargarActividades();
-            }
+                    cargarActividades();
+                }
 
-            if (lOtrasActividades.SelectedIndex != -1)
-            {
-                var actividad = (ActividadBD)lOtrasActividades.SelectedItem;
+                if (lOtrasActividades.SelectedIndex != -1)
+                {
+                    var actividad = (ActividadBD)lOtrasActividades.SelectedItem;
 
-                BD.Delete("Actividad", actividad.id);
+                    BD.Delete("Actividad", actividad.id);
 
-                cargarActividades();
+                    cargarActividades();
+                }
             }
         }
 

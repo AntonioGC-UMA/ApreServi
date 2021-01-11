@@ -33,8 +33,8 @@ namespace ApreServi
                 bAñadirForo.Visible = true;
                 bBorrarForo.Visible = true;
 
-                tAñadir.Visible = true;
                 tDescripcion.ReadOnly = false;
+                bIntegrantes.Visible = true;
             }
 
             cargarForos();
@@ -231,9 +231,22 @@ namespace ApreServi
 
         private void bBorrarTest_Click(object sender, EventArgs e)
         {
-            BD.Delete("Test", ((TestBD)lTest.SelectedItem).id);
+            DialogResult result = MessageBox.Show("¿Seguro que quiere borrar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
 
-            cargarTests();
+                BD.Delete("Test", ((TestBD)lTest.SelectedItem).id);
+
+                cargarTests();
+            }
+        }
+
+        private void bIntegrantes_Click(object sender, EventArgs e)
+        {
+            Integrantes ventana = new Integrantes(curso);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -110,13 +110,17 @@ namespace ApreServi
 
         private void bBorrar_Click(object sender, EventArgs e)
         {
-            if (lForos.SelectedIndex != -1)
+            DialogResult result = MessageBox.Show("¿Seguro que quiere borrar el foro?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                var foro = (ForoBD)lForos.SelectedItem;
+                if (lForos.SelectedIndex != -1)
+                {
+                    var foro = (ForoBD)lForos.SelectedItem;
 
-                BD.Delete("Foro", foro.id);
+                    BD.Delete("Foro", foro.id);
 
-                cargarForos();
+                    cargarForos();
+                }
             }
         }
 

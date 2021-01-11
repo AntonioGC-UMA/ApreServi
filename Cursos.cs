@@ -126,11 +126,13 @@ namespace ApreServi
             lMisCursos.Items.Clear();
             lOtrosCursos.Items.Clear();
 
-            foreach (var elem in BD.Select("select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            var nombre = Usuario.getInstance().usuario;
+
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = 'nieto';"))
             {
                 lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            foreach (var elem in BD.Select("select * from Curso where id not in (select c.id from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "');"))
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id NOT IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') AND c.propietario != '" + nombre + "';"))
             {
                 lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
@@ -147,22 +149,26 @@ namespace ApreServi
 
         private void bEliminarCurso_Click(object sender, EventArgs e)
         {
-            if(lMisCursos.SelectedIndex != -1)
+            DialogResult result = MessageBox.Show("¿Seguro que quiere borrar el curso?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                var curso = (CursoBD)lMisCursos.SelectedItem;
+                if (lMisCursos.SelectedIndex != -1)
+                {
+                    var curso = (CursoBD)lMisCursos.SelectedItem;
 
-                BD.Delete("Curso", curso.id);
+                    BD.Delete("Curso", curso.id);
 
-                cargarCursos();
-            }
+                    cargarCursos();
+                }
 
-            if (lOtrosCursos.SelectedIndex != -1)
-            {
-                var curso = (CursoBD)lOtrosCursos.SelectedItem;
+                if (lOtrosCursos.SelectedIndex != -1)
+                {
+                    var curso = (CursoBD)lOtrosCursos.SelectedItem;
 
-                BD.Delete("Curso", curso.id);
+                    BD.Delete("Curso", curso.id);
 
-                cargarCursos();
+                    cargarCursos();
+                }
             }
         }
 
