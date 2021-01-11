@@ -52,10 +52,18 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.lTest = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cRespuestas = new System.Windows.Forms.CheckedListBox();
+            this.bIzquierda = new System.Windows.Forms.Button();
+            this.bDerecha = new System.Windows.Forms.Button();
+            this.lNumero = new System.Windows.Forms.Label();
             this.lEnunciado = new System.Windows.Forms.Label();
+            this.bFinalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bRegistrarse
@@ -378,14 +386,106 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
+            // lTest
+            // 
+            this.lTest.AutoSize = true;
+            this.lTest.BackColor = System.Drawing.Color.White;
+            this.lTest.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lTest.Location = new System.Drawing.Point(28, 121);
+            this.lTest.Name = "lTest";
+            this.lTest.Size = new System.Drawing.Size(127, 23);
+            this.lTest.TabIndex = 81;
+            this.lTest.Text = "Nombre test";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 107);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(955, 542);
+            this.pictureBox1.TabIndex = 82;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cRespuestas
+            // 
+            this.cRespuestas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cRespuestas.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cRespuestas.FormattingEnabled = true;
+            this.cRespuestas.Location = new System.Drawing.Point(52, 391);
+            this.cRespuestas.Name = "cRespuestas";
+            this.cRespuestas.Size = new System.Drawing.Size(863, 238);
+            this.cRespuestas.TabIndex = 83;
+            this.cRespuestas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cRespuestas_ItemCheck);
+            // 
+            // bIzquierda
+            // 
+            this.bIzquierda.BackColor = System.Drawing.Color.SteelBlue;
+            this.bIzquierda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bIzquierda.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bIzquierda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bIzquierda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bIzquierda.ForeColor = System.Drawing.Color.White;
+            this.bIzquierda.Location = new System.Drawing.Point(135, 206);
+            this.bIzquierda.Name = "bIzquierda";
+            this.bIzquierda.Size = new System.Drawing.Size(135, 35);
+            this.bIzquierda.TabIndex = 84;
+            this.bIzquierda.Text = "Pregunta anterior";
+            this.bIzquierda.UseVisualStyleBackColor = false;
+            this.bIzquierda.Visible = false;
+            this.bIzquierda.Click += new System.EventHandler(this.bIzquierda_Click);
+            // 
+            // bDerecha
+            // 
+            this.bDerecha.BackColor = System.Drawing.Color.SteelBlue;
+            this.bDerecha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDerecha.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bDerecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bDerecha.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bDerecha.ForeColor = System.Drawing.Color.White;
+            this.bDerecha.Location = new System.Drawing.Point(738, 206);
+            this.bDerecha.Name = "bDerecha";
+            this.bDerecha.Size = new System.Drawing.Size(138, 35);
+            this.bDerecha.TabIndex = 85;
+            this.bDerecha.Text = "Siguiente pregunta";
+            this.bDerecha.UseVisualStyleBackColor = false;
+            this.bDerecha.Click += new System.EventHandler(this.bDerecha_Click);
+            // 
+            // lNumero
+            // 
+            this.lNumero.AutoSize = true;
+            this.lNumero.BackColor = System.Drawing.Color.White;
+            this.lNumero.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lNumero.Location = new System.Drawing.Point(364, 209);
+            this.lNumero.Name = "lNumero";
+            this.lNumero.Size = new System.Drawing.Size(291, 32);
+            this.lNumero.TabIndex = 86;
+            this.lNumero.Text = "Pregunta número: X";
+            // 
             // lEnunciado
             // 
-            this.lEnunciado.AutoSize = true;
-            this.lEnunciado.Location = new System.Drawing.Point(23, 112);
+            this.lEnunciado.BackColor = System.Drawing.Color.AliceBlue;
+            this.lEnunciado.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lEnunciado.Location = new System.Drawing.Point(52, 279);
             this.lEnunciado.Name = "lEnunciado";
-            this.lEnunciado.Size = new System.Drawing.Size(38, 15);
-            this.lEnunciado.TabIndex = 81;
-            this.lEnunciado.Text = "label1";
+            this.lEnunciado.Size = new System.Drawing.Size(863, 87);
+            this.lEnunciado.TabIndex = 87;
+            this.lEnunciado.Text = "Enunciado";
+            // 
+            // bFinalizar
+            // 
+            this.bFinalizar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bFinalizar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bFinalizar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bFinalizar.ForeColor = System.Drawing.Color.White;
+            this.bFinalizar.Location = new System.Drawing.Point(1092, 403);
+            this.bFinalizar.Name = "bFinalizar";
+            this.bFinalizar.Size = new System.Drawing.Size(98, 35);
+            this.bFinalizar.TabIndex = 89;
+            this.bFinalizar.Text = "Finalizar test";
+            this.bFinalizar.UseVisualStyleBackColor = false;
+            this.bFinalizar.Click += new System.EventHandler(this.bFinalizar_Click);
             // 
             // Test
             // 
@@ -393,7 +493,13 @@ namespace ApreServi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.bFinalizar);
             this.Controls.Add(this.lEnunciado);
+            this.Controls.Add(this.lNumero);
+            this.Controls.Add(this.bDerecha);
+            this.Controls.Add(this.bIzquierda);
+            this.Controls.Add(this.cRespuestas);
+            this.Controls.Add(this.lTest);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.bAtras);
@@ -407,6 +513,7 @@ namespace ApreServi
             this.Controls.Add(this.bIniciarSesion);
             this.Controls.Add(this.bRegistrarse);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.pictureBox1);
             this.MaximizeBox = false;
             this.Name = "Test";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -414,6 +521,7 @@ namespace ApreServi
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,6 +550,13 @@ namespace ApreServi
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.Label lTest;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckedListBox cRespuestas;
+        private System.Windows.Forms.Button bIzquierda;
+        private System.Windows.Forms.Button bDerecha;
+        private System.Windows.Forms.Label lNumero;
         private System.Windows.Forms.Label lEnunciado;
+        private System.Windows.Forms.Button bFinalizar;
     }
 }

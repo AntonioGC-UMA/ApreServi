@@ -41,6 +41,7 @@ namespace ApreServi
             this.bBorrarTest = new System.Windows.Forms.Button();
             this.bGuardar = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.bCalificaciones = new System.Windows.Forms.Button();
             this.lTest = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.bBorrarForo = new System.Windows.Forms.Button();
@@ -168,7 +169,7 @@ namespace ApreServi
             this.bAñadirTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAñadirTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAñadirTest.ForeColor = System.Drawing.Color.White;
-            this.bAñadirTest.Location = new System.Drawing.Point(3, 459);
+            this.bAñadirTest.Location = new System.Drawing.Point(3, 451);
             this.bAñadirTest.Name = "bAñadirTest";
             this.bAñadirTest.Size = new System.Drawing.Size(83, 38);
             this.bAñadirTest.TabIndex = 43;
@@ -185,7 +186,7 @@ namespace ApreServi
             this.bBorrarTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBorrarTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bBorrarTest.ForeColor = System.Drawing.Color.White;
-            this.bBorrarTest.Location = new System.Drawing.Point(102, 458);
+            this.bBorrarTest.Location = new System.Drawing.Point(105, 451);
             this.bBorrarTest.Name = "bBorrarTest";
             this.bBorrarTest.Size = new System.Drawing.Size(104, 39);
             this.bBorrarTest.TabIndex = 44;
@@ -213,35 +214,53 @@ namespace ApreServi
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.bCalificaciones);
             this.tabPage5.Controls.Add(this.lTest);
             this.tabPage5.Controls.Add(this.bAñadirTest);
             this.tabPage5.Controls.Add(this.bBorrarTest);
-            this.tabPage5.Location = new System.Drawing.Point(4, 24);
+            this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(948, 500);
+            this.tabPage5.Size = new System.Drawing.Size(948, 501);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Examenes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // bCalificaciones
+            // 
+            this.bCalificaciones.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCalificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCalificaciones.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCalificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCalificaciones.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCalificaciones.ForeColor = System.Drawing.Color.White;
+            this.bCalificaciones.Location = new System.Drawing.Point(828, 451);
+            this.bCalificaciones.Name = "bCalificaciones";
+            this.bCalificaciones.Size = new System.Drawing.Size(106, 38);
+            this.bCalificaciones.TabIndex = 82;
+            this.bCalificaciones.Text = "Calificaciones";
+            this.bCalificaciones.UseVisualStyleBackColor = false;
+            this.bCalificaciones.Click += new System.EventHandler(this.bCalificaciones_Click);
+            // 
             // lTest
             // 
+            this.lTest.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lTest.FormattingEnabled = true;
-            this.lTest.ItemHeight = 15;
+            this.lTest.ItemHeight = 23;
             this.lTest.Location = new System.Drawing.Point(0, 0);
             this.lTest.Name = "lTest";
-            this.lTest.Size = new System.Drawing.Size(948, 454);
+            this.lTest.Size = new System.Drawing.Size(948, 441);
             this.lTest.TabIndex = 0;
-            this.lTest.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lTest.DoubleClick += new System.EventHandler(this.lTest_SelectedIndexChanged);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.bBorrarForo);
             this.tabPage2.Controls.Add(this.bAñadirForo);
             this.tabPage2.Controls.Add(this.lForos);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(948, 500);
+            this.tabPage2.Size = new System.Drawing.Size(948, 501);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Foros";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -294,10 +313,10 @@ namespace ApreServi
             this.Pestañas.Controls.Add(this.tDescripcion);
             this.Pestañas.Controls.Add(this.pictureBox2);
             this.Pestañas.Controls.Add(this.bGuardar);
-            this.Pestañas.Location = new System.Drawing.Point(4, 24);
+            this.Pestañas.Location = new System.Drawing.Point(4, 23);
             this.Pestañas.Name = "Pestañas";
             this.Pestañas.Padding = new System.Windows.Forms.Padding(3);
-            this.Pestañas.Size = new System.Drawing.Size(948, 500);
+            this.Pestañas.Size = new System.Drawing.Size(948, 501);
             this.Pestañas.TabIndex = 0;
             this.Pestañas.Text = "Descripcion";
             this.Pestañas.UseVisualStyleBackColor = true;
@@ -330,6 +349,7 @@ namespace ApreServi
             this.tPestañas.Controls.Add(this.Pestañas);
             this.tPestañas.Controls.Add(this.tabPage2);
             this.tPestañas.Controls.Add(this.tabPage5);
+            this.tPestañas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tPestañas.Location = new System.Drawing.Point(12, 121);
             this.tPestañas.Name = "tPestañas";
             this.tPestañas.SelectedIndex = 0;
@@ -549,5 +569,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.ListBox lTest;
         private System.Windows.Forms.Button bIntegrantes;
+        private System.Windows.Forms.Button bCalificaciones;
     }
 }

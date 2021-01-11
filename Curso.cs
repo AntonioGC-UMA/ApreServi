@@ -71,8 +71,8 @@ namespace ApreServi
                 foreach(var p in BD.Select("select * from Pregunta p where p.idTest = " + (int)elm[0]))
                 {
                     var opciones = new List<string>();
-                    foreach (var o in BD.Select("select * from Opcion o where o.idPreguta = " + (int)p[0]))
-                        opciones.Add((string)o[1]);
+                    foreach (var o in BD.Select("select * from Opcion o where o.numPregunta = " + (int)p[0]))
+                        opciones.Add((string)o[3]);
 
                     preguntas.Add(new PreguntaBD((int)p[0], (int)p[1], (string)p[2], opciones, (int)p[3]));
                 }
@@ -151,6 +151,8 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+
+            cargarTests();
         }
 
         private void bGuardar_Click(object sender, EventArgs e)
@@ -210,11 +212,17 @@ namespace ApreServi
                 MessageBox.Show(lista);
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void lTest_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var test_seleccionado = (TestBD)lTest.SelectedItem;
+           var test_seleccionado = (TestBD)lTest.SelectedItem;
 
             if (test_seleccionado == null) return;
+
+            if (BD.Select("SELECT * FROM Puntuacion WHERE idTest = " + test_seleccionado.id + " AND nombreUsuario = '" + Usuario.getInstance().usuario + "';").Count > 0)
+            {
+                MessageBox.Show("Ya has realizado este cuestionario");
+                return;
+            }
 
             Test ventana = new Test(test_seleccionado);
             this.Visible = false;
@@ -247,6 +255,19 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
+        }
+
+        private void bCalificaciones_Click(object sender, EventArgs e)
+        {
+            string message = "CALIFICACIONES\n";
+            var tests = BD.Select("SELECT t.nombre, p.nota FROM Puntuacion p JOIN Test t ON p.idTest = t.idTest WHERE t.idCurso = "+ curso.id + " and p.nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+            foreach (var test in tests)
+            {
+                message += (string)test[0] + " " + test[1].ToString() + "\n";
+            }
+
+            MessageBox.Show(message);
         }
     }
 }

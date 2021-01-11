@@ -12,8 +12,9 @@ namespace ApreServi
     public partial class Test : Form
     {
         TestBD test;
+        int[] respuestas;
+        int actual;
 
-        
         public Test(TestBD test)
         {
             InitializeComponent();
@@ -35,6 +36,37 @@ namespace ApreServi
                 bCerrar.Visible = true;
                 bIniciarSesion.Visible = true;
                 bRegistrarse.Visible = true;
+            }
+
+            lTest.Text = test.nombre;
+
+            respuestas = new int[test.preguntas.Count];
+
+            for (int i = 0; i < respuestas.Length; i++)
+            {
+                respuestas[i] = -1;
+            }
+
+            actual = 0;
+
+            if (respuestas.Length == 1)
+            {
+                bDerecha.Visible = false;
+            }
+
+            cargarPregunta(0);
+        }
+
+        private void cargarPregunta(int numero)
+        {
+            lNumero.Text = "Pregunta número: " + (numero + 1).ToString();
+            cRespuestas.Items.Clear();
+
+            lEnunciado.Text = test.preguntas[numero].enunciado;
+
+            foreach(var opcion in test.preguntas[numero].opciones)
+            {
+                cRespuestas.Items.Add(opcion);
             }
         }
 
@@ -72,11 +104,6 @@ namespace ApreServi
         {
             Usuario.cerrarSesion();
             this.Close();
-        }
-
-        private void bPerfil_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bCerrar_Click(object sender, EventArgs e)
@@ -155,6 +182,59 @@ namespace ApreServi
             }
             if (lista != "")
                 MessageBox.Show(lista);
+        }
+
+        private void bIzquierda_Click(object sender, EventArgs e)
+        {
+            if (actual == 1)
+            {
+                bIzquierda.Visible = false;
+            }
+            cargarPregunta(actual - 1);
+        }
+
+        private void bDerecha_Click(object sender, EventArgs e)
+        {
+            if (actual == test.preguntas.Count - 1)
+            {
+                bDerecha.Visible = false;
+            }
+            cargarPregunta(actual + 1);
+        }
+
+        private void cRespuestas_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue != CheckState.Checked)
+            {
+                respuestas[actual] = -1;
+            }
+            else
+            {
+                respuestas[actual] = e.Index;
+            }
+        }
+
+        private void bFinalizar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que quiere entregar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                double nota = 0;
+                for (int i = 0; i < respuestas.Length; i++)
+                {
+                    if (respuestas[i] == test.preguntas[i].correcta)
+                    {
+                        nota++;
+                    }
+                }
+
+                nota /= respuestas.Length;
+                nota *= 10;
+
+                BD.Insert("INSERT INTO Puntuacion VALUES('" + Usuario.getInstance().usuario + "'," + test.id + "," + nota + ")");
+
+                this.Close();
+            }
         }
     }
 }
