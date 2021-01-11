@@ -11,6 +11,9 @@ namespace ApreServi
 {
     public partial class Noticias : Form
     {
+        NoticiaBD seleccionada;
+        TableLayoutPanel selected;
+
         public Noticias()
         {
             InitializeComponent();
@@ -55,6 +58,7 @@ namespace ApreServi
             template.Margin = new Padding(30, 3, 3, 3);
             template.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             template.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            //TODO  template.BackColor = Color.AntiqueWhite;
 
             var picture = new PictureBox();
             picture.Image = n.image;
@@ -62,8 +66,20 @@ namespace ApreServi
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             picture.Width = 200;
             picture.Height = 180;
+            
 
             picture.Click += (object sender, EventArgs e) =>
+            {
+                template.BackColor = Color.AliceBlue;
+                if (selected != null)
+                {
+                    selected.BackColor = Color.Transparent;
+                }
+                selected = template;
+                seleccionada = n;
+            };
+
+            picture.DoubleClick += (object sender, EventArgs e) =>
             {
                 Noticia ventana = new Noticia(n);
                 this.Visible = false;
@@ -73,6 +89,7 @@ namespace ApreServi
 
             var lable = new Label();
             lable.Text = n.titulo;
+            lable.Width = 200;
 
             template.Controls.Add(picture);
             template.Controls.Add(lable);
@@ -143,16 +160,15 @@ namespace ApreServi
         }
 
         private void bBorrar_Click(object sender, EventArgs e)
-        {
-            /*
-            if (lForos.SelectedIndex != -1)
-            {
-                var foro = (ForoBD)lForos.SelectedItem;
-
-                BD.Delete("Foro", foro.id);
+        {   
+            if (seleccionada != null){
+                BD.Delete("Noticia", seleccionada.id);
 
                 cargarNoticias();
-            }*/
+            }
+
+            seleccionada = null;
+            selected = null;
         }
 
         private void bAñadir_Click(object sender, EventArgs e)

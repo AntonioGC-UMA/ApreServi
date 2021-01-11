@@ -21,6 +21,70 @@ namespace ApreServi
             cargarForos();
         }
 
+        private void cargarNoticia(NoticiaBD n)
+        {
+            var template = new TableLayoutPanel();
+            template.RowCount = 2;
+            template.ColumnCount = 1;
+            template.Width = 200;
+            template.Height = 200;
+            template.Margin = new Padding(30, 3, 3, 3);
+            template.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            template.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            //TODO  template.BackColor = Color.AntiqueWhite;
+
+            var picture = new PictureBox();
+            picture.Image = n.image;
+            picture.BackgroundImageLayout = ImageLayout.Stretch;
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture.Width = 200;
+            picture.Height = 180;
+
+            picture.Click += (object sender, EventArgs e) =>
+            {
+                Noticia ventana = new Noticia(n);
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            };
+
+            var lable = new Label();
+            lable.Text = n.titulo;
+            lable.Width = 200;
+
+            template.Controls.Add(picture);
+            template.Controls.Add(lable);
+            template.SetCellPosition(picture, new TableLayoutPanelCellPosition(0, 0));
+            template.SetCellPosition(lable, new TableLayoutPanelCellPosition(0, 1));
+            fNoticias.Controls.Add(template);
+        }
+
+        public static Bitmap GetImageFromByteArray(byte[] byteArray)
+        {
+            Bitmap bm = (Bitmap)new ImageConverter().ConvertFrom(byteArray);
+
+            if (bm != null && (bm.HorizontalResolution != (int)bm.HorizontalResolution ||
+                               bm.VerticalResolution != (int)bm.VerticalResolution))
+            {
+                // Correct a strange glitch that has been observed in the test program when converting 
+                //  from a PNG file image created by CopyImageToByteArray() - the dpi value "drifts" 
+                //  slightly away from the nominal integer value
+                bm.SetResolution((int)(bm.HorizontalResolution + 0.5f),
+                                 (int)(bm.VerticalResolution + 0.5f));
+            }
+
+            return bm;
+        }
+
+        private void cargarNoticias()
+        {
+            fNoticias.Controls.Clear();
+            foreach (var n in BD.Select("SELECT * FROM Noticia ORDER BY fechaPublicacion LIMIT 4"))
+            {
+                cargarNoticia(new NoticiaBD((int)n[0], (string)n[2], (string)n[1], (string)n[5], GetImageFromByteArray((byte[])n[3]), (DateTime)n[4]));
+            }
+        }
+
         private void bIniciarSesion_Click(object sender, EventArgs e)
         {
             InicioDeSesion ventana = new InicioDeSesion();

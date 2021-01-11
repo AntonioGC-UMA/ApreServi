@@ -382,6 +382,7 @@ namespace ApreServi
             // 
             // fNoticias
             // 
+            this.fNoticias.BackColor = System.Drawing.Color.White;
             this.fNoticias.Location = new System.Drawing.Point(18, 179);
             this.fNoticias.Name = "fNoticias";
             this.fNoticias.Size = new System.Drawing.Size(784, 417);
