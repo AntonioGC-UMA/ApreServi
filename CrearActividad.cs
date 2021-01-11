@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace ApreServi
 {
@@ -41,21 +42,33 @@ namespace ApreServi
                 return;
             }
 
-            if(dInicio.Value < System.DateTime.Now || dFin.Value < System.DateTime.Now)
+            if (dInicio.Value < System.DateTime.Now || dFin.Value < System.DateTime.Now)
             {
                 MessageBox.Show("No puedes iniciar una actividad en el pasado");
                 return;
             }
 
             BD.Insert(new ActividadBD(-1, tNombreActividad.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
-            foreach (var persona in BD.Select("SELECT * FROM Usuario WHERE admin = 0"))
+
+            var personas = BD.Select("SELECT * FROM Usuario WHERE admin = 0");
+
+            var worker = new System.ComponentModel.BackgroundWorker();
+            worker.DoWork += (sender, e) => mandarCorreos(personas);
+            worker.RunWorkerAsync();
+
+            this.Close();
+        }
+
+        public void mandarCorreos(List<object[]> personas)
+        {
+            foreach (var persona in personas)
             {
                 Correo.Enviar((string)persona[1], "Nueva actividad disponible",
-                    "Buenas,\nEn Apreservi se acaba de introducir una nueva actividad que podría ser de su interes: " + tNombreActividad.Text
-                    + ".\nEsta actividad empieza el " + dInicio.Value + ". Si es de su interes, acceda a Apreservi y registrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
+                    "Buenas,\nEn Apreservi se acaba de introducir una nueva actividad que podría ser de su interés: " + tNombreActividad.Text
+                    + ".\nEsta actividad empieza el " + dInicio.Value + ". Si es de su interés, acceda a Apreservi y regístrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
                     + tDescripcion.Text);
+                Console.WriteLine(persona[1] + "\n");
             }
-            this.Close();
         }
 
         private void CrearCurso_Load(object sender, EventArgs e)

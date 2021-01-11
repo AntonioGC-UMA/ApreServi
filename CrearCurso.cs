@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ApreServi
@@ -46,16 +47,27 @@ namespace ApreServi
                 MessageBox.Show("No puedes iniciar un curso en el pasado");
                 return;
             }
-
             BD.Insert(new CursoBD(-1, tNombreCurso.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
-            foreach(var persona in BD.Select("SELECT * FROM Usuario WHERE admin = 0"))
+
+            var personas = BD.Select("SELECT * FROM Usuario WHERE admin = 0");
+
+            var worker = new System.ComponentModel.BackgroundWorker();
+            worker.DoWork += (sender, e) => mandarCorreos(personas);
+            worker.RunWorkerAsync();
+
+            this.Close();
+        }
+
+        public void mandarCorreos(List<object[]> personas)
+        { 
+            foreach (var persona in personas)
             {
                 Correo.Enviar((string)persona[1], "Nuevo curso disponible",
-                    "Buenas,\nEn Apreservi se acaba de introducir un nuevo curso que podría ser de su interes: " + tNombreCurso.Text
-                    + ".\nEste curso empieza el " + dInicio.Value + ". Si es de su interes, acceda a Apreservi y registrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
+                    "Buenas,\nEn Apreservi se acaba de introducir un nuevo curso que podría ser de su interés: " + tNombreCurso.Text
+                    + ".\nEste curso empieza el " + dInicio.Value + ". Si es de su interés, acceda a Apreservi y regístrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
                     + tDescripcion.Text);
+                Console.WriteLine(persona[1] + "\n");
             }
-            this.Close();
         }
 
         private void CrearCurso_Load(object sender, EventArgs e)

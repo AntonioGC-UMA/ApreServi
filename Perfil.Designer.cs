@@ -112,6 +112,7 @@ namespace ApreServi
             // lNombre
             // 
             this.lNombre.AutoSize = true;
+            this.lNombre.BackColor = System.Drawing.Color.White;
             this.lNombre.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lNombre.Location = new System.Drawing.Point(184, 330);
             this.lNombre.Name = "lNombre";
@@ -122,6 +123,7 @@ namespace ApreServi
             // lUsuario
             // 
             this.lUsuario.AutoSize = true;
+            this.lUsuario.BackColor = System.Drawing.Color.White;
             this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lUsuario.Location = new System.Drawing.Point(186, 280);
             this.lUsuario.Name = "lUsuario";
@@ -132,6 +134,7 @@ namespace ApreServi
             // lApellidos
             // 
             this.lApellidos.AutoSize = true;
+            this.lApellidos.BackColor = System.Drawing.Color.White;
             this.lApellidos.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lApellidos.Location = new System.Drawing.Point(186, 377);
             this.lApellidos.Name = "lApellidos";
@@ -142,6 +145,7 @@ namespace ApreServi
             // lCorreo
             // 
             this.lCorreo.AutoSize = true;
+            this.lCorreo.BackColor = System.Drawing.Color.White;
             this.lCorreo.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lCorreo.Location = new System.Drawing.Point(59, 474);
             this.lCorreo.Name = "lCorreo";
@@ -189,6 +193,7 @@ namespace ApreServi
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(61, 280);
             this.label1.Name = "label1";
@@ -208,6 +213,7 @@ namespace ApreServi
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(59, 423);
             this.label2.Name = "label2";
@@ -218,6 +224,7 @@ namespace ApreServi
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(59, 377);
             this.label3.Name = "label3";
@@ -228,6 +235,7 @@ namespace ApreServi
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(59, 330);
             this.label4.Name = "label4";
