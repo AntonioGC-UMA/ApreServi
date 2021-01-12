@@ -52,6 +52,7 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.bMensajes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
@@ -345,11 +346,28 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
+            // bMensajes
+            // 
+            this.bMensajes.BackColor = System.Drawing.Color.SteelBlue;
+            this.bMensajes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMensajes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMensajes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bMensajes.ForeColor = System.Drawing.Color.White;
+            this.bMensajes.Location = new System.Drawing.Point(844, 154);
+            this.bMensajes.Name = "bMensajes";
+            this.bMensajes.Size = new System.Drawing.Size(250, 135);
+            this.bMensajes.TabIndex = 75;
+            this.bMensajes.Text = "Mensajes";
+            this.bMensajes.UseVisualStyleBackColor = false;
+            this.bMensajes.Click += new System.EventHandler(this.bMensajes_Click);
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 661);
+            this.Controls.Add(this.bMensajes);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -405,5 +423,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.Button bMensajes;
     }
 }

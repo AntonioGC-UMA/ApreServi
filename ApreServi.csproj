@@ -29,6 +29,9 @@
     <Compile Update="CrearNoticia.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Mensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Integrantes.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -100,5 +100,13 @@ namespace ApreServi
             ventana.ShowDialog();
             this.Close();
         }
+
+        private void bMensajes_Click(object sender, EventArgs e)
+        {
+            Mensajes ventana = new Mensajes();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
+        }
     }
 }
