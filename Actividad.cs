@@ -25,15 +25,13 @@ namespace ApreServi
 
             if (list.Count > 0 || Usuario.getInstance().admin)
             {
-                bAñadir.Visible = true;
-                bBorrar.Visible = true;
                 bGuardar.Visible = true;
                 bAbandonar.Visible = false;
 
                 bAñadirForo.Visible = true;
                 bBorrarForo.Visible = true;
+                bIntegrantes.Visible = true;
 
-                tAñadir.Visible = true;
                 tDescripcion.ReadOnly = false;
             }
 
@@ -193,15 +191,30 @@ namespace ApreServi
                 return;
             }
 
-            string profesor = BD.Select("SELECT email FROM Usuario WHERE nombreUsuario = '" + curso.dueño + "';")[0].ToString();
-            Correo.Enviar(profesor, "Cuestionario de satisfacción del curso: " + curso.nombre, "Puntuación del curso: " + cValoración.Text
-                + "\nPuntuación del profesor: " + cProfesor.Text + "\nOpinión sobre el curso: " + tOpinion.Text + "\nMejoras para el curso:"
+            string profesor = BD.Select("SELECT email FROM Usuario WHERE nombreUsuario = '" + actividad.dueño + "';")[0].ToString();
+            Correo.Enviar(profesor, "Cuestionario de satisfacción de la actividad: " + actividad.nombre, "Puntuación de la actividad: " + cValoración.Text
+                + "\nPuntuación de la organizacion: " + cProfesor.Text + "\nOpinión sobre la actividad: " + tOpinion.Text + "\nMejoras para la actividad:"
                 + tMejora.Text);
 
             cValoración.SelectedIndex = -1;
             cProfesor.SelectedIndex = -1;
             tOpinion.Text = "";
             tMejora.Text = "";
+        }
+
+        private void bIntegrantes_Click(object sender, EventArgs e)
+        {
+            Integrantes ventana = new Integrantes(null, actividad);
+            this.Visible = false;
+            ventana.ShowDialog();
+            if (!Usuario.hasInstance())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
     }
 }

@@ -251,10 +251,17 @@ namespace ApreServi
 
         private void bIntegrantes_Click(object sender, EventArgs e)
         {
-            Integrantes ventana = new Integrantes(curso);
+            Integrantes ventana = new Integrantes(curso, null);
             this.Visible = false;
             ventana.ShowDialog();
-            this.Close();
+            if (!Usuario.hasInstance())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
 
         private void bCalificaciones_Click(object sender, EventArgs e)

@@ -57,6 +57,7 @@ namespace ApreServi
             this.bEliminar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bCorreo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -251,7 +252,7 @@ namespace ApreServi
             this.lIntegrantes.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lIntegrantes.FormattingEnabled = true;
             this.lIntegrantes.ItemHeight = 23;
-            this.lIntegrantes.Location = new System.Drawing.Point(44, 138);
+            this.lIntegrantes.Location = new System.Drawing.Point(44, 121);
             this.lIntegrantes.Name = "lIntegrantes";
             this.lIntegrantes.Size = new System.Drawing.Size(328, 464);
             this.lIntegrantes.TabIndex = 82;
@@ -408,12 +409,28 @@ namespace ApreServi
             this.pictureBox2.TabIndex = 97;
             this.pictureBox2.TabStop = false;
             // 
+            // bCorreo
+            // 
+            this.bCorreo.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCorreo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCorreo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCorreo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCorreo.ForeColor = System.Drawing.Color.White;
+            this.bCorreo.Location = new System.Drawing.Point(120, 606);
+            this.bCorreo.Name = "bCorreo";
+            this.bCorreo.Size = new System.Drawing.Size(150, 43);
+            this.bCorreo.TabIndex = 98;
+            this.bCorreo.Text = "Enviar correo grupal";
+            this.bCorreo.UseVisualStyleBackColor = false;
+            this.bCorreo.Click += new System.EventHandler(this.bCorreo_Click);
+            // 
             // Integrantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.bCorreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bEliminar);
             this.Controls.Add(this.tBuscar);
@@ -478,5 +495,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bEliminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button bCorreo;
     }
 }

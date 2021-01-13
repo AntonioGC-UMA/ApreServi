@@ -12,12 +12,13 @@ namespace ApreServi
     public partial class Integrantes : Form
     {
         CursoBD curso;
+        ActividadBD actividad;
 
-        public Integrantes(CursoBD curso)
+        public Integrantes(CursoBD curso, ActividadBD actividad)
         {
             InitializeComponent();
-
             this.curso = curso;
+            this.actividad = actividad;
             this.lUsuario.Text = Usuario.getInstance().usuario;
 
             cargarIntegrantes("");
@@ -31,20 +32,22 @@ namespace ApreServi
         private void cargarIntegrantes(string filtro)
         {
             lIntegrantes.Items.Clear();
+            string sql = "";
 
-            List<object[]> participantes;
-
-            if(filtro == "")
-            {
-                participantes = BD.Select("SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Matricula WHERE idCurso = " + curso.id + ") AND admin = 0;");
-            }
+            if (curso != null)
+                sql = "SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Matricula WHERE idCurso = " + curso.id + ") AND admin = 0";
+            else if (actividad != null)
+                sql = "SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Inscripcion WHERE idActividad = " + actividad.id + ") AND admin = 0";
             else
-            {
-                participantes = BD.Select("SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Matricula WHERE idCurso = " + curso.id + ") AND admin = 0 AND nombreUsuario LIKE '" + filtro + "%';");
-            }
-            
+                throw new Exception("Error");
 
-            foreach (var persona in participantes)
+            if (filtro != "")
+            {
+
+                sql += "  AND nombreUsuario LIKE '" + filtro + "%';";
+            }
+
+            foreach (var persona in BD.Select(sql))
             {
                 lIntegrantes.Items.Add(new PersonaBD((string) persona[0], (string) persona[1], (string) persona[2], (string) persona[3], (string) persona[4], (SByte) persona[5] != 0));
             }
@@ -62,12 +65,6 @@ namespace ApreServi
 
             //TODO CALIFICACIONES
         }
-
-
-
-
-
-
 
 
 
@@ -141,7 +138,14 @@ namespace ApreServi
             { 
                 var persona = (PersonaBD)lIntegrantes.Items[lIntegrantes.SelectedIndex];
 
-                BD.Delete("DELETE FROM Matricula WHERE nombreUsuario = '" + persona.usuario + "' AND idCurso = " + this.curso.id);
+
+                if (curso != null)
+                    BD.Delete("DELETE FROM Matricula WHERE nombreUsuario = '" + persona.usuario + "' AND idCurso = " + this.curso.id);
+                else if (actividad != null)
+                    BD.Delete("DELETE FROM Inscripcion WHERE nombreUsuario = '" + persona.usuario + "' AND idActividad = " + this.actividad.id);
+                else
+                    throw new Exception("Error");
+
                 cargarIntegrantes(tBuscar.Text);
 
                 lUser.Text = "";
@@ -156,6 +160,25 @@ namespace ApreServi
             string texto = tBuscar.Text;
 
             cargarIntegrantes(texto);
+        }
+
+        private void bCorreo_Click(object sender, EventArgs e)
+        {
+            List<string> correos = new List<string>();
+
+            if (curso != null)
+                foreach (var a in BD.Select("SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Matricula WHERE idCurso = " + curso.id + ") AND admin = 0"))
+                    correos.Add((string)a[1]);
+            else if (actividad != null)
+                foreach (var a in BD.Select("SELECT * FROM Usuario WHERE nombreUsuario IN (SELECT nombreUsuario FROM Inscripcion WHERE idActividad = " + actividad.id + ") AND admin = 0"))
+                    correos.Add((string)a[1]);
+            else
+                throw new Exception("Error");
+
+            CorreoGrupal ventana = new CorreoGrupal(correos);
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
     }
 }

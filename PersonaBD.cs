@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ApreServi
 {
-    class PersonaBD
+    public class PersonaBD
     {
         public string usuario { get; private set; }
         public string nombre { get; private set; }
