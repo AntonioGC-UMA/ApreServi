@@ -184,5 +184,24 @@ namespace ApreServi
             if (lista != "")
                 MessageBox.Show(lista);
         }
+
+        private void bEnviar_Click(object sender, EventArgs e)
+        {
+            if (cValoración.Text == "" || cProfesor.Text == "" || tOpinion.Text == "" || tMejora.Text == "")
+            {
+                MessageBox.Show("Rellene los campos necesarios");
+                return;
+            }
+
+            string profesor = BD.Select("SELECT email FROM Usuario WHERE nombreUsuario = '" + curso.dueño + "';")[0].ToString();
+            Correo.Enviar(profesor, "Cuestionario de satisfacción del curso: " + curso.nombre, "Puntuación del curso: " + cValoración.Text
+                + "\nPuntuación del profesor: " + cProfesor.Text + "\nOpinión sobre el curso: " + tOpinion.Text + "\nMejoras para el curso:"
+                + tMejora.Text);
+
+            cValoración.SelectedIndex = -1;
+            cProfesor.SelectedIndex = -1;
+            tOpinion.Text = "";
+            tMejora.Text = "";
+        }
     }
 }

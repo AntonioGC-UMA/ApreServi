@@ -117,7 +117,7 @@ namespace ApreServi
 
             foreach(var elem in BD.Select("select * from Curso"))
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
+                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
             }
         }
 
@@ -130,11 +130,11 @@ namespace ApreServi
 
             foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = 'nieto';"))
             {
-                lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
+                lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
             }
             foreach (var elem in BD.Select("select * from Curso c WHERE c.id NOT IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') AND c.propietario != '" + nombre + "';"))
             {
-                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
+                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
             }
         }
 

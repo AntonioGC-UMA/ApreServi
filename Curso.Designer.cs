@@ -51,6 +51,16 @@ namespace ApreServi
             this.tDescripcion = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tPestañas = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bEnviar = new System.Windows.Forms.Button();
+            this.tMejora = new System.Windows.Forms.TextBox();
+            this.tOpinion = new System.Windows.Forms.TextBox();
+            this.cProfesor = new System.Windows.Forms.CheckedListBox();
+            this.cValoración = new System.Windows.Forms.CheckedListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pApreservi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,6 +76,7 @@ namespace ApreServi
             this.Pestañas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tPestañas.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -349,12 +360,139 @@ namespace ApreServi
             this.tPestañas.Controls.Add(this.Pestañas);
             this.tPestañas.Controls.Add(this.tabPage2);
             this.tPestañas.Controls.Add(this.tabPage5);
+            this.tPestañas.Controls.Add(this.tabPage1);
             this.tPestañas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tPestañas.Location = new System.Drawing.Point(12, 121);
             this.tPestañas.Name = "tPestañas";
             this.tPestañas.SelectedIndex = 0;
             this.tPestañas.Size = new System.Drawing.Size(956, 528);
             this.tPestañas.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.bEnviar);
+            this.tabPage1.Controls.Add(this.tMejora);
+            this.tabPage1.Controls.Add(this.tOpinion);
+            this.tabPage1.Controls.Add(this.cProfesor);
+            this.tabPage1.Controls.Add(this.cValoración);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(948, 501);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Cuestionario de satisfacción";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // bEnviar
+            // 
+            this.bEnviar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEnviar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEnviar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bEnviar.ForeColor = System.Drawing.Color.White;
+            this.bEnviar.Location = new System.Drawing.Point(834, 414);
+            this.bEnviar.Name = "bEnviar";
+            this.bEnviar.Size = new System.Drawing.Size(75, 38);
+            this.bEnviar.TabIndex = 82;
+            this.bEnviar.Text = "Enviar";
+            this.bEnviar.UseVisualStyleBackColor = false;
+            this.bEnviar.Click += new System.EventHandler(this.bEnviar_Click);
+            // 
+            // tMejora
+            // 
+            this.tMejora.Location = new System.Drawing.Point(51, 387);
+            this.tMejora.Multiline = true;
+            this.tMejora.Name = "tMejora";
+            this.tMejora.Size = new System.Drawing.Size(605, 65);
+            this.tMejora.TabIndex = 7;
+            // 
+            // tOpinion
+            // 
+            this.tOpinion.Location = new System.Drawing.Point(51, 258);
+            this.tOpinion.Multiline = true;
+            this.tOpinion.Name = "tOpinion";
+            this.tOpinion.Size = new System.Drawing.Size(605, 65);
+            this.tOpinion.TabIndex = 6;
+            // 
+            // cProfesor
+            // 
+            this.cProfesor.CheckOnClick = true;
+            this.cProfesor.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cProfesor.FormattingEnabled = true;
+            this.cProfesor.HorizontalExtent = 5;
+            this.cProfesor.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cProfesor.Location = new System.Drawing.Point(51, 169);
+            this.cProfesor.MultiColumn = true;
+            this.cProfesor.Name = "cProfesor";
+            this.cProfesor.Size = new System.Drawing.Size(605, 30);
+            this.cProfesor.TabIndex = 5;
+            // 
+            // cValoración
+            // 
+            this.cValoración.CheckOnClick = true;
+            this.cValoración.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cValoración.FormattingEnabled = true;
+            this.cValoración.HorizontalExtent = 5;
+            this.cValoración.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cValoración.Location = new System.Drawing.Point(51, 70);
+            this.cValoración.MultiColumn = true;
+            this.cValoración.Name = "cValoración";
+            this.cValoración.Size = new System.Drawing.Size(605, 30);
+            this.cValoración.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(51, 222);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(295, 23);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "¿Qué te ha parecido el curso?";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(45, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(181, 23);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Valora al profesor";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(51, 346);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(409, 23);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "¿Qué mejorarías para cursos posteriores?";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(51, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(153, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Valora el curso";
             // 
             // label2
             // 
@@ -531,6 +669,8 @@ namespace ApreServi
             this.Pestañas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tPestañas.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -568,7 +708,17 @@ namespace ApreServi
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.ListBox lTest;
-        private System.Windows.Forms.Button bIntegrantes;
         private System.Windows.Forms.Button bCalificaciones;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button bEnviar;
+        private System.Windows.Forms.TextBox tMejora;
+        private System.Windows.Forms.TextBox tOpinion;
+        private System.Windows.Forms.CheckedListBox cProfesor;
+        private System.Windows.Forms.CheckedListBox cValoración;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bIntegrantes;
     }
 }

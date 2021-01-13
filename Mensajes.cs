@@ -43,8 +43,7 @@ namespace ApreServi
         private void cargarGente(string filtro)
         {
             lPersonas.Items.Clear();
-            List<object[]> participantes;
-            string aux = String.Format("select * from Usuario where nombreUsuario <> '{0}'", Usuario.getInstance().usuario);
+            string aux = String.Format("select * from Usuario where nombreUsuario <> '{0}' AND nombreUsuario <> 'Anónimo'", Usuario.getInstance().usuario);
             if (filtro != "")
             {
                 aux += " and nombreUsuario LIKE '" + filtro + "%';";

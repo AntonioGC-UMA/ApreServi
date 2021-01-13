@@ -56,7 +56,7 @@ namespace ApreServi
             this.bCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCancelar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCancelar.ForeColor = System.Drawing.Color.White;
-            this.bCancelar.Location = new System.Drawing.Point(607, 546);
+            this.bCancelar.Location = new System.Drawing.Point(355, 532);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(117, 65);
             this.bCancelar.TabIndex = 9;
@@ -66,7 +66,7 @@ namespace ApreServi
             // 
             // tCorreo
             // 
-            this.tCorreo.Location = new System.Drawing.Point(692, 148);
+            this.tCorreo.Location = new System.Drawing.Point(686, 244);
             this.tCorreo.Name = "tCorreo";
             this.tCorreo.Size = new System.Drawing.Size(256, 23);
             this.tCorreo.TabIndex = 8;
@@ -82,7 +82,7 @@ namespace ApreServi
             // 
             this.password.AutoSize = true;
             this.password.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password.Location = new System.Drawing.Point(694, 114);
+            this.password.Location = new System.Drawing.Point(688, 210);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(186, 23);
             this.password.TabIndex = 6;
@@ -100,7 +100,7 @@ namespace ApreServi
             // 
             // tConfirmPassword
             // 
-            this.tConfirmPassword.Location = new System.Drawing.Point(692, 412);
+            this.tConfirmPassword.Location = new System.Drawing.Point(686, 508);
             this.tConfirmPassword.Name = "tConfirmPassword";
             this.tConfirmPassword.PasswordChar = '*';
             this.tConfirmPassword.Size = new System.Drawing.Size(256, 23);
@@ -108,7 +108,7 @@ namespace ApreServi
             // 
             // tPassword
             // 
-            this.tPassword.Location = new System.Drawing.Point(694, 281);
+            this.tPassword.Location = new System.Drawing.Point(688, 377);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '*';
             this.tPassword.Size = new System.Drawing.Size(254, 23);
@@ -118,7 +118,7 @@ namespace ApreServi
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(694, 240);
+            this.label1.Location = new System.Drawing.Point(688, 336);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 23);
             this.label1.TabIndex = 11;
@@ -128,7 +128,7 @@ namespace ApreServi
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(694, 374);
+            this.label2.Location = new System.Drawing.Point(688, 470);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(216, 23);
             this.label2.TabIndex = 10;
@@ -189,7 +189,7 @@ namespace ApreServi
             this.bConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bConfirmar.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bConfirmar.ForeColor = System.Drawing.Color.White;
-            this.bConfirmar.Location = new System.Drawing.Point(406, 546);
+            this.bConfirmar.Location = new System.Drawing.Point(154, 532);
             this.bConfirmar.Name = "bConfirmar";
             this.bConfirmar.Size = new System.Drawing.Size(136, 65);
             this.bConfirmar.TabIndex = 19;
@@ -204,7 +204,7 @@ namespace ApreServi
             "Usuario",
             "Profesor",
             "ONG"});
-            this.cbRol.Location = new System.Drawing.Point(690, 37);
+            this.cbRol.Location = new System.Drawing.Point(684, 133);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(121, 23);
             this.cbRol.TabIndex = 20;
@@ -213,7 +213,7 @@ namespace ApreServi
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(690, 9);
+            this.label6.Location = new System.Drawing.Point(684, 105);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 23);
             this.label6.TabIndex = 21;

@@ -250,7 +250,7 @@ namespace ApreServi
             this.fNoticias.BackColor = System.Drawing.Color.White;
             this.fNoticias.Location = new System.Drawing.Point(45, 183);
             this.fNoticias.Name = "fNoticias";
-            this.fNoticias.Size = new System.Drawing.Size(428, 417);
+            this.fNoticias.Size = new System.Drawing.Size(480, 417);
             this.fNoticias.TabIndex = 74;
             // 
             // PantallaInicio

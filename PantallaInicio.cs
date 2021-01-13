@@ -19,6 +19,7 @@ namespace ApreServi
         {
             InitializeComponent();
             cargarForos();
+            cargarNoticias();
         }
 
         private void cargarNoticia(NoticiaBD n)
@@ -45,7 +46,7 @@ namespace ApreServi
                 Noticia ventana = new Noticia(n);
                 this.Visible = false;
                 ventana.ShowDialog();
-                this.Close();
+                this.Visible = true;
             };
 
             var lable = new Label();

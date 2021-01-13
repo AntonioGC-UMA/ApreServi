@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.Mail;
 using System.Text;
 using System.Windows.Forms;
 
@@ -60,6 +61,15 @@ namespace ApreServi
             if (BD.Select("select * from Usuario where nombreUsuario = '" + nombre + "'").Count > 0)
             {
                 MessageBox.Show("Ya existe una cuenta con ese nombre de usuario");
+                return;
+            }
+
+            try
+            {
+                var a = new MailAddress(correo, "To User");
+            }
+            catch (Exception ex) {
+                MessageBox.Show("El correo no es válido");
                 return;
             }
 
