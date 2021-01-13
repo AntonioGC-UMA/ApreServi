@@ -61,6 +61,10 @@ namespace ApreServi
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.lArchivos = new System.Windows.Forms.ListBox();
+            this.bEliminarArchivo = new System.Windows.Forms.Button();
+            this.bSubirArchivo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pApreservi = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -70,6 +74,7 @@ namespace ApreServi
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.bIntegrantes = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -77,6 +82,7 @@ namespace ApreServi
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tPestañas.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -361,6 +367,7 @@ namespace ApreServi
             this.tPestañas.Controls.Add(this.tabPage2);
             this.tPestañas.Controls.Add(this.tabPage5);
             this.tPestañas.Controls.Add(this.tabPage1);
+            this.tPestañas.Controls.Add(this.tabPage3);
             this.tPestañas.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tPestañas.Location = new System.Drawing.Point(12, 121);
             this.tPestañas.Name = "tPestañas";
@@ -493,6 +500,63 @@ namespace ApreServi
             this.label3.Size = new System.Drawing.Size(153, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Valora el curso";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.lArchivos);
+            this.tabPage3.Controls.Add(this.bEliminarArchivo);
+            this.tabPage3.Controls.Add(this.bSubirArchivo);
+            this.tabPage3.Location = new System.Drawing.Point(4, 23);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(948, 501);
+            this.tabPage3.TabIndex = 6;
+            this.tabPage3.Text = "Material";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // lArchivos
+            // 
+            this.lArchivos.FormattingEnabled = true;
+            this.lArchivos.ItemHeight = 14;
+            this.lArchivos.Location = new System.Drawing.Point(4, 4);
+            this.lArchivos.Name = "lArchivos";
+            this.lArchivos.Size = new System.Drawing.Size(944, 424);
+            this.lArchivos.TabIndex = 84;
+            this.lArchivos.DoubleClick += new System.EventHandler(this.lArchivos_DoubleClick);
+            // 
+            // bEliminarArchivo
+            // 
+            this.bEliminarArchivo.BackColor = System.Drawing.Color.SteelBlue;
+            this.bEliminarArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEliminarArchivo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bEliminarArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEliminarArchivo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bEliminarArchivo.ForeColor = System.Drawing.Color.White;
+            this.bEliminarArchivo.Location = new System.Drawing.Point(175, 449);
+            this.bEliminarArchivo.Name = "bEliminarArchivo";
+            this.bEliminarArchivo.Size = new System.Drawing.Size(106, 38);
+            this.bEliminarArchivo.TabIndex = 83;
+            this.bEliminarArchivo.Text = "Eliminar";
+            this.bEliminarArchivo.UseVisualStyleBackColor = false;
+            this.bEliminarArchivo.Visible = false;
+            this.bEliminarArchivo.Click += new System.EventHandler(this.bEliminarArchivo_Click);
+            // 
+            // bSubirArchivo
+            // 
+            this.bSubirArchivo.BackColor = System.Drawing.Color.SteelBlue;
+            this.bSubirArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSubirArchivo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bSubirArchivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bSubirArchivo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bSubirArchivo.ForeColor = System.Drawing.Color.White;
+            this.bSubirArchivo.Location = new System.Drawing.Point(28, 449);
+            this.bSubirArchivo.Name = "bSubirArchivo";
+            this.bSubirArchivo.Size = new System.Drawing.Size(106, 38);
+            this.bSubirArchivo.TabIndex = 82;
+            this.bSubirArchivo.Text = "Subir";
+            this.bSubirArchivo.UseVisualStyleBackColor = false;
+            this.bSubirArchivo.Visible = false;
+            this.bSubirArchivo.Click += new System.EventHandler(this.bSubirArchivo_Click);
             // 
             // label2
             // 
@@ -639,6 +703,10 @@ namespace ApreServi
             this.bIntegrantes.Visible = false;
             this.bIntegrantes.Click += new System.EventHandler(this.bIntegrantes_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -671,6 +739,7 @@ namespace ApreServi
             this.tPestañas.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -720,5 +789,10 @@ namespace ApreServi
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button bIntegrantes;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ListBox lArchivos;
+        private System.Windows.Forms.Button bEliminarArchivo;
+        private System.Windows.Forms.Button bSubirArchivo;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

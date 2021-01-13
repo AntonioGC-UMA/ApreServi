@@ -17,6 +17,15 @@ namespace ApreServi
 
             var instance = Usuario.getInstance();
 
+            if(instance.admin)
+            {
+                lUsuarios.Visible = true;
+                tBuscar.Visible = true;
+                bEliminar.Visible = true;
+
+                cargarIntegrantes("");
+            }
+
             lUsuario.Text = instance.usuario;
             lNombre.Text = instance.nombre;
             lApellidos.Text = instance.apellido;
@@ -107,6 +116,48 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Close();
+        }
+
+
+
+        private void cargarIntegrantes(string filtro)
+        {
+            lUsuarios.Items.Clear();
+            string sql = "";
+
+            sql = "SELECT * FROM Usuario where admin = 0 and nombreUsuario <> 'Anónimo'";
+
+            if (filtro != "")
+            {
+
+                sql += "  AND nombreUsuario LIKE '" + filtro + "%';";
+            }
+
+            foreach (var persona in BD.Select(sql))
+            {
+                lUsuarios.Items.Add(new PersonaBD((string)persona[0], (string)persona[1], (string)persona[2], (string)persona[3], (string)persona[4], (SByte)persona[5] != 0));
+            }
+        }
+
+
+        private void bEliminar_Click(object sender, EventArgs e)
+        {
+            if (lUsuarios.SelectedIndex == -1) return;
+
+            DialogResult result = MessageBox.Show("¿Seguro que quiere eliminar al usuario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var persona = (PersonaBD)lUsuarios.Items[lUsuarios.SelectedIndex];
+
+                BD.Delete("DELETE FROM Usuario WHERE nombreUsuario = '" + persona.usuario + "'");
+
+                cargarIntegrantes(tBuscar.Text);
+            }
+        }
+
+        private void tBuscar_TextChanged(object sender, EventArgs e)
+        {
+            cargarIntegrantes(tBuscar.Text);
         }
     }
 }

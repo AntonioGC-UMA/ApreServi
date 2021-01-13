@@ -30,6 +30,36 @@ namespace ApreServi
             return connection;
         }
 
+        public static void Subir(string path, string nombre, int id_curso)
+        {
+            EnsureConection();
+            connection.Open();
+
+            var data = File.ReadAllBytes(path);
+
+            var cmd = new MySqlCommand("", connection);
+
+            cmd.CommandText = String.Format("insert into Archivo values ('{0}', {1}, @data)", nombre, id_curso);
+            
+            var paramUserImage = new MySqlParameter("@data", MySqlDbType.Blob, data.Length);
+            paramUserImage.Value = data;
+            cmd.Parameters.Add(paramUserImage);
+
+            cmd.ExecuteNonQuery();
+
+            connection.Close();
+        }
+
+        public static void Descargar(string path, string nombre, int id_curso)
+        {
+            if (path == null || path == "") path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var file = Select("select informacion from Archivo where nombre = '" + nombre + "' and idCurso = " + id_curso);
+
+            if (file == null || file.Count == 0) return;
+
+            File.WriteAllBytes(path + "/" + nombre, (byte[])(file[0][0]));
+        }
+
 
         public static void Insert(string sql)
         {

@@ -148,6 +148,9 @@
   <metadata name="tDescripcion.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
     <value>True</value>
   </metadata>
+  <metadata name="tDescripcion.Locked" type="System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>True</value>
+  </metadata>
   <data name="tDescripcion.Text" xml:space="preserve">
     <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sem orci, viverra a tellus in, dapibus efficitur elit. Nulla consectetur porttitor metus quis accumsan. Aenean lobortis eros at augue vulputate viverra. Donec vitae lorem a mauris pharetra semper eget a mauris. Quisque sit amet venenatis libero. Curabitur lobortis justo felis, eu pretium ipsum venenatis ut. Nunc eget sapien sodales, tristique sem a, viverra metus. Sed pellentesque viverra pharetra. Integer tincidunt elit a ornare commodo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sem orci, viverra a tellus in, dapibus efficitur elit. Nulla consectetur porttitor metus quis accumsan. Aenean lobortis eros at augue vulputate viverra. Donec vitae lorem a mauris pharetra semper eget a mauris. Quisque sit amet venenatis libero. Curabitur lobortis justo felis, eu pretium ipsum venenatis ut. Nunc eget sapien sodales, tristique sem a, viverra metus. Sed pellentesque viverra pharetra. Integer tincidunt elit a ornare commodo.</value>
   </data>
@@ -685,4 +688,7 @@
         7620zXwvBrAK/852n4GBoaB4Y+NC27wtAZZRAR3+H1ImP9jhQlCxAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e">
+    <value>25</value>
+  </metadata>
 </root>

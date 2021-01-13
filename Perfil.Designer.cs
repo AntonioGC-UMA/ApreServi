@@ -53,6 +53,9 @@ namespace ApreServi
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.bMensajes = new System.Windows.Forms.Button();
+            this.bEliminar = new System.Windows.Forms.Button();
+            this.tBuscar = new System.Windows.Forms.TextBox();
+            this.lUsuarios = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
@@ -354,7 +357,7 @@ namespace ApreServi
             this.bMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bMensajes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bMensajes.ForeColor = System.Drawing.Color.White;
-            this.bMensajes.Location = new System.Drawing.Point(844, 154);
+            this.bMensajes.Location = new System.Drawing.Point(936, 420);
             this.bMensajes.Name = "bMensajes";
             this.bMensajes.Size = new System.Drawing.Size(250, 135);
             this.bMensajes.TabIndex = 75;
@@ -362,11 +365,50 @@ namespace ApreServi
             this.bMensajes.UseVisualStyleBackColor = false;
             this.bMensajes.Click += new System.EventHandler(this.bMensajes_Click);
             // 
+            // bEliminar
+            // 
+            this.bEliminar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEliminar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bEliminar.ForeColor = System.Drawing.Color.White;
+            this.bEliminar.Location = new System.Drawing.Point(875, 323);
+            this.bEliminar.Name = "bEliminar";
+            this.bEliminar.Size = new System.Drawing.Size(124, 35);
+            this.bEliminar.TabIndex = 98;
+            this.bEliminar.Text = "Eliminar usuario";
+            this.bEliminar.UseVisualStyleBackColor = false;
+            this.bEliminar.Visible = false;
+            this.bEliminar.Click += new System.EventHandler(this.bEliminar_Click);
+            // 
+            // tBuscar
+            // 
+            this.tBuscar.Location = new System.Drawing.Point(875, 217);
+            this.tBuscar.Name = "tBuscar";
+            this.tBuscar.Size = new System.Drawing.Size(100, 23);
+            this.tBuscar.TabIndex = 97;
+            this.tBuscar.Visible = false;
+            this.tBuscar.TextChanged += new System.EventHandler(this.tBuscar_TextChanged);
+            // 
+            // lUsuarios
+            // 
+            this.lUsuarios.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lUsuarios.FormattingEnabled = true;
+            this.lUsuarios.ItemHeight = 23;
+            this.lUsuarios.Location = new System.Drawing.Point(525, 125);
+            this.lUsuarios.Name = "lUsuarios";
+            this.lUsuarios.Size = new System.Drawing.Size(328, 464);
+            this.lUsuarios.TabIndex = 96;
+            this.lUsuarios.Visible = false;
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 661);
+            this.Controls.Add(this.bEliminar);
+            this.Controls.Add(this.tBuscar);
+            this.Controls.Add(this.lUsuarios);
             this.Controls.Add(this.bMensajes);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.label4);
@@ -424,5 +466,8 @@ namespace ApreServi
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.Button bMensajes;
+        private System.Windows.Forms.Button bEliminar;
+        private System.Windows.Forms.TextBox tBuscar;
+        private System.Windows.Forms.ListBox lUsuarios;
     }
 }

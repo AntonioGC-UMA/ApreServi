@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -32,6 +33,8 @@ namespace ApreServi
 
                 bAñadirForo.Visible = true;
                 bBorrarForo.Visible = true;
+                bSubirArchivo.Visible = true;
+                bEliminarArchivo.Visible = true;
 
                 tDescripcion.ReadOnly = false;
                 bIntegrantes.Visible = true;
@@ -39,6 +42,7 @@ namespace ApreServi
 
             cargarForos();
             cargarTests();
+            cargarMaterial();
 
             foreach (var a in Usuario.get_eventos())
             {
@@ -294,6 +298,54 @@ namespace ApreServi
             cProfesor.SelectedIndex = -1;
             tOpinion.Text = "";
             tMejora.Text = "";
+        }
+
+        private void cargarMaterial()
+        {
+            lArchivos.Items.Clear();
+
+            foreach(var a in BD.Select("select nombre from Archivo where idCurso = " + curso.id))
+            {
+                lArchivos.Items.Add((string)a[0]);
+            }
+        }
+
+        private void bSubirArchivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    var a = openFileDialog1.FileName;
+                    var b = a.Split(Path.DirectorySeparatorChar);
+                    var c = b[b.Length - 1];
+
+                    BD.Subir(a, c, curso.id);
+
+                    cargarMaterial();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido subir el archivo");
+            }
+        }
+
+        private void lArchivos_DoubleClick(object sender, EventArgs e)
+        {
+            if (lArchivos.SelectedIndex == -1) return;
+
+            BD.Descargar(null, (string)lArchivos.Items[lArchivos.SelectedIndex], curso.id);
+
+            MessageBox.Show("Se ha descargado el archivo en la carpeta Documentos");
+        }
+
+        private void bEliminarArchivo_Click(object sender, EventArgs e)
+        {
+            if (lArchivos.SelectedIndex == -1) return;
+
+            BD.Delete("delete from Archivo where nombre = '" + (string)lArchivos.Items[lArchivos.SelectedIndex] + "' and idCurso = " + curso.id);
+            cargarMaterial();
         }
     }
 }
