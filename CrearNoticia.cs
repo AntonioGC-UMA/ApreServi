@@ -53,7 +53,7 @@ namespace ApreServi
                     pImagen.Image = Image.FromFile(imagen);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
             }

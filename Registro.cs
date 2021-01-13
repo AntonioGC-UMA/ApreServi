@@ -68,7 +68,7 @@ namespace ApreServi
             {
                 var a = new MailAddress(correo, "To User");
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 MessageBox.Show("El correo no es válido");
                 return;
             }

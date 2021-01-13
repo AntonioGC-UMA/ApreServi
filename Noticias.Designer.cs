@@ -497,7 +497,6 @@ namespace ApreServi
         }
 
         #endregion
-        private System.Windows.Forms.Label noticias;
         private System.Windows.Forms.Button bAñadir;
         private System.Windows.Forms.Button bBorrar;
         private System.Windows.Forms.Button bCerrar;

@@ -325,7 +325,7 @@ namespace ApreServi
                     cargarMaterial();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("No se ha podido subir el archivo");
             }
