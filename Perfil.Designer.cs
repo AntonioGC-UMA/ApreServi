@@ -33,7 +33,7 @@ namespace ApreServi
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.titulo = new System.Windows.Forms.Label();
             this.bCerrarSesion = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pCara = new System.Windows.Forms.PictureBox();
             this.lNombre = new System.Windows.Forms.Label();
             this.lUsuario = new System.Windows.Forms.Label();
             this.lApellidos = new System.Windows.Forms.Label();
@@ -56,8 +56,10 @@ namespace ApreServi
             this.bEliminar = new System.Windows.Forms.Button();
             this.tBuscar = new System.Windows.Forms.TextBox();
             this.lUsuarios = new System.Windows.Forms.ListBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.bCambiarFoto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pCara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -103,15 +105,15 @@ namespace ApreServi
             this.bCerrarSesion.UseVisualStyleBackColor = false;
             this.bCerrarSesion.Click += new System.EventHandler(this.bCerrarSesion_Click);
             // 
-            // pictureBox1
+            // pCara
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(61, 142);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 61;
-            this.pictureBox1.TabStop = false;
+            this.pCara.Image = ((System.Drawing.Image)(resources.GetObject("pCara.Image")));
+            this.pCara.Location = new System.Drawing.Point(61, 142);
+            this.pCara.Name = "pCara";
+            this.pCara.Size = new System.Drawing.Size(126, 113);
+            this.pCara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pCara.TabIndex = 61;
+            this.pCara.TabStop = false;
             // 
             // lNombre
             // 
@@ -401,11 +403,32 @@ namespace ApreServi
             this.lUsuarios.TabIndex = 96;
             this.lUsuarios.Visible = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // bCambiarFoto
+            // 
+            this.bCambiarFoto.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCambiarFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCambiarFoto.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bCambiarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bCambiarFoto.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCambiarFoto.ForeColor = System.Drawing.Color.White;
+            this.bCambiarFoto.Location = new System.Drawing.Point(240, 184);
+            this.bCambiarFoto.Name = "bCambiarFoto";
+            this.bCambiarFoto.Size = new System.Drawing.Size(164, 26);
+            this.bCambiarFoto.TabIndex = 99;
+            this.bCambiarFoto.Text = "Cambiar foto";
+            this.bCambiarFoto.UseVisualStyleBackColor = false;
+            this.bCambiarFoto.Click += new System.EventHandler(this.bCambiarFoto_Click);
+            // 
             // Perfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1227, 661);
+            this.Controls.Add(this.bCambiarFoto);
             this.Controls.Add(this.bEliminar);
             this.Controls.Add(this.tBuscar);
             this.Controls.Add(this.lUsuarios);
@@ -422,7 +445,7 @@ namespace ApreServi
             this.Controls.Add(this.lApellidos);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.lNombre);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pCara);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.titulo);
@@ -432,7 +455,7 @@ namespace ApreServi
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pCara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -446,7 +469,7 @@ namespace ApreServi
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.Button bCerrarSesion;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pCara;
         private System.Windows.Forms.Label lNombre;
         private System.Windows.Forms.Label lUsuario;
         private System.Windows.Forms.Label lApellidos;
@@ -469,5 +492,7 @@ namespace ApreServi
         private System.Windows.Forms.Button bEliminar;
         private System.Windows.Forms.TextBox tBuscar;
         private System.Windows.Forms.ListBox lUsuarios;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button bCambiarFoto;
     }
 }

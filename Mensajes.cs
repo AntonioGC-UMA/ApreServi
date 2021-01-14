@@ -186,7 +186,20 @@ namespace ApreServi
         {
             if (lPersonas.SelectedIndex != -1)
             {
-                cargarMensajes((PersonaBD)lPersonas.Items[lPersonas.SelectedIndex]);
+                var per = (PersonaBD)lPersonas.Items[lPersonas.SelectedIndex];
+                cargarMensajes(per);
+
+                var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + per.usuario + "';");
+
+                if (i.Count > 0)
+                {
+                    pCara.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+                }
+                else
+                {
+                    pCara.Image = Properties.Resources.guest;
+                }
+
                 tMensaje.Text = "";
             }
         }

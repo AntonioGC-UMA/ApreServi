@@ -26,6 +26,13 @@ namespace ApreServi
                 cargarIntegrantes("");
             }
 
+            var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + instance.usuario + "';");
+
+            if(i.Count > 0)
+            {
+                pCara.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+            }
+            
             lUsuario.Text = instance.usuario;
             lNombre.Text = instance.nombre;
             lApellidos.Text = instance.apellido;
@@ -42,7 +49,10 @@ namespace ApreServi
 
         private void bNoticias_Click(object sender, EventArgs e)
         {
-            // TODO
+            Noticias ventana = new Noticias();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Close();
         }
 
         private void bCursos_Click(object sender, EventArgs e)
@@ -158,6 +168,55 @@ namespace ApreServi
         private void tBuscar_TextChanged(object sender, EventArgs e)
         {
             cargarIntegrantes(tBuscar.Text);
+        }
+
+        private void bCambiarFoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    string imagen = openFileDialog1.FileName;
+                    pCara.Image = Image.FromFile(imagen);
+
+                    var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+                    if (i.Count > 0)
+                    {
+                        var connection = BD.GetConnection();
+                        connection.Open();
+
+                        var cmd = new MySqlCommand("", connection);
+                        cmd.CommandText = "UPDATE ImagenPerfil SET imagen = @userImage WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';";
+                        var userImage = BD.ImageToByteArray(pCara.Image);
+                        var paramUserImage = new MySqlParameter("@userImage", MySqlDbType.Blob, userImage.Length);
+                        paramUserImage.Value = userImage;
+                        cmd.Parameters.Add(paramUserImage);
+
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                    else
+                    {
+                        var connection = BD.GetConnection();
+                        connection.Open();
+
+                        var cmd = new MySqlCommand("", connection);
+                        cmd.CommandText = "INSERT INTO ImagenPerfil VALUES('" + Usuario.getInstance().usuario + "', @userImage);";
+                        var userImage = BD.ImageToByteArray(pCara.Image);
+                        var paramUserImage = new MySqlParameter("@userImage", MySqlDbType.Blob, userImage.Length);
+                        paramUserImage.Value = userImage;
+                        cmd.Parameters.Add(paramUserImage);
+
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
         }
     }
 }
