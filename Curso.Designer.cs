@@ -75,6 +75,7 @@ namespace ApreServi
             this.bActividades = new System.Windows.Forms.Button();
             this.bIntegrantes = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.bModificarTest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -231,6 +232,7 @@ namespace ApreServi
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.bModificarTest);
             this.tabPage5.Controls.Add(this.bCalificaciones);
             this.tabPage5.Controls.Add(this.lTest);
             this.tabPage5.Controls.Add(this.bAñadirTest);
@@ -707,6 +709,23 @@ namespace ApreServi
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // bModificarTest
+            // 
+            this.bModificarTest.BackColor = System.Drawing.Color.SteelBlue;
+            this.bModificarTest.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bModificarTest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bModificarTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bModificarTest.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bModificarTest.ForeColor = System.Drawing.Color.White;
+            this.bModificarTest.Location = new System.Drawing.Point(227, 450);
+            this.bModificarTest.Name = "bModificarTest";
+            this.bModificarTest.Size = new System.Drawing.Size(104, 39);
+            this.bModificarTest.TabIndex = 83;
+            this.bModificarTest.Text = "Modificar";
+            this.bModificarTest.UseVisualStyleBackColor = false;
+            this.bModificarTest.Visible = false;
+            this.bModificarTest.Click += new System.EventHandler(this.bModificarTest_Click);
+            // 
             // Curso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -794,5 +813,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bEliminarArchivo;
         private System.Windows.Forms.Button bSubirArchivo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button bModificarTest;
     }
 }

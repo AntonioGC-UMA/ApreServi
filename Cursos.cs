@@ -156,9 +156,16 @@ namespace ApreServi
                 {
                     var curso = (CursoBD)lMisCursos.SelectedItem;
 
-                    BD.Delete("Curso", curso.id);
+                    if (curso.dueño.Equals(Usuario.getInstance().usuario) || Usuario.getInstance().admin)
+                    {
+                        BD.Delete("Curso", curso.id);
 
-                    cargarCursos();
+                        cargarCursos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No eres el propietario de este curso");
+                    }                    
                 }
 
                 if (lOtrosCursos.SelectedIndex != -1)

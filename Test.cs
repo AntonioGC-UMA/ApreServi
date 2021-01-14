@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -59,6 +60,7 @@ namespace ApreServi
 
         private void cargarPregunta(int numero)
         {
+            actual = numero;
             lNumero.Text = "Pregunta número: " + (numero + 1).ToString();
             cRespuestas.Items.Clear();
 
@@ -68,6 +70,9 @@ namespace ApreServi
             {
                 cRespuestas.Items.Add(opcion);
             }
+
+            if (respuestas[numero] != -1)
+                cRespuestas.SetItemChecked(respuestas[numero], true);
         }
 
         private void bForos_Click(object sender, EventArgs e)
@@ -190,28 +195,25 @@ namespace ApreServi
             {
                 bIzquierda.Visible = false;
             }
+            bDerecha.Visible = true;
             cargarPregunta(actual - 1);
         }
 
         private void bDerecha_Click(object sender, EventArgs e)
         {
-            if (actual == test.preguntas.Count - 1)
+            if (actual == test.preguntas.Count - 2)
             {
                 bDerecha.Visible = false;
             }
+            bIzquierda.Visible = true;
             cargarPregunta(actual + 1);
         }
 
         private void cRespuestas_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (e.NewValue != CheckState.Checked)
-            {
-                respuestas[actual] = -1;
-            }
-            else
-            {
-                respuestas[actual] = e.Index;
-            }
+            for (int ix = 0; ix < cRespuestas.Items.Count; ++ix)
+                if (ix != e.Index) cRespuestas.SetItemChecked(ix, false);
+            respuestas[actual] = e.Index;
         }
 
         private void bFinalizar_Click(object sender, EventArgs e)
@@ -231,7 +233,7 @@ namespace ApreServi
                 nota /= respuestas.Length;
                 nota *= 10;
 
-                BD.Insert("INSERT INTO Puntuacion VALUES('" + Usuario.getInstance().usuario + "'," + test.id + "," + nota + ")");
+                BD.Insert("INSERT INTO Puntuacion VALUES('" + Usuario.getInstance().usuario + "'," + test.id + "," + nota.ToString(new CultureInfo("en-US")) + ")");
 
                 this.Close();
             }

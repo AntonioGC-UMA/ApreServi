@@ -21,6 +21,12 @@ namespace ApreServi
             this.actividad = actividad;
             this.lUsuario.Text = Usuario.getInstance().usuario;
 
+            if (curso == null)
+            {
+                lCalificacion.Visible = false;
+                label9.Visible = false;
+            }
+
             cargarIntegrantes("");
 
             lUser.Text = "";
@@ -63,7 +69,8 @@ namespace ApreServi
             lApellidos.Text = persona.apellido;
             lCorreo.Text = persona.correo;
 
-            //TODO CALIFICACIONES
+            if(curso != null)
+                lCalificacion.Text = BD.Select(String.Format("SELECT AVG(p.nota) FROM Puntuacion p JOIN Test t ON p.idTest = t.idTest  WHERE p.nombreUsuario = '{0}' AND t.idCurso = {1};", persona.usuario, curso.id))[0][0].ToString(); 
         }
 
 

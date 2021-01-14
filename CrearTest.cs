@@ -14,11 +14,26 @@ namespace ApreServi
         List<PreguntaBD> preguntas = new List<PreguntaBD>();
 
         CursoBD curso;
+        TestBD test;
 
-        public CrearTest(CursoBD c)
+        public CrearTest(CursoBD c, TestBD t)
         {
-            curso = c;
             InitializeComponent();
+
+            curso = c;
+            test = t;
+
+            if(test != null)
+            {
+                preguntas = test.preguntas;
+
+                tNombreTest.Text = test.nombre;
+
+                foreach(var p in preguntas)
+                {
+                    lPreguntas.Items.Add(p);
+                }
+            }            
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
@@ -28,7 +43,11 @@ namespace ApreServi
 
         private void bCrear_Click(object sender, EventArgs e)
         {
-      
+            if(test != null)
+            {
+                BD.Delete("delete from Test where idTest = " + test.id);
+            }
+
             BD.Insert(new TestBD(-1, curso.id, tNombreTest.Text, preguntas));
 
 

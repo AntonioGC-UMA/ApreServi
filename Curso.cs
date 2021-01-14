@@ -35,6 +35,7 @@ namespace ApreServi
                 bBorrarForo.Visible = true;
                 bSubirArchivo.Visible = true;
                 bEliminarArchivo.Visible = true;
+                bModificarTest.Visible = true;
 
                 tDescripcion.ReadOnly = false;
                 bIntegrantes.Visible = true;
@@ -75,7 +76,7 @@ namespace ApreServi
                 foreach(var p in BD.Select("select * from Pregunta p where p.idTest = " + (int)elm[0]))
                 {
                     var opciones = new List<string>();
-                    foreach (var o in BD.Select("select * from Opcion o where o.numPregunta = " + (int)p[0]))
+                    foreach (var o in BD.Select("select * from Opcion o where o.numPregunta = " + (int)p[0] + " and o.idTest = " + (int)elm[0]))
                         opciones.Add((string)o[3]);
 
                     preguntas.Add(new PreguntaBD((int)p[0], (int)p[1], (string)p[2], opciones, (int)p[3]));
@@ -151,7 +152,7 @@ namespace ApreServi
 
         private void bAñadir_Click(object sender, EventArgs e)
         {
-            CrearTest ventana = new CrearTest(curso);
+            CrearTest ventana = new CrearTest(curso, null);
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
@@ -218,7 +219,7 @@ namespace ApreServi
 
         private void lTest_SelectedIndexChanged(object sender, EventArgs e)
         {
-           var test_seleccionado = (TestBD)lTest.SelectedItem;
+            var test_seleccionado = (TestBD)lTest.SelectedItem;
 
             if (test_seleccionado == null) return;
 
@@ -346,6 +347,25 @@ namespace ApreServi
 
             BD.Delete("delete from Archivo where nombre = '" + (string)lArchivos.Items[lArchivos.SelectedIndex] + "' and idCurso = " + curso.id);
             cargarMaterial();
+        }
+
+        private void bModificarTest_Click(object sender, EventArgs e)
+        {
+            var test_seleccionado = (TestBD)lTest.SelectedItem;
+
+            if (test_seleccionado == null) return;
+
+            CrearTest ventana = new CrearTest(curso, test_seleccionado);
+            this.Visible = false;
+            ventana.ShowDialog();
+            if (!Usuario.hasInstance())
+            {
+                this.Close();
+            }
+            else
+            {
+                this.Visible = true;
+            }
         }
     }
 }

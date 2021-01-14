@@ -309,9 +309,8 @@ namespace ApreServi
             this.lCalificacion.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lCalificacion.Location = new System.Drawing.Point(844, 419);
             this.lCalificacion.Name = "lCalificacion";
-            this.lCalificacion.Size = new System.Drawing.Size(68, 23);
+            this.lCalificacion.Size = new System.Drawing.Size(0, 23);
             this.lCalificacion.TabIndex = 87;
-            this.lCalificacion.Text = "label6";
             // 
             // label9
             // 

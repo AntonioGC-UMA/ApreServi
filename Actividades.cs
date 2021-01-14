@@ -155,9 +155,16 @@ namespace ApreServi
                 {
                     var actividad = (ActividadBD)lMisActividades.SelectedItem;
 
-                    BD.Delete("Actividad", actividad.id);
+                    if (actividad.dueño.Equals(Usuario.getInstance().usuario) || Usuario.getInstance().admin)
+                    {
+                        BD.Delete("Actividad", actividad.id);
 
-                    cargarActividades();
+                        cargarActividades();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No eres el propietario de esta actividad");
+                    }
                 }
 
                 if (lOtrasActividades.SelectedIndex != -1)

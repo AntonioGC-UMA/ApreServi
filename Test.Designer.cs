@@ -409,6 +409,7 @@ namespace ApreServi
             // cRespuestas
             // 
             this.cRespuestas.BackColor = System.Drawing.Color.AliceBlue;
+            this.cRespuestas.CheckOnClick = true;
             this.cRespuestas.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cRespuestas.FormattingEnabled = true;
             this.cRespuestas.Location = new System.Drawing.Point(52, 391);
