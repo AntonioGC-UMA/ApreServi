@@ -30,9 +30,7 @@ namespace ApreServi
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PantallaInicioSesionIniciada));
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.bPerfil = new System.Windows.Forms.Button();
-            this.noticias = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,21 +44,15 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.fNoticias = new System.Windows.Forms.FlowLayoutPanel();
+            this.lForos = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bMensajes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.listBox1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 23;
-            this.listBox1.Location = new System.Drawing.Point(12, 178);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(902, 441);
-            this.listBox1.TabIndex = 14;
             // 
             // bPerfil
             // 
@@ -77,19 +69,6 @@ namespace ApreServi
             this.bPerfil.Text = "Mi perfil";
             this.bPerfil.UseVisualStyleBackColor = false;
             this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click_1);
-            // 
-            // noticias
-            // 
-            this.noticias.AutoSize = true;
-            this.noticias.BackColor = System.Drawing.Color.DodgerBlue;
-            this.noticias.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.noticias.ForeColor = System.Drawing.Color.White;
-            this.noticias.Location = new System.Drawing.Point(12, 132);
-            this.noticias.Name = "noticias";
-            this.noticias.Padding = new System.Windows.Forms.Padding(20, 10, 684, 10);
-            this.noticias.Size = new System.Drawing.Size(902, 43);
-            this.noticias.TabIndex = 9;
-            this.noticias.Text = "Noticias destacadas";
             // 
             // titulo
             // 
@@ -120,7 +99,7 @@ namespace ApreServi
             this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(999, 179);
+            this.label1.Location = new System.Drawing.Point(564, 120);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(20, 10, 17, 10);
             this.label1.Size = new System.Drawing.Size(187, 34);
@@ -129,7 +108,7 @@ namespace ApreServi
             // 
             // mCalendario
             // 
-            this.mCalendario.Location = new System.Drawing.Point(998, 216);
+            this.mCalendario.Location = new System.Drawing.Point(559, 163);
             this.mCalendario.Name = "mCalendario";
             this.mCalendario.TabIndex = 19;
             this.mCalendario.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
@@ -277,22 +256,88 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
+            // fNoticias
+            // 
+            this.fNoticias.BackColor = System.Drawing.Color.White;
+            this.fNoticias.Location = new System.Drawing.Point(12, 199);
+            this.fNoticias.Name = "fNoticias";
+            this.fNoticias.Size = new System.Drawing.Size(480, 417);
+            this.fNoticias.TabIndex = 79;
+            // 
+            // lForos
+            // 
+            this.lForos.BackColor = System.Drawing.Color.White;
+            this.lForos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lForos.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lForos.FormattingEnabled = true;
+            this.lForos.ItemHeight = 23;
+            this.lForos.Location = new System.Drawing.Point(523, 399);
+            this.lForos.Name = "lForos";
+            this.lForos.Size = new System.Drawing.Size(596, 257);
+            this.lForos.TabIndex = 78;
+            this.lForos.SelectedIndexChanged += new System.EventHandler(this.lForos_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(514, 355);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(188, 0, 189, 10);
+            this.label3.Size = new System.Drawing.Size(605, 42);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Foros generales";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label4.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 163);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(74, 0, 74, 0);
+            this.label4.Size = new System.Drawing.Size(428, 32);
+            this.label4.TabIndex = 75;
+            this.label4.Text = "Noticias destacadas";
+            // 
+            // bMensajes
+            // 
+            this.bMensajes.BackColor = System.Drawing.Color.SteelBlue;
+            this.bMensajes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMensajes.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bMensajes.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bMensajes.ForeColor = System.Drawing.Color.White;
+            this.bMensajes.Location = new System.Drawing.Point(902, 194);
+            this.bMensajes.Name = "bMensajes";
+            this.bMensajes.Size = new System.Drawing.Size(250, 135);
+            this.bMensajes.TabIndex = 80;
+            this.bMensajes.Text = "Mensajes";
+            this.bMensajes.UseVisualStyleBackColor = false;
+            this.bMensajes.Click += new System.EventHandler(this.bMensajes_Click);
+            // 
             // PantallaInicioSesionIniciada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.bMensajes);
+            this.Controls.Add(this.fNoticias);
+            this.Controls.Add(this.lForos);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.bCerrarSesion);
             this.Controls.Add(this.lUsuario);
             this.Controls.Add(this.mCalendario);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.noticias);
             this.Controls.Add(this.titulo);
             this.MaximizeBox = false;
             this.Name = "PantallaInicioSesionIniciada";
@@ -307,9 +352,7 @@ namespace ApreServi
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button bPerfil;
-        private System.Windows.Forms.Label noticias;
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
@@ -323,5 +366,10 @@ namespace ApreServi
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.FlowLayoutPanel fNoticias;
+        private System.Windows.Forms.ListBox lForos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button bMensajes;
     }
 }

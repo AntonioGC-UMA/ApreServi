@@ -44,6 +44,9 @@ namespace ApreServi
             this.bCursos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
             this.fNoticias = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -253,12 +256,47 @@ namespace ApreServi
             this.fNoticias.Size = new System.Drawing.Size(480, 417);
             this.fNoticias.TabIndex = 74;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label2.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(45, 148);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(74, 0, 74, 0);
+            this.label2.Size = new System.Drawing.Size(428, 32);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Noticias destacadas";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(564, 148);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(188, 0, 189, 10);
+            this.label3.Size = new System.Drawing.Size(605, 42);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Foros generales";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 184);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(480, 417);
+            this.flowLayoutPanel1.TabIndex = 74;
+            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.fNoticias);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.pApreservi);
@@ -266,7 +304,9 @@ namespace ApreServi
             this.Controls.Add(this.lForos);
             this.Controls.Add(this.bRegistrarse);
             this.Controls.Add(this.bIniciarSesion);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.noticias);
             this.Controls.Add(this.titulo);
             this.MaximizeBox = false;
@@ -297,6 +337,9 @@ namespace ApreServi
         private System.Windows.Forms.Button bCursos;
         private System.Windows.Forms.Button bActividades;
         private System.Windows.Forms.FlowLayoutPanel fNoticias;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
