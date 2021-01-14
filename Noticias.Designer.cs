@@ -58,6 +58,7 @@ namespace ApreServi
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.bEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -455,12 +456,30 @@ namespace ApreServi
             this.label3.TabIndex = 74;
             this.label3.Text = "label3";
             // 
+            // bEditar
+            // 
+            this.bEditar.BackColor = System.Drawing.Color.SteelBlue;
+            this.bEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.bEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bEditar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bEditar.ForeColor = System.Drawing.Color.White;
+            this.bEditar.Location = new System.Drawing.Point(288, 613);
+            this.bEditar.Name = "bEditar";
+            this.bEditar.Size = new System.Drawing.Size(97, 36);
+            this.bEditar.TabIndex = 74;
+            this.bEditar.Text = "Editar";
+            this.bEditar.UseVisualStyleBackColor = false;
+            this.bEditar.Visible = false;
+            this.bEditar.Click += new System.EventHandler(this.bEditar_Click);
+            // 
             // Noticias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.bEditar);
             this.Controls.Add(this.fNoticias);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.pApreservi);
@@ -525,5 +544,6 @@ namespace ApreServi
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button bEditar;
     }
 }

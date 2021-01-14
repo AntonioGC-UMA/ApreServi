@@ -31,6 +31,7 @@ namespace ApreServi
                 {
                     bAñadir.Visible = true;
                     bBorrar.Visible = true;
+                    bEditar.Visible = true;
                 }
             }
             else
@@ -173,7 +174,7 @@ namespace ApreServi
 
         private void bAñadir_Click(object sender, EventArgs e)
         {
-            CrearNoticia ventana = new CrearNoticia();
+            CrearNoticia ventana = new CrearNoticia(null);
             this.Visible = false;
             ventana.ShowDialog();
             cargarNoticias();
@@ -242,6 +243,24 @@ namespace ApreServi
             }
             if (lista != "")
                 MessageBox.Show(lista);
+        }
+
+        private void bEditar_Click(object sender, EventArgs e)
+        {
+            if (seleccionada != null)
+            {
+                CrearNoticia ventana = new CrearNoticia(seleccionada);
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Visible = true;
+
+
+                cargarNoticias();
+            }
+
+            seleccionada = null;
+            selected = null;
+
         }
     }
 }

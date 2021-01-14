@@ -46,7 +46,6 @@ namespace ApreServi
             this.fNoticias = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -282,21 +281,12 @@ namespace ApreServi
             this.label3.TabIndex = 2;
             this.label3.Text = "Foros generales";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(45, 184);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(480, 417);
-            this.flowLayoutPanel1.TabIndex = 74;
-            // 
             // PantallaInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.fNoticias);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.pApreservi);
@@ -339,7 +329,6 @@ namespace ApreServi
         private System.Windows.Forms.FlowLayoutPanel fNoticias;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 

@@ -11,9 +11,20 @@ namespace ApreServi
 {
     public partial class CrearNoticia : Form
     {
-        public CrearNoticia()
+        NoticiaBD noticia;
+
+        public CrearNoticia(NoticiaBD n)
         {
             InitializeComponent();
+
+            noticia = n;
+
+            if(noticia != null)
+            {
+                tCuerpo.Text = noticia.cuerpo;
+                tTitular.Text = noticia.titulo;
+                pImagen.Image = n.image;
+            }
         }
 
         private void bCancelar_Click(object sender, EventArgs e)
@@ -35,10 +46,25 @@ namespace ApreServi
                 return;
             }
 
-            BD.Insert(new NoticiaBD(-1, tCuerpo.Text, tTitular.Text, Usuario.getInstance().usuario, pImagen.Image, DateTime.Now));
+            if(noticia != null)
+            {
+                var connection = BD.GetConnection();
+                connection.Open();
 
+                var cmd = new MySqlCommand("", connection);
+                cmd.CommandText = String.Format("UPDATE Noticia SET titular = '{0}', cuerpo = '{1}', imagen = @userImage, fechaPublicacion = '{2}' WHERE id = '{3}';", tTitular.Text, tCuerpo.Text, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), noticia.id);
+                var userImage = BD.ImageToByteArray(pImagen.Image);
+                var paramUserImage = new MySqlParameter("@userImage", MySqlDbType.Blob, userImage.Length);
+                paramUserImage.Value = userImage;
+                cmd.Parameters.Add(paramUserImage);
 
-           // BD.Insert(new CursoBD(-1, tNombreCurso.Text, tDescripcion.Text, dInicio.Value, dFin.Value, Usuario.getInstance().usuario));
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            else
+            {
+                BD.Insert(new NoticiaBD(-1, tCuerpo.Text, tTitular.Text, Usuario.getInstance().usuario, pImagen.Image, DateTime.Now));
+            }
             
             this.Close();
         }
