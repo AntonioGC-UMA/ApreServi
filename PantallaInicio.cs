@@ -160,7 +160,10 @@ namespace ApreServi
 
         private void bAyuda_Click(object sender, EventArgs e)
         {
-
+            Ayuda ventana = new Ayuda();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
 
         private void pApreservi_Click(object sender, EventArgs e)

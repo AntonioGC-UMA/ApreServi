@@ -196,7 +196,6 @@ namespace ApreServi
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
-            this.bAyuda.Visible = false;
             this.bAyuda.Click += new System.EventHandler(this.bAyuda_Click);
             // 
             // bNoticias
