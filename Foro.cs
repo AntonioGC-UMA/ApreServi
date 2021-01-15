@@ -47,7 +47,7 @@ namespace ApreServi
                 bCerrarSesion.Visible = true;
                 bAtras.Visible = true;
                 var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
-
+                
                 if (i.Count > 0)
                 {
                     pImagen.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
@@ -59,6 +59,8 @@ namespace ApreServi
                 bIniciarSesion.Visible = true;
                 bRegistrarse.Visible = true;
             }
+
+            tDescripcion.Text = foro.descripcion;
 
             update();
         }

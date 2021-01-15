@@ -93,7 +93,9 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
-          
+            cargarForos();
+            cargarNoticias();
+
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,6 +125,8 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+            cargarForos();
+            cargarNoticias();
         }
 
         private void bSalir_Click(object sender, EventArgs e)
@@ -141,6 +145,8 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+            cargarForos();
+            cargarNoticias();
         }
 
         private void bCursos_Click(object sender, EventArgs e)
@@ -149,6 +155,9 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+
+            cargarForos();
+            cargarNoticias();
         }
 
         private void bActividades_Click(object sender, EventArgs e)
@@ -157,6 +166,9 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+
+            cargarForos();
+            cargarNoticias();
         }
 
         private void bAyuda_Click(object sender, EventArgs e)
@@ -165,6 +177,9 @@ namespace ApreServi
             this.Visible = false;
             ventana.ShowDialog();
             this.Visible = true;
+
+            cargarForos();
+            cargarNoticias();
         }
 
         private void pApreservi_Click(object sender, EventArgs e)

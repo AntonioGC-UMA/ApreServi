@@ -56,6 +56,7 @@ namespace ApreServi
             this.bNoticias = new System.Windows.Forms.Button();
             this.bForos = new System.Windows.Forms.Button();
             this.bActividades = new System.Windows.Forms.Button();
+            this.tDescripcion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -66,7 +67,7 @@ namespace ApreServi
             this.lPosts.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lPosts.FormattingEnabled = true;
             this.lPosts.ItemHeight = 14;
-            this.lPosts.Location = new System.Drawing.Point(22, 167);
+            this.lPosts.Location = new System.Drawing.Point(22, 238);
             this.lPosts.Name = "lPosts";
             this.lPosts.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lPosts.Size = new System.Drawing.Size(841, 284);
@@ -80,14 +81,14 @@ namespace ApreServi
             this.lableTitulo.ForeColor = System.Drawing.Color.White;
             this.lableTitulo.Location = new System.Drawing.Point(22, 121);
             this.lableTitulo.Name = "lableTitulo";
-            this.lableTitulo.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.lableTitulo.Padding = new System.Windows.Forms.Padding(10);
             this.lableTitulo.Size = new System.Drawing.Size(101, 43);
             this.lableTitulo.TabIndex = 60;
             this.lableTitulo.Text = "Foro \'x\'";
             // 
             // tRespuesta
             // 
-            this.tRespuesta.Location = new System.Drawing.Point(22, 480);
+            this.tRespuesta.Location = new System.Drawing.Point(22, 544);
             this.tRespuesta.Multiline = true;
             this.tRespuesta.Name = "tRespuesta";
             this.tRespuesta.Size = new System.Drawing.Size(692, 72);
@@ -101,7 +102,7 @@ namespace ApreServi
             this.bEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEnviar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bEnviar.ForeColor = System.Drawing.Color.White;
-            this.bEnviar.Location = new System.Drawing.Point(747, 501);
+            this.bEnviar.Location = new System.Drawing.Point(738, 563);
             this.bEnviar.Name = "bEnviar";
             this.bEnviar.Size = new System.Drawing.Size(79, 33);
             this.bEnviar.TabIndex = 62;
@@ -428,12 +429,21 @@ namespace ApreServi
             this.bActividades.UseVisualStyleBackColor = false;
             this.bActividades.Click += new System.EventHandler(this.bActividades_Click);
             // 
+            // tDescripcion
+            // 
+            this.tDescripcion.Location = new System.Drawing.Point(22, 177);
+            this.tDescripcion.Multiline = true;
+            this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.Size = new System.Drawing.Size(841, 55);
+            this.tDescripcion.TabIndex = 81;
+            // 
             // Foro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
+            this.Controls.Add(this.tDescripcion);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pApreservi);
             this.Controls.Add(this.bAtras);
@@ -490,5 +500,6 @@ namespace ApreServi
         private System.Windows.Forms.Button bNoticias;
         private System.Windows.Forms.Button bForos;
         private System.Windows.Forms.Button bActividades;
+        private System.Windows.Forms.TextBox tDescripcion;
     }
 }
