@@ -108,7 +108,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace ApreServi
 
             var nombre = Usuario.getInstance().usuario;
 
-            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = 'nieto';"))
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
             {
                 lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
             }

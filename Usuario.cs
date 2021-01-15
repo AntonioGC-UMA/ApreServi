@@ -25,13 +25,14 @@ namespace ApreServi
             if (instance == null) return new List<(DateTime dia, string descripcion)>();
 
             List<(DateTime dia, string descripcion)> res = new List<(DateTime dia, string descripcion)>();
+            string nombre = Usuario.getInstance().usuario;
 
-            foreach (var elem in BD.Select("select * from Actividad a join Inscripcion i on a.id = i.idActividad where i.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
             {
                 res.Add(((DateTime)elem[3], "Comienza la actividad: " + (string)elem[1]));
                 res.Add(((DateTime)elem[4], "Termina la actividad: " + (string)elem[1]));
             }
-            foreach (var elem in BD.Select("select * from Curso c join Matricula m on c.id = m.idCurso where m.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
             {
                 res.Add(((DateTime)elem[3], "Comienza el curso: " + (string)elem[1]));
                 res.Add(((DateTime)elem[4], "Termina el curso: " + (string)elem[1]));

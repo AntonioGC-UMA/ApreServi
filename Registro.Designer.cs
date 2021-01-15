@@ -203,7 +203,7 @@ namespace ApreServi
             this.cbRol.Items.AddRange(new object[] {
             "Usuario",
             "Profesor",
-            "ONG"});
+            "Organización"});
             this.cbRol.Location = new System.Drawing.Point(684, 133);
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(121, 23);

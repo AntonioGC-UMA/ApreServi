@@ -73,6 +73,7 @@ namespace ApreServi
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             picture.Width = 200;
             picture.Height = 180;
+            picture.Cursor = Cursors.Hand;
             
 
             picture.Click += (object sender, EventArgs e) =>
@@ -125,7 +126,7 @@ namespace ApreServi
         private void cargarNoticias()
         {
             fNoticias.Controls.Clear();
-            foreach (var n in BD.Select("SELECT * FROM Noticia ORDER BY fechaPublicacion LIMIT 6"))
+            foreach (var n in BD.Select("SELECT * FROM Noticia ORDER BY fechaPublicacion DESC LIMIT 6"))
             {
                 cargarNoticia(new NoticiaBD((int)n[0], (string)n[2], (string)n[1], (string)n[5], GetImageFromByteArray((byte[])n[3]), (DateTime)n[4]));
             }
@@ -160,7 +161,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)

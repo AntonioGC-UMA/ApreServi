@@ -108,7 +108,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
@@ -134,13 +134,13 @@ namespace ApreServi
             lMisActividades.Items.Clear();
             lOtrasActividades.Items.Clear();
             this.lUsuario.Text = Usuario.getInstance().usuario;
+            var nombre = Usuario.getInstance().usuario;
 
-
-            foreach (var elem in BD.Select("select * from Actividad a join Inscripcion i on a.id = i.idActividad where i.nombreUsuario = '" + Usuario.getInstance().usuario + "';"))
+            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
             {
                 lMisActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            foreach (var elem in BD.Select("select * from Actividad where id not in (select a.id from Actividad a join Inscripcion i on a.id = i.idActividad where i.nombreUsuario = '" + Usuario.getInstance().usuario + "');"))
+            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id NOT IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') AND a.propietario != '" + nombre + "';"))
             {
                 lOtrasActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }

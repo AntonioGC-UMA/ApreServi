@@ -63,7 +63,7 @@ namespace ApreServi
             foreach (var persona in personas)
             {
                 Correo.Enviar((string)persona[1], "Nuevo curso disponible",
-                    "Buenas,\nEn Apreservi se acaba de introducir un nuevo curso que podría ser de su interés: " + tNombreCurso.Text
+                    "Saludos,\nEn Apreservi se acaba de introducir un nuevo curso que podría ser de su interés: " + tNombreCurso.Text
                     + ".\nEste curso empieza el " + dInicio.Value + ". Si es de su interés, acceda a Apreservi y regístrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
                     + tDescripcion.Text);
                 Console.WriteLine(persona[1] + "\n");

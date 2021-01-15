@@ -88,7 +88,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bAbandonar_Click(object sender, EventArgs e)

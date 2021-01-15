@@ -274,7 +274,7 @@ namespace ApreServi
             this.lForos.Name = "lForos";
             this.lForos.Size = new System.Drawing.Size(382, 418);
             this.lForos.TabIndex = 78;
-            this.lForos.SelectedIndexChanged += new System.EventHandler(this.lForos_SelectedIndexChanged);
+            this.lForos.DoubleClick += new System.EventHandler(this.lForos_SelectedIndexChanged);
             // 
             // label3
             // 

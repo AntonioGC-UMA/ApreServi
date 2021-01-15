@@ -92,7 +92,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bEnviar_Click(object sender, EventArgs e)
@@ -119,11 +119,6 @@ namespace ApreServi
         {
             Usuario.cerrarSesion();
             this.Close();
-        }
-
-        private void bPerfil_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void bCerrar_Click(object sender, EventArgs e)

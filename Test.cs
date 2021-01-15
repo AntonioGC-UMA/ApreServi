@@ -83,46 +83,71 @@ namespace ApreServi
 
         private void bForos_Click(object sender, EventArgs e)
         {
-            ForosGenerales ventana = new ForosGenerales();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                ForosGenerales ventana = new ForosGenerales();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
         private void bNoticias_Click(object sender, EventArgs e)
         {
-            Noticias ventana = new Noticias();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Noticias ventana = new Noticias();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
         private void bCursos_Click(object sender, EventArgs e)
         {
-            Cursos ventana = new Cursos();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Cursos ventana = new Cursos();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
+            
 
         private void bAyuda_Click(object sender, EventArgs e)
         {
-            Ayuda ventana = new Ayuda();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Visible = true;
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Ayuda ventana = new Ayuda();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
         {
-            Usuario.cerrarSesion();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Usuario.cerrarSesion();
+                this.Close();
+            }
         }
 
         private void bCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void bIniciarSesion_Click(object sender, EventArgs e)
@@ -152,15 +177,23 @@ namespace ApreServi
 
         private void bAtrasCurso_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void bActividades_Click(object sender, EventArgs e)
         {
-            Actividades ventana = new Actividades();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Actividades ventana = new Actividades();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
         private void pApreservi_Click(object sender, EventArgs e)
@@ -180,10 +213,14 @@ namespace ApreServi
 
         private void bPerfil_Click_1(object sender, EventArgs e)
         {
-            Perfil ventana = new Perfil();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("¿Seguro que quiere abandonar el cuestionario?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Perfil ventana = new Perfil();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
         private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)

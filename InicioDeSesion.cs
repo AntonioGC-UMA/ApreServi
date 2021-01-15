@@ -70,7 +70,7 @@ namespace ApreServi
 
             if (nombre.Length == 0)
             {
-                MessageBox.Show("Introduce el nombre de usuario de la cuenta cuya contraseña qieres recuperar");
+                MessageBox.Show("Introduce el nombre de usuario de la cuenta cuya contraseña quieres recuperar");
                 return;
             }
 
@@ -82,7 +82,7 @@ namespace ApreServi
                 var correo = (string)elem[1];
                 var contraseña = (string)elem[2];
 
-                Correo.Enviar(correo, "Recuperar contraseña", "La contraseña es : " + contraseña);
+                Correo.Enviar(correo, "Recuperar contraseña", "Saludos,\nUsted ha solicitado la recuperación de la contraseña de su cuenta Apreservi.\nSu contraseña es : " + contraseña);
 
                 MessageBox.Show("Se ha enviado la contraseña a la cuenta de correo asociada");
             }

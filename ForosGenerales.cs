@@ -89,7 +89,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)

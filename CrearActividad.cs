@@ -64,7 +64,7 @@ namespace ApreServi
             foreach (var persona in personas)
             {
                 Correo.Enviar((string)persona[1], "Nueva actividad disponible",
-                    "Buenas,\nEn Apreservi se acaba de introducir una nueva actividad que podría ser de su interés: " + tNombreActividad.Text
+                    "Saludos,\nEn Apreservi se acaba de introducir una nueva actividad que podría ser de su interés: " + tNombreActividad.Text
                     + ".\nEsta actividad empieza el " + dInicio.Value + ". Si es de su interés, acceda a Apreservi y regístrese sin ningún problema. Esperamos que sea de su agrado.\n\n"
                     + tDescripcion.Text);
                 Console.WriteLine(persona[1] + "\n");

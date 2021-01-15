@@ -68,7 +68,7 @@ namespace ApreServi
             Ayuda ventana = new Ayuda();
             this.Visible = false;
             ventana.ShowDialog();
-            this.Visible = true;
+            this.Close();
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
@@ -86,10 +86,17 @@ namespace ApreServi
         private void bCambiarContraseña_Click(object sender, EventArgs e)
         {
             var contraseña = tContraseña.Text;
+            var contraseña2 = tContraseña2.Text;
 
             if (contraseña.Length == 0)
             {
                 MessageBox.Show("La nueva contraseña no puede ser nula");
+                return;
+            }
+
+            if (!contraseña.Equals(contraseña2))
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
                 return;
             }
 
@@ -98,6 +105,8 @@ namespace ApreServi
             BD.Update("update Usuario set contraseña = '" + contraseña + "' where nombreUsuario = '" + instance.usuario + "'");
 
             instance.contraseña = contraseña;
+
+            MessageBox.Show("Se ha actualizado la contraseña de tu cuenta");
         }
 
         private void pApreservi_Click(object sender, EventArgs e)
@@ -219,6 +228,46 @@ namespace ApreServi
             catch (Exception)
             {
                 MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido");
+            }
+        }
+
+        private void tContraseña_MouseLeave(object sender, EventArgs e)
+        {
+            if(tContraseña.Text.Length == 0)
+            {
+                tContraseña.ForeColor = Color.Gray;
+                tContraseña.Text = "Introduzca la nueva contraseña";
+                tContraseña.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void tContraseña2_MouseLeave(object sender, EventArgs e)
+        {
+            if (tContraseña2.Text.Length == 0)
+            {
+                tContraseña2.ForeColor = Color.Gray;
+                tContraseña2.Text = "Repita la nueva contraseña";
+                tContraseña2.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void tContraseña2_MouseEnter(object sender, EventArgs e)
+        {
+            if ((tContraseña2.Text).Equals("Repita la nueva contraseña"))
+            {
+                tContraseña2.Text = "";
+                tContraseña2.ForeColor = SystemColors.WindowText;
+                tContraseña2.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void tContraseña_MouseEnter(object sender, EventArgs e)
+        {   
+            if((tContraseña.Text).Equals("Introduzca la nueva contraseña"))
+            {
+                tContraseña.Text = "";
+                tContraseña.ForeColor = SystemColors.WindowText;
+                tContraseña.UseSystemPasswordChar = true;
             }
         }
     }
