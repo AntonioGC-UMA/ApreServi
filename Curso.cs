@@ -23,6 +23,12 @@ namespace ApreServi
             this.tDescripcion.Text = curso.descripcion;
 
             var lista = BD.Select("select * from Curso c where c.propietario ='" + Usuario.getInstance().usuario + "' and c.id =" + curso.id);
+            var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+            if (i.Count > 0)
+            {
+                pictureBox1.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+            }
 
             if (lista.Count > 0 || Usuario.getInstance().admin)
             {

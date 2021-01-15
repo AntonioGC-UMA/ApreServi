@@ -14,6 +14,31 @@ namespace ApreServi
         public Ayuda()
         {
             InitializeComponent();
+
+            
+            bCursos.Visible = true;
+            
+            
+           
+            if (Usuario.hasInstance())
+            {
+                this.lUsuario.Text = Usuario.getInstance().usuario;
+                lUsuario.Visible = true;
+                bPerfil.Visible = true;
+                pImagen.Visible = true;
+                bCerrarSesion.Visible = true;
+                var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+               
+                if (i.Count > 0)
+                {
+                    pImagen.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+                }
+            }
+            else
+            {
+                bIniciarSesion.Visible = true;
+                bRegistrarse.Visible = true;
+            }
         }
 
 

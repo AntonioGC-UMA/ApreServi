@@ -20,6 +20,12 @@ namespace ApreServi
             this.curso = curso;
             this.actividad = actividad;
             this.lUsuario.Text = Usuario.getInstance().usuario;
+            var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+            if (i.Count > 0)
+            {
+                pictureBox1.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+            }
 
             if (curso == null)
             {

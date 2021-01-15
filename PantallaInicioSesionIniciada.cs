@@ -15,6 +15,12 @@ namespace ApreServi
             InitializeComponent();
 
             lUsuario.Text = Usuario.getInstance().usuario;
+            var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+            if (i.Count > 0)
+            {
+                pictureBox1.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+            }
 
             foreach (var a in Usuario.get_eventos())
             {

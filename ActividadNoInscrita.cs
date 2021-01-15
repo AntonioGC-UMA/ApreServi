@@ -22,6 +22,12 @@ namespace ApreServi
 
             if (Usuario.hasInstance())
             {
+                var i = BD.Select("SELECT imagen FROM ImagenPerfil WHERE nombreUsuario = '" + Usuario.getInstance().usuario + "';");
+
+                if (i.Count > 0)
+                {
+                    pImagen.Image = Noticias.GetImageFromByteArray((byte[])(i[0][0]));
+                }
                 this.lUsuario.Text = Usuario.getInstance().usuario;
 
                 bCerrarSesion.Visible = true;
