@@ -137,24 +137,14 @@ namespace ApreServi
 
             var nombre = Usuario.getInstance().usuario;
 
-            if(Usuario.getInstance().admin)
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
             {
-                foreach (var elem in BD.Select("select * from Curso;"))
-                {
-                    lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
-                }
+                lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
             }
-            else
+            foreach (var elem in BD.Select("select * from Curso c WHERE c.id NOT IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') AND c.propietario != '" + nombre + "';"))
             {
-                foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
-                {
-                    lMisCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
-                }
-                foreach (var elem in BD.Select("select * from Curso c WHERE c.id NOT IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') AND c.propietario != '" + nombre + "';"))
-                {
-                    lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
-                }
-            }           
+                lOtrosCursos.Items.Add(new CursoBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4], (string)elem[5]));
+            }
         }
 
         private void bCrearCurso_Click(object sender, EventArgs e)

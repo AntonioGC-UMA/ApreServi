@@ -136,25 +136,14 @@ namespace ApreServi
             this.lUsuario.Text = Usuario.getInstance().usuario;
             var nombre = Usuario.getInstance().usuario;
 
-            if (Usuario.getInstance().admin)
+            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
             {
-                foreach (var elem in BD.Select("select * from Actividad;"))
-                {
-                    lMisActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
-                }
+                lMisActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            else
+            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id NOT IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') AND a.propietario != '" + nombre + "';"))
             {
-                foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
-                {
-                    lMisActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
-                }
-                foreach (var elem in BD.Select("select * from Actividad a WHERE a.id NOT IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') AND a.propietario != '" + nombre + "';"))
-                {
-                    lOtrasActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
-                }
+                lOtrasActividades.Items.Add(new ActividadBD((int)elem[0], (string)elem[1], (string)elem[2], (DateTime)elem[3], (DateTime)elem[4]));
             }
-            
         }
 
         private void bCrearActividad_Click(object sender, EventArgs e)

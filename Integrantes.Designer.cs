@@ -58,7 +58,6 @@ namespace ApreServi
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bCorreo = new System.Windows.Forms.Button();
-            this.bAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pApreservi)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -423,28 +422,12 @@ namespace ApreServi
             this.bCorreo.UseVisualStyleBackColor = false;
             this.bCorreo.Click += new System.EventHandler(this.bCorreo_Click);
             // 
-            // bAtras
-            // 
-            this.bAtras.BackColor = System.Drawing.Color.SteelBlue;
-            this.bAtras.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.bAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bAtras.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bAtras.ForeColor = System.Drawing.Color.White;
-            this.bAtras.Location = new System.Drawing.Point(1108, 606);
-            this.bAtras.Name = "bAtras";
-            this.bAtras.Size = new System.Drawing.Size(92, 43);
-            this.bAtras.TabIndex = 99;
-            this.bAtras.Text = "Atras";
-            this.bAtras.UseVisualStyleBackColor = false;
-            this.bAtras.Click += new System.EventHandler(this.bAtras_Click);
-            // 
             // Integrantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1228, 661);
-            this.Controls.Add(this.bAtras);
             this.Controls.Add(this.bCorreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bEliminar);
@@ -511,6 +494,5 @@ namespace ApreServi
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button bCorreo;
-        private System.Windows.Forms.Button bAtras;
     }
 }
