@@ -63,6 +63,7 @@ namespace ApreServi
             this.tCuerpo.Multiline = true;
             this.tCuerpo.Name = "tCuerpo";
             this.tCuerpo.ReadOnly = true;
+            this.tCuerpo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tCuerpo.Size = new System.Drawing.Size(798, 302);
             this.tCuerpo.TabIndex = 50;
             // 
@@ -320,7 +321,7 @@ namespace ApreServi
             // 
             this.lTitular.AutoSize = true;
             this.lTitular.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lTitular.Location = new System.Drawing.Point(265, 188);
+            this.lTitular.Location = new System.Drawing.Point(217, 198);
             this.lTitular.Name = "lTitular";
             this.lTitular.Size = new System.Drawing.Size(327, 38);
             this.lTitular.TabIndex = 72;

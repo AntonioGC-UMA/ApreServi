@@ -431,9 +431,11 @@ namespace ApreServi
             // 
             // tDescripcion
             // 
+            this.tDescripcion.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tDescripcion.Location = new System.Drawing.Point(22, 177);
             this.tDescripcion.Multiline = true;
             this.tDescripcion.Name = "tDescripcion";
+            this.tDescripcion.ReadOnly = true;
             this.tDescripcion.Size = new System.Drawing.Size(841, 55);
             this.tDescripcion.TabIndex = 81;
             // 
