@@ -157,7 +157,10 @@ namespace ApreServi
         
         private void bAyuda_Click(object sender, EventArgs e)
         {
-            // TODO
+            Ayuda ventana = new Ayuda();
+            this.Visible = false;
+            ventana.ShowDialog();
+            this.Visible = true;
         }
 
         private void bCerrarSesion_Click(object sender, EventArgs e)
