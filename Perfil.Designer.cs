@@ -442,7 +442,7 @@ namespace ApreServi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1227, 661);
+            this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.tContraseña2);
             this.Controls.Add(this.bCambiarFoto);
             this.Controls.Add(this.bEliminar);

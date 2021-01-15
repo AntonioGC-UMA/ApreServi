@@ -68,10 +68,9 @@ namespace ApreServi
             this.bBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bBloquear.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bBloquear.ForeColor = System.Drawing.Color.White;
-            this.bBloquear.Location = new System.Drawing.Point(363, 711);
-            this.bBloquear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bBloquear.Location = new System.Drawing.Point(318, 533);
             this.bBloquear.Name = "bBloquear";
-            this.bBloquear.Size = new System.Drawing.Size(242, 31);
+            this.bBloquear.Size = new System.Drawing.Size(212, 23);
             this.bBloquear.TabIndex = 31;
             this.bBloquear.Text = "Bloquear usuario";
             this.bBloquear.UseVisualStyleBackColor = false;
@@ -85,10 +84,9 @@ namespace ApreServi
             this.bEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bEnviar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bEnviar.ForeColor = System.Drawing.Color.White;
-            this.bEnviar.Location = new System.Drawing.Point(1062, 711);
-            this.bEnviar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bEnviar.Location = new System.Drawing.Point(929, 533);
             this.bEnviar.Name = "bEnviar";
-            this.bEnviar.Size = new System.Drawing.Size(74, 31);
+            this.bEnviar.Size = new System.Drawing.Size(65, 23);
             this.bEnviar.TabIndex = 32;
             this.bEnviar.Text = "Enviar";
             this.bEnviar.UseVisualStyleBackColor = false;
@@ -102,10 +100,9 @@ namespace ApreServi
             this.bCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCerrar.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrar.ForeColor = System.Drawing.Color.White;
-            this.bCerrar.Location = new System.Drawing.Point(1279, 817);
-            this.bCerrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bCerrar.Location = new System.Drawing.Point(1119, 613);
             this.bCerrar.Name = "bCerrar";
-            this.bCerrar.Size = new System.Drawing.Size(111, 48);
+            this.bCerrar.Size = new System.Drawing.Size(97, 36);
             this.bCerrar.TabIndex = 70;
             this.bCerrar.Text = "Cerrar";
             this.bCerrar.UseVisualStyleBackColor = false;
@@ -120,8 +117,8 @@ namespace ApreServi
             this.titulo.ForeColor = System.Drawing.Color.White;
             this.titulo.Location = new System.Drawing.Point(-2, -1);
             this.titulo.Name = "titulo";
-            this.titulo.Padding = new System.Windows.Forms.Padding(0, 33, 1207, 33);
-            this.titulo.Size = new System.Drawing.Size(1430, 119);
+            this.titulo.Padding = new System.Windows.Forms.Padding(0, 25, 1056, 25);
+            this.titulo.Size = new System.Drawing.Size(1234, 92);
             this.titulo.TabIndex = 20;
             this.titulo.Text = " preServi";
             // 
@@ -133,10 +130,9 @@ namespace ApreServi
             this.bPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bPerfil.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bPerfil.ForeColor = System.Drawing.Color.White;
-            this.bPerfil.Location = new System.Drawing.Point(1239, 161);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bPerfil.Location = new System.Drawing.Point(1084, 121);
             this.bPerfil.Name = "bPerfil";
-            this.bPerfil.Size = new System.Drawing.Size(121, 48);
+            this.bPerfil.Size = new System.Drawing.Size(106, 36);
             this.bPerfil.TabIndex = 23;
             this.bPerfil.Text = "Mi perfil";
             this.bPerfil.UseVisualStyleBackColor = false;
@@ -146,10 +142,9 @@ namespace ApreServi
             // pImagen
             // 
             this.pImagen.Image = ((System.Drawing.Image)(resources.GetObject("pImagen.Image")));
-            this.pImagen.Location = new System.Drawing.Point(1239, 32);
-            this.pImagen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pImagen.Location = new System.Drawing.Point(1084, 24);
             this.pImagen.Name = "pImagen";
-            this.pImagen.Size = new System.Drawing.Size(121, 121);
+            this.pImagen.Size = new System.Drawing.Size(106, 91);
             this.pImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pImagen.TabIndex = 27;
             this.pImagen.TabStop = false;
@@ -163,10 +158,9 @@ namespace ApreServi
             this.bCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCerrarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.bCerrarSesion.Location = new System.Drawing.Point(843, 47);
-            this.bCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bCerrarSesion.Location = new System.Drawing.Point(738, 35);
             this.bCerrarSesion.Name = "bCerrarSesion";
-            this.bCerrarSesion.Size = new System.Drawing.Size(125, 47);
+            this.bCerrarSesion.Size = new System.Drawing.Size(109, 35);
             this.bCerrarSesion.TabIndex = 29;
             this.bCerrarSesion.Text = "Cerrar Sesión";
             this.bCerrarSesion.UseVisualStyleBackColor = false;
@@ -179,9 +173,9 @@ namespace ApreServi
             this.lUsuario.BackColor = System.Drawing.Color.Navy;
             this.lUsuario.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lUsuario.ForeColor = System.Drawing.Color.White;
-            this.lUsuario.Location = new System.Drawing.Point(1039, 51);
+            this.lUsuario.Location = new System.Drawing.Point(909, 38);
             this.lUsuario.Name = "lUsuario";
-            this.lUsuario.Size = new System.Drawing.Size(83, 29);
+            this.lUsuario.Size = new System.Drawing.Size(68, 23);
             this.lUsuario.TabIndex = 30;
             this.lUsuario.Text = "label2";
             this.lUsuario.Visible = false;
@@ -194,10 +188,9 @@ namespace ApreServi
             this.bRegistrarse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bRegistrarse.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bRegistrarse.ForeColor = System.Drawing.Color.White;
-            this.bRegistrarse.Location = new System.Drawing.Point(1112, 47);
-            this.bRegistrarse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bRegistrarse.Location = new System.Drawing.Point(973, 35);
             this.bRegistrarse.Name = "bRegistrarse";
-            this.bRegistrarse.Size = new System.Drawing.Size(103, 44);
+            this.bRegistrarse.Size = new System.Drawing.Size(90, 33);
             this.bRegistrarse.TabIndex = 68;
             this.bRegistrarse.Text = "Registrarse";
             this.bRegistrarse.UseVisualStyleBackColor = false;
@@ -212,10 +205,9 @@ namespace ApreServi
             this.bIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bIniciarSesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.bIniciarSesion.Location = new System.Drawing.Point(978, 47);
-            this.bIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bIniciarSesion.Location = new System.Drawing.Point(856, 35);
             this.bIniciarSesion.Name = "bIniciarSesion";
-            this.bIniciarSesion.Size = new System.Drawing.Size(127, 44);
+            this.bIniciarSesion.Size = new System.Drawing.Size(111, 33);
             this.bIniciarSesion.TabIndex = 69;
             this.bIniciarSesion.Text = "Iniciar Sesión";
             this.bIniciarSesion.UseVisualStyleBackColor = false;
@@ -224,10 +216,9 @@ namespace ApreServi
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(623, 1100);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(545, 825);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 31);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 31;
             this.button3.Text = "Añadir";
             this.button3.UseVisualStyleBackColor = true;
@@ -235,10 +226,9 @@ namespace ApreServi
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(757, 1100);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Location = new System.Drawing.Point(662, 825);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 31);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 32;
             this.button4.Text = "Borrar";
             this.button4.UseVisualStyleBackColor = true;
@@ -250,10 +240,9 @@ namespace ApreServi
             this.pApreservi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pApreservi.BackgroundImage")));
             this.pApreservi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pApreservi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pApreservi.Location = new System.Drawing.Point(14, 23);
-            this.pApreservi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pApreservi.Location = new System.Drawing.Point(12, 17);
             this.pApreservi.Name = "pApreservi";
-            this.pApreservi.Size = new System.Drawing.Size(226, 67);
+            this.pApreservi.Size = new System.Drawing.Size(198, 50);
             this.pApreservi.TabIndex = 71;
             this.pApreservi.TabStop = false;
             this.pApreservi.Click += new System.EventHandler(this.pApreservi_Click);
@@ -272,12 +261,11 @@ namespace ApreServi
             this.tableLayoutPanel2.Controls.Add(this.bNoticias, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.bForos, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.bActividades, 3, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(274, 39);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(240, 29);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(430, 55);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 41);
             this.tableLayoutPanel2.TabIndex = 72;
             // 
             // bAyuda
@@ -288,10 +276,9 @@ namespace ApreServi
             this.bAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bAyuda.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bAyuda.ForeColor = System.Drawing.Color.White;
-            this.bAyuda.Location = new System.Drawing.Point(354, 4);
-            this.bAyuda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bAyuda.Location = new System.Drawing.Point(310, 3);
             this.bAyuda.Name = "bAyuda";
-            this.bAyuda.Size = new System.Drawing.Size(72, 47);
+            this.bAyuda.Size = new System.Drawing.Size(63, 35);
             this.bAyuda.TabIndex = 3;
             this.bAyuda.Text = "Ayuda";
             this.bAyuda.UseVisualStyleBackColor = false;
@@ -305,10 +292,9 @@ namespace ApreServi
             this.bCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bCursos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bCursos.ForeColor = System.Drawing.Color.White;
-            this.bCursos.Location = new System.Drawing.Point(157, 4);
-            this.bCursos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bCursos.Location = new System.Drawing.Point(138, 3);
             this.bCursos.Name = "bCursos";
-            this.bCursos.Size = new System.Drawing.Size(70, 47);
+            this.bCursos.Size = new System.Drawing.Size(61, 35);
             this.bCursos.TabIndex = 2;
             this.bCursos.Text = "Cursos";
             this.bCursos.UseVisualStyleBackColor = false;
@@ -322,10 +308,9 @@ namespace ApreServi
             this.bNoticias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bNoticias.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bNoticias.ForeColor = System.Drawing.Color.White;
-            this.bNoticias.Location = new System.Drawing.Point(71, 4);
-            this.bNoticias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bNoticias.Location = new System.Drawing.Point(63, 3);
             this.bNoticias.Name = "bNoticias";
-            this.bNoticias.Size = new System.Drawing.Size(79, 47);
+            this.bNoticias.Size = new System.Drawing.Size(69, 35);
             this.bNoticias.TabIndex = 1;
             this.bNoticias.Text = "Noticias";
             this.bNoticias.UseVisualStyleBackColor = false;
@@ -339,10 +324,9 @@ namespace ApreServi
             this.bForos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bForos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bForos.ForeColor = System.Drawing.Color.White;
-            this.bForos.Location = new System.Drawing.Point(3, 4);
-            this.bForos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bForos.Location = new System.Drawing.Point(3, 3);
             this.bForos.Name = "bForos";
-            this.bForos.Size = new System.Drawing.Size(62, 47);
+            this.bForos.Size = new System.Drawing.Size(54, 35);
             this.bForos.TabIndex = 0;
             this.bForos.Text = "Foros";
             this.bForos.UseVisualStyleBackColor = false;
@@ -356,10 +340,9 @@ namespace ApreServi
             this.bActividades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bActividades.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.bActividades.ForeColor = System.Drawing.Color.White;
-            this.bActividades.Location = new System.Drawing.Point(234, 4);
-            this.bActividades.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bActividades.Location = new System.Drawing.Point(205, 3);
             this.bActividades.Name = "bActividades";
-            this.bActividades.Size = new System.Drawing.Size(113, 47);
+            this.bActividades.Size = new System.Drawing.Size(99, 35);
             this.bActividades.TabIndex = 4;
             this.bActividades.Text = "Actividades";
             this.bActividades.UseVisualStyleBackColor = false;
@@ -368,10 +351,9 @@ namespace ApreServi
             // pCara
             // 
             this.pCara.Image = ((System.Drawing.Image)(resources.GetObject("pCara.Image")));
-            this.pCara.Location = new System.Drawing.Point(54, 377);
-            this.pCara.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pCara.Location = new System.Drawing.Point(47, 283);
             this.pCara.Name = "pCara";
-            this.pCara.Size = new System.Drawing.Size(186, 205);
+            this.pCara.Size = new System.Drawing.Size(163, 154);
             this.pCara.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pCara.TabIndex = 73;
             this.pCara.TabStop = false;
@@ -379,47 +361,43 @@ namespace ApreServi
             // lPersonas
             // 
             this.lPersonas.FormattingEnabled = true;
-            this.lPersonas.ItemHeight = 20;
-            this.lPersonas.Location = new System.Drawing.Point(363, 197);
-            this.lPersonas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lPersonas.ItemHeight = 15;
+            this.lPersonas.Location = new System.Drawing.Point(318, 148);
             this.lPersonas.Name = "lPersonas";
-            this.lPersonas.Size = new System.Drawing.Size(305, 504);
+            this.lPersonas.Size = new System.Drawing.Size(267, 379);
             this.lPersonas.TabIndex = 74;
             this.lPersonas.SelectedIndexChanged += new System.EventHandler(this.lPersonas_SelectedIndexChanged);
             // 
             // tMensaje
             // 
-            this.tMensaje.Location = new System.Drawing.Point(675, 711);
-            this.tMensaje.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tMensaje.Location = new System.Drawing.Point(591, 533);
             this.tMensaje.Name = "tMensaje";
-            this.tMensaje.Size = new System.Drawing.Size(379, 27);
+            this.tMensaje.Size = new System.Drawing.Size(332, 23);
             this.tMensaje.TabIndex = 75;
             // 
             // tMensajes
             // 
-            this.tMensajes.Location = new System.Drawing.Point(675, 197);
-            this.tMensajes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tMensajes.Location = new System.Drawing.Point(591, 148);
             this.tMensajes.Multiline = true;
             this.tMensajes.Name = "tMensajes";
             this.tMensajes.ReadOnly = true;
-            this.tMensajes.Size = new System.Drawing.Size(460, 504);
+            this.tMensajes.Size = new System.Drawing.Size(403, 379);
             this.tMensajes.TabIndex = 76;
             // 
             // tBusqueda
             // 
-            this.tBusqueda.Location = new System.Drawing.Point(363, 159);
-            this.tBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tBusqueda.Location = new System.Drawing.Point(318, 119);
             this.tBusqueda.Name = "tBusqueda";
-            this.tBusqueda.Size = new System.Drawing.Size(305, 27);
+            this.tBusqueda.Size = new System.Drawing.Size(267, 23);
             this.tBusqueda.TabIndex = 77;
             this.tBusqueda.TextChanged += new System.EventHandler(this.tBusqueda_TextChanged);
             // 
             // Mensajes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1403, 881);
+            this.ClientSize = new System.Drawing.Size(1228, 661);
             this.Controls.Add(this.tBusqueda);
             this.Controls.Add(this.tMensajes);
             this.Controls.Add(this.tMensaje);
@@ -439,7 +417,6 @@ namespace ApreServi
             this.Controls.Add(this.pImagen);
             this.Controls.Add(this.bPerfil);
             this.Controls.Add(this.titulo);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Mensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

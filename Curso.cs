@@ -299,13 +299,15 @@ namespace ApreServi
                 return;
             }
 
-            string profesor = BD.Select("SELECT email FROM Usuario WHERE nombreUsuario = '" + curso.dueño + "';")[0].ToString();
+            string profesor = BD.Select("SELECT email FROM Usuario WHERE nombreUsuario = '" + curso.dueño + "';")[0][0].ToString();
             Correo.Enviar(profesor,"Cuestionario de satisfacción del curso: " + curso.nombre, "Puntuación del curso: "+ cValoración.Text
                 + "\nPuntuación del profesor: " + cProfesor.Text + "\nOpinión sobre el curso: " + tOpinion.Text + "\nMejoras para el curso:"
                 + tMejora.Text);
 
-            cValoración.SelectedIndex = -1;
-            cProfesor.SelectedIndex = -1;
+            for (int ix = 0; ix < cValoración.Items.Count; ++ix)
+                cValoración.SetItemChecked(ix, false);
+            for (int ix = 0; ix < cProfesor.Items.Count; ++ix)
+                cProfesor.SetItemChecked(ix, false);
             tOpinion.Text = "";
             tMejora.Text = "";
         }
