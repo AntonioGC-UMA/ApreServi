@@ -24,18 +24,38 @@ namespace ApreServi
         {
             if (instance == null) return new List<(DateTime dia, string descripcion)>();
 
-            List<(DateTime dia, string descripcion)> res = new List<(DateTime dia, string descripcion)>();
-            string nombre = Usuario.getInstance().usuario;
+            List<(DateTime dia, string descripcion)> res;
 
-            foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
+            if (Usuario.getInstance().admin)
             {
-                res.Add(((DateTime)elem[3], "Comienza la actividad: " + (string)elem[1]));
-                res.Add(((DateTime)elem[4], "Termina la actividad: " + (string)elem[1]));
+                res = new List<(DateTime dia, string descripcion)>();
+
+                foreach (var elem in BD.Select("select * from Actividad;"))
+                {
+                    res.Add(((DateTime)elem[3], "Comienza la actividad: " + (string)elem[1]));
+                    res.Add(((DateTime)elem[4], "Termina la actividad: " + (string)elem[1]));
+                }
+                foreach (var elem in BD.Select("select * from Curso;"))
+                {
+                    res.Add(((DateTime)elem[3], "Comienza el curso: " + (string)elem[1]));
+                    res.Add(((DateTime)elem[4], "Termina el curso: " + (string)elem[1]));
+                }
             }
-            foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
+            else
             {
-                res.Add(((DateTime)elem[3], "Comienza el curso: " + (string)elem[1]));
-                res.Add(((DateTime)elem[4], "Termina el curso: " + (string)elem[1]));
+                res = new List<(DateTime dia, string descripcion)>();
+                string nombre = Usuario.getInstance().usuario;
+
+                foreach (var elem in BD.Select("select * from Actividad a WHERE a.id IN (SELECT idActividad from Inscripcion WHERE nombreUsuario = '" + nombre + "') OR a.propietario = '" + nombre + "';"))
+                {
+                    res.Add(((DateTime)elem[3], "Comienza la actividad: " + (string)elem[1]));
+                    res.Add(((DateTime)elem[4], "Termina la actividad: " + (string)elem[1]));
+                }
+                foreach (var elem in BD.Select("select * from Curso c WHERE c.id IN (SELECT idCurso from Matricula WHERE nombreUsuario = '" + nombre + "') OR c.propietario = '" + nombre + "';"))
+                {
+                    res.Add(((DateTime)elem[3], "Comienza el curso: " + (string)elem[1]));
+                    res.Add(((DateTime)elem[4], "Termina el curso: " + (string)elem[1]));
+                }
             }
 
             return res;

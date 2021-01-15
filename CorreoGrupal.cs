@@ -38,9 +38,10 @@ namespace ApreServi
                 return;
             }
 
-
+            string asunto = tAsunto.Text;
+            string cuerpo = tCuerpo.Text;
             var worker = new System.ComponentModel.BackgroundWorker();
-            worker.DoWork += (sender, e) => mandarCorreos(tAsunto.Text, tCuerpo.Text);
+            worker.DoWork += (sender, e) => mandarCorreos(asunto, cuerpo);
             worker.RunWorkerAsync();
 
 

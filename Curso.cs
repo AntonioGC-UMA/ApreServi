@@ -126,12 +126,16 @@ namespace ApreServi
 
         private void bAbandonar_Click(object sender, EventArgs e)
         {
-            BD.Delete("delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + curso.id);
+            DialogResult result = MessageBox.Show("¿Seguro que desea abandonar el curso?", "Confirmación", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                BD.Delete("delete from Matricula m where m.nombreUsuario = '" + Usuario.getInstance().usuario + "' and m.idCurso = " + curso.id);
 
-            Cursos ventana = new Cursos();
-            this.Visible = false;
-            ventana.ShowDialog();
-            this.Close();
+                Cursos ventana = new Cursos();
+                this.Visible = false;
+                ventana.ShowDialog();
+                this.Close();
+            }
         }
 
         private void lForos_SelectedIndexChanged(object sender, EventArgs e)

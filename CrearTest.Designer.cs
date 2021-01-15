@@ -95,7 +95,7 @@ namespace ApreServi
             this.bCrear.Name = "bCrear";
             this.bCrear.Size = new System.Drawing.Size(149, 65);
             this.bCrear.TabIndex = 42;
-            this.bCrear.Text = "Crear cuestionario";
+            this.bCrear.Text = "Confirmar";
             this.bCrear.UseVisualStyleBackColor = false;
             this.bCrear.Click += new System.EventHandler(this.bCrear_Click);
             // 

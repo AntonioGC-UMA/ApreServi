@@ -16,9 +16,9 @@ namespace ApreServi
 
 
 
-        public ActividadBD(int i, string n, string d, DateTime fi, DateTime ff, string du = "")
+        public ActividadBD(int i, string n, string d, DateTime fi, DateTime ff, string duu)
         {
-            id = i; nombre = n; descripcion = d; fecha_inicio = fi; fecha_fin = ff;  dueño = du;
+            id = i; nombre = n; descripcion = d; fecha_inicio = fi; fecha_fin = ff;  dueño = duu;
         }
 
         public override string ToString()

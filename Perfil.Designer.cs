@@ -179,7 +179,7 @@ namespace ApreServi
             // tContraseña
             // 
             this.tContraseña.ForeColor = System.Drawing.Color.Gray;
-            this.tContraseña.Location = new System.Drawing.Point(59, 532);
+            this.tContraseña.Location = new System.Drawing.Point(61, 532);
             this.tContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tContraseña.Name = "tContraseña";
             this.tContraseña.Size = new System.Drawing.Size(217, 23);
